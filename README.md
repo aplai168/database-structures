@@ -7,10 +7,16 @@ A queue works like a line for an amusement park ride -- people enter at the end 
 
 ![queue image]
 
+#### A queue would be great for....
+Issuing instructions to your sandwich-making robot.
+
 ### 2. [Stack]
 A stack works like a stack of plates -- plates are added and removed from the the top of the stack (*LIFO*: last in, first out).
 
 ![stack image]
+
+#### A stack would be great for...
+Implementing your browser's back button.
 
 ## Requirements
 - Implement a **stack** class and a **queue** class
