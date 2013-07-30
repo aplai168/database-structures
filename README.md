@@ -53,6 +53,30 @@ node
     correctly. Test this by reducing the size limit for storage to 1 and seeing
     if the hash table can keep track of 2 different key-value pairs.
 
+## APIs and Implementation: A Note on Communicating Your Intentions as a Developer
+
+**tl;dr**: _prefix private properties and methods with an underscore_
+
+APIs are more than just URLs that return data--**API** is a general term that refers
+to the visible surface of any system, object, or library with which your code
+interacts. E.g., an airplane has an API that consists of knobs, dials, pedals,
+and a steering wheel (?) which allow the pilot to make use of the airplane's
+underlying **implementation**--an engine, wings, and rudders. Importantly, the
+next model of airplane will probably have improvements to the engine, but the
+pilot need not know about this, as the controls will remain basically unchanged.
+
+This relationship between APIs and implementations--that they remain independent--is
+what keeps the towering stacks of software we use everyday from falling over.
+
+In JavaScript, because there is no concept of private variables (except through closure),
+sometimes API and implementation are both visible. If it's impossible to distinguish
+between API and implementation, you might depend upon a piece of implementation
+that later changes and breaks your code.
+
+To prevent this from happening to your collaborators and consumers, indicate private
+properties and methods by prefixing them with an underscore.
+
+
 ## Extra Credit:
 
 Write all of the following data structures and improvements in the order shown.
