@@ -58,7 +58,7 @@ node
 Write all of the following data structures and improvements in the order shown.
 Use any style you like.
 
-* Extend your linked list to be [doubly linked](http://en.wikipedia.org/wiki/Doubly_linked_list/), and add the
+* Extend your linked list to be [doubly linked](http://en.wikipedia.org/wiki/Doubly_linked_list), and add the
   following properties:
   - [ ] An `.addToHead()` method which takes a value and adds it to the end of the
     list.
