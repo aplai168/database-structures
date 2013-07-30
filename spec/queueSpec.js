@@ -21,5 +21,38 @@ describe("queue", function() {
     expect(queue.size).to.be.a('function');
   });
 
-  // Hey! Add tests here that thoroughly test the functionality of your queue
+  it('should not error when dequeuing from an empty queue', function() {
+    expect(queue.dequeue).not.throws();
+  });
+
+  it('should report its size correctly', function() {
+    var a = 'a', b = 'b', c = 'c';
+
+    queue.enqueue(a);
+    queue.enqueue(b);
+    queue.enqueue(c);
+    expect(queue.size()).equal(3);
+
+    queue.dequeue();
+    expect(queue.size()).equal(2);
+
+    queue.dequeue();
+    queue.dequeue();
+    queue.dequeue();
+    expect(queue.size()).equal(0);
+  });
+
+  it('should dequeue items in the FIFO order', function() {
+    var a = 'a', b = 'b', c = 'c', d = 'd';
+
+    queue.enqueue(a);
+    queue.enqueue(b);
+    queue.enqueue(c);
+    expect(queue.dequeue()).equal(a);
+    expect(queue.dequeue()).equal(b);
+
+    queue.enqueue(d);
+    expect(queue.dequeue()).equal(c);
+    expect(queue.dequeue()).equal(d);
+  });
 });

@@ -21,21 +21,38 @@ describe("stack", function() {
     expect(stack.size).to.be.a('function');
   });
 
-  it('should add pushed items to the top of the stack', function() {
-    // Fill out the body of the test here
-  });
-
-  it('should remove popped items from the top of the stack', function() {
-    // Fill out the body of the test here
-  });
-
-  it('should push and pop multiple items in the right order (LIFO)', function() {
-    // Fill out the body of the test here
-  });
-
   it('should not error when popping from an empty stack', function() {
-    // Fill out the body of the test here
+    expect(stack.pop).not.throws();
   });
 
-  // Hey! Add more tests here if you can think of ways to test your stack more thoroughly
+  it('should report its size correctly', function() {
+    var a = 'a', b = 'b', c = 'c';
+
+    stack.push(a);
+    stack.push(b);
+    stack.push(c);
+    expect(stack.size()).equal(3);
+
+    stack.pop();
+    expect(stack.size()).equal(2);
+
+    stack.pop();
+    stack.pop();
+    stack.pop();
+    expect(stack.size()).equal(0);
+  });
+
+  it('should pop items in the LIFO order', function() {
+    var a = 'a', b = 'b', c = 'c', d = 'd';
+
+    stack.push(a);
+    stack.push(b);
+    stack.push(c);
+    expect(stack.pop()).equal(c);
+    expect(stack.pop()).equal(b);
+
+    stack.push(d);
+    expect(stack.pop()).equal(d);
+    expect(stack.pop()).equal(a);
+  });
 });
