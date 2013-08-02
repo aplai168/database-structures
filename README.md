@@ -71,7 +71,7 @@ between API and implementation, you might depend upon a piece of implementation
 that later changes and breaks your code.
 
 To prevent this from happening to your collaborators and consumers, indicate private
-properties and methods by prefixing them with an underscore.
+properties and methods by prefixing them with an underscore. This is how we do.
 
 
 ## Extra Credit:
