@@ -49,9 +49,6 @@ node
     * [ ] An `.insert()` method
     * [ ] A `.retrieve()` method
     * [ ] A `.remove()` method
-  * [ ] Once you have a working, naive hash table, make sure it handles collisions
-    correctly. Test this by reducing the size limit for storage to 1 and seeing
-    if the hash table can keep track of 2 different key-value pairs.
 
 ## APIs and Implementation: A Note on Communicating Your Intentions as a Developer
 
