@@ -54,7 +54,7 @@ node
 
 **tl;dr**: _prefix private properties and methods with an underscore_
 
-APIs are more than just URLs that return data--**API** is a general term that refers
+APIs are more than just URLs that return data; **API** is a general term that refers
 to the visible surface of any system, object, or library with which your code
 interacts. E.g., an airplane has an API that consists of knobs, dials, pedals,
 and a steering wheel (?) which allow the pilot to make use of the airplane's
