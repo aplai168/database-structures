@@ -1,38 +1,27 @@
 <!doctype html>
 <meta charset="utf8">
 <head>
-	<link rel="stylesheet" href="lib/mocha/mocha.css">
-	<link rel="stylesheet" href="lib/runner/runner.css">
-	<script src="lib/mocha/mocha.js"></script>
-	<script src="lib/chai/chai.js"></script>
-	<script src="lib/runner/runner.js"></script>
+  <link rel="stylesheet" href="lib/mocha/mocha.css">
 
-	<script type="text/javascript">
-		// Setup mocha
-		mocha.setup('bdd');
+  <script src="lib/mocha/mocha.js"></script>
+  <script src="lib/chai/chai.js"></script>
+  <script type="text/javascript">
+    // Setup mocha
+    mocha.setup('bdd');
 
-		// Expose chai's expect method
-		var expect = chai.expect;
+    // Expose chai's expect method
+    var expect = chai.expect;
+  </script>
+  <script src="lib/underscore.js"></script>
 
-		runner.variations = {
-			'src/functional': 'Functional',
-			'src/functional-shared': 'Functional (shared)',
-			'src/prototypal': 'Prototypal',
-			'src/pseudoclassical': 'Pseudoclassical'
-		};
+  <script src="lib/skipper.js"></script>
 
-		runner.scripts = [
-			'queue.js',
-			'stack.js'
-		];
+  <script src="spec/stackSpec.js"></script>
+  <script src="spec/queueSpec.js"></script>
 
-		runner.specs = [
-			'spec/stackSpec.js',
-			'spec/queueSpec.js'
-		];
-	</script>
 </head>
-
+<body>
 <div id="mocha">
 </div>
-
+</body>
+</html>

@@ -1,18 +1,18 @@
 describe("queue", function() {
   var queue;
 
-  /* BEGIN DO NOT MODIFY */
-  beforeEach(function() {
+  // TODO: give this responsability to the student
+  var refreshQueue = function() {
     // Before each test runs, create a new Queue
-    if (runner.is('src/functional') || runner.is('src/functional-shared')) {
+    if (skipper.variant == 'functional' || skipper.variant == 'functional-shared') {
       queue = makeQueue();
-    } else if (runner.is('src/prototypal')) {
+    } else if (skipper.variant == 'prototypal') {
       queue = Queue();
-    } else if (runner.is('src/pseudoclassical')) {
+    } else if (skipper.variant == 'pseudoclassical') {
       queue = new Queue();
     }
-  });
-  /* END DO NOT MODIFY */
+  }
+  beforeEach(refreshQueue);
 
   // Any queue implementation should have the following methods
   it('should have "enqueue", "dequeue", and "size" methods', function() {
@@ -22,7 +22,7 @@ describe("queue", function() {
   });
 
   it('should not error when dequeuing from an empty queue', function() {
-    expect(queue.dequeue).not.throws();
+    expect(function(){queue.dequeue()}).not.throws();
   });
 
   it('should report its size correctly', function() {
@@ -38,7 +38,7 @@ describe("queue", function() {
 
     queue.dequeue();
     queue.dequeue();
-    queue.dequeue();
+    queue.dequeue(); // make sure we don't get to -1
     expect(queue.size()).equal(0);
   });
 
@@ -55,4 +55,28 @@ describe("queue", function() {
     expect(queue.dequeue()).equal(c);
     expect(queue.dequeue()).equal(d);
   });
+
+  // instantiation-style-specific tests
+  if (skipper.variant != 'functional'  ){
+    it('should have its own storage property', function(){
+      expect(queue.hasOwnProperty('storage')).to.exist;
+    });
+
+    it('should share methods with other instances', function(){
+      var oldQueue = queue;
+      refreshQueue();
+      expect(oldQueue.push).to.be.equal(queue.push);
+    });
+    
+    // TODO: test for prototypal vs pseudoclassical
+    if (skipper.variant != 'functional-shared'){
+      it('should inherit its methods ', function(){
+        expect(queue.__proto__).to.be.a('object');
+        expect(queue.__proto__.enqueue).to.be.a('function');
+        expect(queue.__proto__.dequeue).to.be.a('function');
+        expect(queue.__proto__.size).to.be.a('function');
+      });
+    }
+  }
+
 });
