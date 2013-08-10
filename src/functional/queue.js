@@ -1,20 +1,35 @@
 var makeQueue = function(){
   // Use an object with numeric keys to store values
   var storage = {};
-
-  var size; // Hint: set an initial value here
+/* START SOLUTION */
+  var start = -1;
+  var end = -1;
+/* END SOLUTION */
 
   // Implement the methods below
-  var queue = {};
+  var instance = {};
 
-  queue.enqueue = function(value){
+  instance.enqueue = function(value){
+/* START SOLUTION */
+    end++;
+    storage[end] = value;
+/* END SOLUTION */
   };
 
-  queue.dequeue = function(){
+  instance.dequeue = function(){
+/* START SOLUTION */
+    instance.size() && start++;
+    var result = storage[start];
+    delete storage[start];
+    return result;
+/* END SOLUTION */
   };
 
-  queue.size = function(){
+  instance.size = function(){
+/* START SOLUTION */
+    return end - start;
+/* END SOLUTION */
   };
 
-  return queue;
+  return instance;
 };
