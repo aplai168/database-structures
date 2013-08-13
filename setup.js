@@ -4,8 +4,8 @@ require.config({
     'underscore': 'lib/underscore',
     'mocha': 'lib/mocha',
     'chai': 'lib/chai',
-    'skipper': 'lib/skipper',
-    'testClassPattern': 'lib/testClassPattern'
+    'variant': 'lib/variant',
+    'classPattern': 'lib/classPattern'
   },
   shim:{
     'underscore':{
@@ -14,10 +14,10 @@ require.config({
   }
 });
 
-require(['mocha', 'chai', 'skipper'], function(notMocha, chai, skipper){
+require(['mocha', 'chai', 'variant'], function(notMocha, chai, variant){
   mocha.setup('bdd');
 
-  skipper.setup(['stack.js','queue.js'], {
+  variant.setup(['stack.js','queue.js'], {
     'pseudoclassical': 'Pseudoclassical',
     'prototypal': 'Prototypal',
     'functional-shared': 'Functional (shared)',

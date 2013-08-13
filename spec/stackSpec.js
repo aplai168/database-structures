@@ -1,28 +1,26 @@
 var deps = ['mocha',
             'chai',
-            'skipper',
-            'testClassPattern'];
+            'variant',
+            'classPattern'];
+define(deps, function(notMocha, chai, variant, classPattern){
 
-define(deps, function(notMocha, chai, skipper, testClassPattern){
+  require(variant.pathFromFile('stack.js'));
+
   describe("stack", function() {
     var stack;
     var instantiator;
+    var refreshStack;
 
-    var getInstantiator = function(){
-      return instantiator;
+    if(variant.is('pseudoclassical')){
+      instantiator = Stack;
+      refreshStack = function(){ stack = new Stack(); }
+    } else {
+      instantiator = makeStack;
+      refreshStack = function(){ stack = makeStack(); };
     }
-
-    var refreshStack = function() {
-      if(skipper.variant == 'pseudoclassical'){
-        stack = new Stack();
-      }else{
-        stack = makeStack();
-      }
-    };
 
     beforeEach(refreshStack);
 
-    // Any stack implementation should have the following methods
     it('has "push", "pop", and "size" methods', function() {
       expect(stack.push).to.be.a('function');
       expect(stack.pop).to.be.a('function');
@@ -74,7 +72,6 @@ define(deps, function(notMocha, chai, skipper, testClassPattern){
       expect(stack.pop()).equal('a');
     });
 
-    testClassPattern(skipper.variant, getInstantiator, {'prototypeOfInstantiatorsPrototypeProperty': Object.prototype});
-
+    classPattern.ensure(instantiator).follows(variant.current);
   });
 });

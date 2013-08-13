@@ -1,21 +1,25 @@
-define(['chai', 'mocha','skipper'], function(chai, notMocha, skipper){
+var deps = ['chai',
+            'mocha',
+            'variant',
+            'classPattern'];
+define(deps, function(chai, notMocha, variant, classPattern){
+
+  require(variant.pathFromFile('queue.js'));
+
   describe("queue", function() {
     var queue;
+    var instantiator;
 
-    var refreshQueue = function() {
-      if (skipper.variant == 'functional' ||
-          skipper.variant == 'functional-shared') {
-        queue = makeQueue();
-      } else if (skipper.variant == 'prototypal') {
-        queue = Queue();
-      } else if (skipper.variant == 'pseudoclassical') {
-        queue = new Queue();
-      }
+    if(variant.is('pseudoclassical')){
+      instantiator = Queue;
+      refreshQueue = function(){ queue = new Queue(); };
+    } else {
+      instantiator = makeQueue;
+      refreshQueue = function(){ queue = makeQueue(); };
     }
 
     beforeEach(refreshQueue);
 
-    // Any queue implementation should have the following methods
     it('should have "enqueue", "dequeue", and "size" methods', function() {
       expect(queue.enqueue).to.be.a('function');
       expect(queue.dequeue).to.be.a('function');
@@ -57,27 +61,6 @@ define(['chai', 'mocha','skipper'], function(chai, notMocha, skipper){
       expect(queue.dequeue()).equal(d);
     });
 
-    // instantiation-style-specific tests
-    if (skipper.variant != 'functional'  ){
-      it('should have its own storage property', function(){
-        expect(queue.hasOwnProperty('storage')).to.exist;
-      });
-
-      it('should share methods with other instances', function(){
-        var oldQueue = queue;
-        refreshQueue();
-        expect(oldQueue.push).to.be.equal(queue.push);
-      });
-
-      // TODO: test for prototypal vs pseudoclassical
-      if (skipper.variant != 'functional-shared'){
-        it('should inherit its methods ', function(){
-          expect(queue.__proto__).to.be.a('object');
-          expect(queue.__proto__.enqueue).to.be.a('function');
-          expect(queue.__proto__.dequeue).to.be.a('function');
-          expect(queue.__proto__.size).to.be.a('function');
-        });
-      }
-    }
+    classPattern.ensure(instantiator).follows(variant.current);
   });
 });
