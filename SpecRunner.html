@@ -5,9 +5,12 @@
     <style>
       body {
         width: 120%;
+        margin: 0;
+        padding: 0;
       }
       iframe {
         width: 24%;
+        border-width: 0;
       }
     </style>
     <script src="lib/jquery.js"></script>
@@ -15,10 +18,10 @@
       $(function(){
         $.each(['functional', 'functional-shared', 'prototypal', 'pseudoclassical'], function(i, variant){
           $('<iframe src="' + window.location.toString().replace('.html', 'Section.html?') + variant + '" />').appendTo(document.body);
-        })
+        });
 
         $(window).resize(function() {
-          $('iframe').height($(this).height() - 46);
+          $('iframe').height($(this).height());
         }).trigger('resize');
       });
     </script>
