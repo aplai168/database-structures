@@ -1,4 +1,5 @@
-define(['lib/underscore.js', 'spec/initMocha.js'], function(_){
+define(['lib/chai.js', 'lib/underscore.js'], function(chai){
+  var expect = chai.expect;
 
   var follows = function(instantiator, pattern, options, prototypeOfInstances){
     var patternIs = function(){

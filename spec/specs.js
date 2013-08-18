@@ -1,9 +1,20 @@
+window.variant = document.location.search.slice(1).split('&')[0];
+
 define([
-  'lib/classPattern.js',
-  'spec/initMocha.js',
+  'spec/classPattern.js',
+  'lib/chai.js',
+  'lib/mocha.js',
   'src/'+variant+'/stack.js',
-  'src/'+variant+'/queue.js'
-], function(classPattern){
+  'src/'+variant+'/queue.js',
+  'lib/jquery.js'
+], function(classPattern, chai){
+
+  $(function(){
+    $('<h4>The '+variant+' pattern</h4>').css({margin: 0}).prependTo(document.body);
+  });
+
+  mocha.setup('bdd');
+  var expect = chai.expect;
 
   describe("stack", function() {
 
