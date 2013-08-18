@@ -2,34 +2,27 @@
 <meta charset="utf8">
 <html>
   <head>
-    <link rel="stylesheet" href="css/mocha.css">
     <style>
-      a {
-        padding: 10px;
-        font-size: .8em;
+      body {
+        width: 120%;
+      }
+      iframe {
+        width: 24%;
       }
     </style>
+    <script src="lib/jquery.js"></script>
     <script>
-      window.variant = document.location.search.slice(1);
-      variant || (window.location.search = '?functional');
-      var require = {
-        shim: {
-          'lib/underscore.js': {
-            exports: '_'
-          }
-        }
-      };
+      $(function(){
+        $.each(['functional', 'functional-shared', 'prototypal', 'pseudoclassical'], function(i, variant){
+          $('<iframe src="' + window.location.toString().replace('.html', 'Section.html?') + variant + '" />').appendTo(document.body);
+        })
+
+        $(window).resize(function() {
+          $('iframe').height($(this).height() - 46);
+        }).trigger('resize');
+      });
     </script>
-    <script data-main="spec/specs.js" src="lib/require.js"></script>
   </head>
   <body>
-    <div>
-      <!-- todo add iframes -->
-      <a href="?functional">functional</a>
-      <a href="?functional-shared">functional-shared</a>
-      <a href="?prototypal">prototypal</a>
-      <a href="?pseudoclassical">pseudoclassical</a>
-    </div>
-    <div id="mocha"></div>
   </body>
 </html>
