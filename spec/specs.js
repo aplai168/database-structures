@@ -1,7 +1,7 @@
 window.variant = document.location.search.slice(1);
 
 define([
-  'spec/classPattern.js',
+  'spec/verifyClass.js',
   'lib/chai.js',
   'lib/mocha.js',
   'src/'+variant+'/stack.js',
@@ -32,7 +32,7 @@ define([
 
     describe('stack shared behavior', function(){
 
-      varifyClass(instantiator).followsPattern(variant, {}, prototypeOfInstances);
+      verifyClass(instantiator).followsPattern(variant, {}, prototypeOfInstances);
 
       it('reports a size of zero for a new stack', function() {
         expect(stack.size()).to.equal(0);

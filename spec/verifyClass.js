@@ -3,6 +3,10 @@ define(['lib/chai.js', 'lib/underscore.js'], function(chai){
 
   return function(instantiator){
     return {followsPattern: function(pattern, options, prototypeOfInstances){
+      var patternIs = function(){
+        return _(arguments).contains(pattern);
+      };
+
       if(!patternIs(
         'functional',
         'functional-shared',
@@ -11,10 +15,6 @@ define(['lib/chai.js', 'lib/underscore.js'], function(chai){
       )){
         throw new Error('Unrecognized class pattern');
       }
-
-      var patternIs = function(){
-        return _(arguments).contains(pattern);
-      };
 
       if(patternIs('prototypal') && !prototypeOfInstances){
         throw new Error('Testing the prototypal pattern requires you to supply the expected prototype');
@@ -165,6 +165,6 @@ define(['lib/chai.js', 'lib/underscore.js'], function(chai){
       if(!_(options).isEmpty()){
         console.warn('testClassPattern is being invoked with unused options: ', options);
       };
-    };
-
+    }}
+  };
 });
