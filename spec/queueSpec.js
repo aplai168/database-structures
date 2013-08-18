@@ -1,23 +1,18 @@
-var deps = [
-  'chai',
-  'mocha',
-  'variant',
-  'classPattern'];
-define(deps, function(chai, notMocha, variant, classPattern){
-  require([variant('queue')], function(){
-    describe("queue", function() {
+define(['lib/classPattern.js', 'spec/initMocha.js', 'src/'+variant+'/queue.js'], function(classPattern){
+  describe("queue", function() {
       var queue;
-      var instantiator;
+      var instantiator = variant === 'pseudoclassical' ? Queue : makeQueue;
+      var prototypeOfInstances = variant === 'prototypal' && queueMethods;
 
-      if(variant.is('pseudoclassical')){
-        instantiator = Queue;
-        refreshQueue = function(){ queue = new Queue(); };
-      } else {
-        instantiator = makeQueue;
-        refreshQueue = function(){ queue = makeQueue(); };
-      }
+      beforeEach(function(){
+        if(variant === 'pseudoclassical'){
+          queue = new instantiator();
+        } else {
+          queue = instantiator();
+        }
+      });
 
-      beforeEach(refreshQueue);
+      classPattern.ensure(instantiator).follows(variant, {}, prototypeOfInstances);
 
       it('should have "enqueue", "dequeue", and "size" methods', function() {
         expect(queue.enqueue).to.be.a('function');
@@ -29,6 +24,7 @@ define(deps, function(chai, notMocha, variant, classPattern){
         expect(function(){queue.dequeue()}).not.throws();
       });
 
+      // todo: fix these variables
       it('should report its size correctly', function() {
         var a = 'a', b = 'b', c = 'c';
 
@@ -59,9 +55,5 @@ define(deps, function(chai, notMocha, variant, classPattern){
         expect(queue.dequeue()).equal(c);
         expect(queue.dequeue()).equal(d);
       });
-
-      classPattern.ensure(instantiator).follows(variant());
-    });
-    variant.done();
   })
 });

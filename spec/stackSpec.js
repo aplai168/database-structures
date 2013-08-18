@@ -1,24 +1,18 @@
-var deps = ['mocha',
-  'chai',
-  'variant',
-  'classPattern'];
-define(deps, function(notMocha, chai, variant, classPattern){
-  require([variant('stack')], function(){
-    describe("stack", function() {
-
+define(['lib/classPattern.js', 'spec/initMocha.js', 'src/'+variant+'/stack.js'], function(classPattern){
+  describe("stack", function() {
       var stack;
-      var instantiator;
-      var refreshStack;
+      var instantiator = variant === 'pseudoclassical' ? Stack : makeStack;
+      var prototypeOfInstances = variant === 'prototypal' && stackMethods;
 
-      if(variant.is('pseudoclassical')){
-        instantiator = Stack;
-        refreshStack = function(){ stack = new Stack(); }
-      } else {
-        instantiator = makeStack;
-        refreshStack = function(){ stack = makeStack(); };
-      }
+      beforeEach(function(){
+        if(variant === 'pseudoclassical'){
+          stack = new instantiator();
+        } else {
+          stack = instantiator();
+        }
+      });
 
-      beforeEach(refreshStack);
+      classPattern.ensure(instantiator).follows(variant, {}, prototypeOfInstances);
 
       it('has "push", "pop", and "size" methods', function() {
         expect(stack.push).to.be.a('function');
@@ -27,52 +21,49 @@ define(deps, function(notMocha, chai, variant, classPattern){
       });
 
       it('does not error when popping from an empty stack', function() {
-        expect(function(){stack.pop()}).not.throws();
+        expect(function(){ stack.pop(); }).not.throws();
       });
 
       it('reports a size of zero for a new stack', function() {
-        expect(stack.size()).equal(0);
+        expect(stack.size()).to.equal(0);
       });
 
       it('reports a size of 2 after pushing twice', function() {
         stack.push('a');
         stack.push('b');
-        expect(stack.size()).equal(2);
+        expect(stack.size()).to.equal(2);
       });
 
       it('reports a size of 1 after pushing twice and removing once', function() {
         stack.push('a');
         stack.push('b');
         stack.pop();
-        expect(stack.size()).equal(1);
+        expect(stack.size()).to.equal(1);
       });
 
       it('reports a size of 0 after removing more items than were added', function() {
         stack.push('a');
         stack.pop();
         stack.pop();
-        expect(stack.size()).equal(0);
+        expect(stack.size()).to.equal(0);
       });
 
       it('allows repeated pushing and popping of items', function() {
         stack.push('a');
-        expect(stack.pop()).equal('a');
+        expect(stack.pop()).to.equal('a');
         stack.push('b');
-        expect(stack.pop()).equal('b');
+        expect(stack.pop()).to.equal('b');
       });
 
       it('pops the oldest item, after newer items have already been pushed and popped', function() {
         stack.push('a');
         stack.push('b');
-        expect(stack.pop()).equal('b');
+        expect(stack.pop()).to.equal('b');
 
         stack.push('c');
-        expect(stack.pop()).equal('c');
-        expect(stack.pop()).equal('a');
+        expect(stack.pop()).to.equal('c');
+        expect(stack.pop()).to.equal('a');
       });
 
-      classPattern.ensure(instantiator).follows(variant());
-    });
-    variant.done();
   });
 });

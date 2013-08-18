@@ -1,4 +1,6 @@
 var makeStack = function(){
+  var instance = {};
+
   // Use an object with numeric keys to store values
   var storage = {};
 /* START PROMPT
@@ -9,7 +11,6 @@ END PROMPT */
 /* END SOLUTION */
 
   // Implement the methods below
-  var instance = {};
 
   instance.push = function(value){
 /* START SOLUTION */

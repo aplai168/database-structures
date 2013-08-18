@@ -1,11 +1,34 @@
 <!doctype html>
 <meta charset="utf8">
-<head>
-  <link rel="stylesheet" href="css/mocha.css">
-  <script src="config.js"></script>
-  <script data-main="spec/spec.js" src="lib/require.js"></script>
-</head>
-<body>
-  <div id="mocha"></div>
-</body>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/mocha.css">
+    <style>
+      a {
+        padding: 10px;
+        font-size: .8em;
+      }
+    </style>
+    <script>
+      window.variant = document.location.search.slice(1);
+      variant || (window.location.search = '?functional');
+      var require = {
+        shim: {
+          'lib/underscore.js': {
+            exports: '_'
+          }
+        }
+      };
+    </script>
+    <script data-main="spec/spec.js" src="lib/require.js"></script>
+  </head>
+  <body>
+    <div>
+      <a href="?functional">functional</a>
+      <a href="?functional-shared">functional-shared</a>
+      <a href="?prototypal">prototypal</a>
+      <a href="?pseudoclassical">pseudoclassical</a>
+    </div>
+    <div id="mocha"></div>
+  </body>
 </html>
