@@ -92,7 +92,9 @@ then write more specs and more code.
 
 ### Implement and test the following classes:
 
+
 * A `linkedList` class, in functional style, with the following properties:
+![linked list image]
   - [ ] `.head` property, a `linkedListNode` instance
   - [ ] `.tail` property, a `linkedListNode` instance
   - [ ] `.addToTail()` method, takes a value and adds it to the end of the list
@@ -231,3 +233,5 @@ Use any style you like.
 [_.extend]: http://underscorejs.org/#extend
 [Jasmine]: http://pivotal.github.com/jasmine/
 [Chrome profiling tools]: https://developers.google.com/chrome-developer-tools/docs/profiles
+
+[linked list image]: https://upload.wikimedia.org/wikipedia/commons/6/6d/Singly-linked-list.svg
