@@ -94,7 +94,6 @@ then write more specs and more code.
 
 
 * A `linkedList` class, in functional style, with the following properties:
-![linked list image]
   - [ ] `.head` property, a `linkedListNode` instance
   - [ ] `.tail` property, a `linkedListNode` instance
   - [ ] `.addToTail()` method, takes a value and adds it to the end of the list
