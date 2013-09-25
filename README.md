@@ -116,7 +116,7 @@ Some failing specs are included. You're welcome! You should make them pass, then
 ![Set image]
 
 * A `set` class, in prototypal style, with the following properties:
-  - [ ] An `.add()` method, takes any stringand adds it to the set
+  - [ ] An `.add()` method, takes any string and adds it to the set
   - [ ] A `.contains()` method, takes any string and returns a boolean reflecting whether it can be found in the set
   - [ ] A `.remove()` method, takes any string and removes it from the set, if present
   * **Note:** Sets should not use up any more space than necessary. Once a value is added to a set, adding it a second time should not increase the size of the set.
