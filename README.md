@@ -1,4 +1,4 @@
-# Sprint One: Data Structures
+# Sprint One: Object Oriented Programming
 ---               
 In this assignment, we'll implement and test two basic data structures:
 
@@ -79,7 +79,7 @@ Implement both **stack** and **queue** data structures in each of four instantia
     -  Comment out all but one test suite.  Record the results of the profiler.  Repeat for each step of the refactor.
     -  Write a brief analysis of your results.
 
-# Sprint Two: More Data Structures
+# Sprint Two: Data Structures
 ---
 
 This repo holds a mostly-empty [Jasmine](http://pivotal.github.com/jasmine/)
@@ -92,7 +92,8 @@ then write more specs and more code.
 
 ### Implement and test the following classes:
 
-
+### 1. [Linked List]
+![Linked List image]
 * A `linkedList` class, in functional style, with the following properties:
   - [ ] `.head` property, a `linkedListNode` instance
   - [ ] `.tail` property, a `linkedListNode` instance
@@ -102,6 +103,9 @@ then write more specs and more code.
   - [ ] `.contains()` method, returns boolean reflecting whether or not the
     passed-in value is in the linked list
 
+
+### 2. [Tree]
+![Tree image]
 * A `tree` class, in functional with shared methods style, with the following
   properties:
   - [ ] `.children` property, an array containing a number of subtrees
@@ -110,6 +114,9 @@ then write more specs and more code.
   - [ ] A `.contains()` method, takes any input and returns a boolean reflecting
     whether it can be found as the value of the target node or any descendant
 node
+
+### 3. [Set]
+![Set image]
 * A `set` class, in prototypal style, with the following properties:
   - [ ] An `.add()` method, takes any stringand adds it to the set
   - [ ] A `.contains()` method, takes any string and returns a boolean reflecting
@@ -121,6 +128,9 @@ node
     the set.
   * **Note:** Until the extra credit section, your sets should handle only
     string values.
+
+### 4. [Hash Table]
+![Hash Table image]
 - [ ] A `hashTable` class, in pseudoclassical style:
   * [ ] **First:** Play with each of the helper functions provided to get a sense of
     what they do.
@@ -233,4 +243,11 @@ Use any style you like.
 [Jasmine]: http://pivotal.github.com/jasmine/
 [Chrome profiling tools]: https://developers.google.com/chrome-developer-tools/docs/profiles
 
-[linked list image]: https://upload.wikimedia.org/wikipedia/commons/6/6d/Singly-linked-list.svg
+[Linked List]: https://en.wikipedia.org/wiki/Linked_list
+[Linked List image]: https://upload.wikimedia.org/wikipedia/commons/6/6d/Singly-linked-list.svg
+[Set]: https://en.wikipedia.org/wiki/Set_data_structure
+[Set image]: http://www.codeproject.com/KB/recipes/DotNetSet/Sets02.png
+[Tree]: https://en.wikipedia.org/wiki/Tree_(data_structure)
+[Tree Image]: http://www.urgenthomework.com/images/ternary-and-quaternary-tree.gif
+[Hash Table]: https://en.wikipedia.org/wiki/Hash_tables
+[Hash Table image]: https://upload.wikimedia.org/wikipedia/commons/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg
