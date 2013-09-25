@@ -205,7 +205,7 @@ Write all of the following data structures and improvements in the order shown. 
 [Chrome profiling tools]: https://developers.google.com/chrome-developer-tools/docs/profiles
 
 [Linked List]: https://en.wikipedia.org/wiki/Linked_list
-[Linked List image]: https://upload.wikimedia.org/wikipedia/commons/6/6d/Singly-linked-list.svg
+[Linked List image]: https://f.cloud.github.com/assets/1577682/1212239/43154574-2615-11e3-8e29-43cf74e25b10.png
 [Set]: https://en.wikipedia.org/wiki/Set_data_structure
 [Set image]: http://www.codeproject.com/KB/recipes/DotNetSet/Sets02.png
 [Tree]: https://en.wikipedia.org/wiki/Tree_(data_structure)
