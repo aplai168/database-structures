@@ -18,7 +18,7 @@ A stack works like a stack of plates -- plates are added and removed from the th
 #### A stack would be great for... Implementing your browser's back button.
 
 ## Goal
-Implement both **stack** and **queue** data structures in each of four instantiation styles. The funtional style is stubbed out in `src/functional/queue.js` and `src/functional/stack.js` to get you started.
+Implement both **stack** and **queue** data structures in each of four instantiation styles. The functional style is stubbed out in `src/functional/queue.js` and `src/functional/stack.js` to get you started.
 
 ## Requirements
 - No arrays! Instead, use an object with numeric keys.
