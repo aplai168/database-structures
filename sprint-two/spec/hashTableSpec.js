@@ -5,9 +5,26 @@ describe("hashTable", function() {
     hashTable = new HashTable();
   });
 
-  it("should have methods named 'insert' and 'retrieve", function() {
+  it("should have methods named 'insert', 'remove', and 'retrieve", function() {
     expect(hashTable.insert).toEqual(jasmine.any(Function));
+    expect(hashTable.remove).toEqual(jasmine.any(Function));
     expect(hashTable.retrieve).toEqual(jasmine.any(Function));
+  });
+
+  it("should store values that were inserted", function() {
+    hashTable.insert("Steven", "Seagal");
+    expect(hashTable.retrieve("Steven")).toEqual("Seagal");
+  });
+
+  it("should not contain values that were not inserted", function() {
+    hashTable.insert("Steven", "Spielberg");
+    expect(hashTable.retrieve("Steven")).not.toEqual("Seagal");
+  });
+
+  it("should not contain values that were removed", function() {
+    hashTable.insert("Steven", "Tyler");
+    hashTable.remove("Steven");
+    expect(hashTable.retrieve("Steven")).not.toEqual("Tyler");
   });
 
   it("should handle hash function collisions", function(){
