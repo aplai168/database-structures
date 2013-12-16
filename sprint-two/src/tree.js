@@ -1,65 +1,59 @@
-
 var makeTree = function(value){
   var newTree = {};
-  extend(newTree, treeMethods);
   newTree.value = value;
   newTree.children = undefined;
-  newTree.parent = undefined;
-
+  /* START SOLUTION */
+  extend(newTree, treeMethods);
+  newTree.children = [];
+  /* END SOLUTION */
   return newTree;
 };
 
-
+/* START SOLUTION */
 var extend = function(to, from){
-  for (var key in from) {
+  for (var key in from){
     to[key] = from[key];
   }
 };
+/* END SOLUTION */
 
 
 var treeMethods = {};
 
 treeMethods.addChild = function(value){
+/* START SOLUTION */
   var child = makeTree(value);
-  child.parent = this;
-  if(this.children === undefined){
-    this.children = [child];
-  } else {
-    this.children.push(child);
-  }
+  this.children.push(child);
+/* END SOLUTION */
 };
 
 treeMethods.contains = function(target){
-  if (target === this.value){
-    return true;
-  } else if (this.children !== undefined){
-    for (var i = 0; i < this.children.length; i++){
-      if ((this.children[i]).contains(target)) {
-        return true;
-      }
+/* START SOLUTION */
+  var found = false;
+  var subroutine = function(node){
+    if ( node.value === target ){
+      found = true;
+      return;
+    }
+    for ( var i = 0; i < node.children.length; i++ ){
+      var child = node.children[i];
+      subroutine(child);
     }
   }
-return false;
+  subroutine(this);
+  return found;
+/* END SOLUTION */
 };
-
-treeMethods.removeFromParent = function(){
-  var indexToRemove;
-  for (var i = 0; i < this.parent.children.length; i++){
-    if (this.parent.children[i] === this){
-      indexToRemove = i;
-      break;
-    }
-  }
-  this.parent.children.splice(indexToRemove,1);
-  this.parent = undefined;
-};
-
+/* START SOLUTION */
 treeMethods.traverse = function(callback){
-  callback(this);
+  callback(this.value);
 
-  if (this.children){
-    for (var i = 0; i < children.length;){
-      this.children[i].traverse(callback);
-    }
+  if ( !this.children ){ return; }
+  for ( var i = 0; i < this.children.length; i++ ){
+    var child = this.children[i];
+    debugger;
+    child.traverse(callback);
   }
 };
+/* END SOLUTION */
+

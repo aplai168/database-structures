@@ -1,69 +1,80 @@
 var HashTable = function(){
   this._limit = 8;
-  this._size = 0;
+  /* START SOLUTION */
+  this._size = 0; 
+  /* END SOLUTION */
   this._storage = makeLimitedArray(this._limit);
 };
 
 HashTable.prototype.insert = function(k, v){
   var i = getIndexBelowMaxForKey(k, this._limit);
+  /* START SOLUTION */
+
+
   var bucket = this._storage.get(i) || [];
   for( var j = 0; j < bucket.length; j++ ){
     var pair = bucket[j];
     if( pair[0] === k ){
       pair[1] = v;
-      break;
+      return;
     }
   }
   bucket.push([k,v]);
   this._storage.set(i, bucket);  
   this._size++;
-  // if( this._size > this._limit * 0.75 ){
-  //   this.resize(this._limit*2);
-  // }
+  if( this._size > this._limit * 0.75 ){
+    this.resize(this._limit*2);
+  }
+  /* END SOLUTION */
 };
 
 HashTable.prototype.retrieve = function(k){
   var i = getIndexBelowMaxForKey(k, this._limit);
-  var bucket = this._storage.get(i);
-  if (!bucket) return null;
-  for( var j = 0; j < bucket.length; j++ ){
+/* START SOLUTION */
+  var bucket = this._storage.get(i) || [];
+  for ( var j = 0; j < bucket.length; j++ ) {
     var pair = bucket[j];
     if( pair[0] === k ){
       return pair[1];
     }
   }
   return null;
+/* END SOLUTION */
 };
 
 HashTable.prototype.remove = function(k){
+/* START SOLUTION */
   var i = getIndexBelowMaxForKey(k, this._limit);
-  var bucket = this._storage.get(i);
-  if (!bucket) return null;
+  var bucket = this._storage.get(i) || [];
   for( var j = 0; j < bucket.length; j++ ){
     var pair = bucket[j];
     if( pair[0] === k ){
-      var v = pair[1];
       bucket.splice(j, 1)
-      break;
+      this._size--;
+      if( this._size < this._limit * 0.25 ){
+        this.resize(Math.floor(this._limit/2));
+      }      
+      return pair[1];
     }
   }
-  // if (this._size < this._limit * 0.25){
-  //   this.resize(this._limit/2);
-  // }
-  return v || null;
+  return null;
+/* END SOLUTION */
 };
 
+/* START SOLUTION */
+HashTable.prototype.resize = function(newLimit){
+  var oldStorage = this._storage;
+  this._limit = newLimit;
+  this._storage = makeLimitedArray(this._limit);
+  this._size = 0;
+  var that = this;
+  oldStorage.each(function(bucket){
+    if( !bucket ){ return; }
+    for( var i = 0; i < bucket.length; i++ ){
+      var pair = bucket[i];
+      that.insert(pair[0], pair[1]);
+    }
+  });
+};
+/* END SOLUTION */
 
-// TODO: Resizing is an extra credit requirement. Should it appear in the solution?
-
-// HashTable.prototype.resize = function(newLimit){
-//   var oldStorage = this._storage;
-//   this._limit = newLimit;
-//   this._storage = makeLimitedArray(this._limit);
-//   oldStorage.each(function(bucket){
-//     for( var i = 0; i < bucket.length; i++ ){
-//       var pair = bucket[i];
-//       this.insert(pair[0], pair[1]);
-//     }
-//   });
-// };
