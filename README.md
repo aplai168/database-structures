@@ -121,6 +121,7 @@ Some failing specs are included. You're welcome! You should make them pass, then
   - [ ] A `.remove()` method, takes any string and removes it from the set, if present
   * **Note:** Sets should not use up any more space than necessary. Once a value is added to a set, adding it a second time should not increase the size of the set.
   * **Note:** Until the extra credit section, your sets should handle only string values.
+  * **Note:** This is a rather simple data structure. Take a look at the [Wikipedia](http://en.wikipedia.org/wiki/Set_(computer_science) entry. Which native Javascript type fits the requirements best?
 
 ### 4. [Hash Table]
 
@@ -174,6 +175,13 @@ Write all of the following data structures and improvements in the order shown. 
 - [ ] Make your `set` capable of handling numbers as well as strings.
 - [ ] Make your `set` capable of handling input objects of any type.
 - [ ] Make your `binarySearchTree` rebalance as soon as the max depth is more than twice the minimum depth.
+
+* Implement a `bloomFilter`:
+- [ ] Read about it here: [Bloom Filters](http://en.wikipedia.org/wiki/Bloom_filter). tl;dr: It's a probabalistic hash table that can gain enormous space and speed advantages over traditional hash tables. Downside is it has to accept a false positive rate when looking up whether an item is in the table. Use cases are often for checking against a giant list locally and only doing a full lookup when the local one comes back positive.
+- [ ] Create an "m=18, k=3" bloom filter. This means 18 slots, with 3 hash functions.
+- [ ] Run a small loop that runs 10,000 trials of trying to retreive a mix of items that are in the filter and not in the filter.
+- [ ] Record the empirical rate of false-positives by comparing your result with what you know to be true from the inputs you selected.
+- [ ] Compare that rate with the approximation given for Bloom filters, which is approximated as (1- e^(-kn/m))^k)
 
 ## Nightmare Mode
 
