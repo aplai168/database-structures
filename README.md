@@ -176,12 +176,21 @@ Write all of the following data structures and improvements in the order shown. 
 - [ ] Make your `set` capable of handling input objects of any type.
 - [ ] Make your `binarySearchTree` rebalance as soon as the max depth is more than twice the minimum depth.
 
+* Read about [Graphs](http://en.wikipedia.org/wiki/Graph_(abstract_data_type)). There is a graph.js and graphSpec.js file in your folders, use them if you wish. Implement a `graph` class, in pseudoclassical style, with the following properties:
+  - [ ] A `.addNode()` method that takes a new node and adds it to the graph
+  - [ ] A `.contains()` method that takes any node and returns a boolean reflecting whether it can be found in the graph
+  - [ ] A `.removeNode()` method that takes any node and removes it from the graph, if present. All edges connected to that Node are removed as well.
+  - [ ] A `.addEdge()` method that creates a edge (connection) between two nodes if they both are present within the graph
+  - [ ] A `.getEdge()` method that returns a boolean reflecting whether or not two nodes are connected
+  - [ ] A `.removeEdge()` method that removes the connection between two nodes
+  - [ ] A `.forEachNode()` method that traverses through the graph, calling a passed in function once on each node
+
 * Implement a `bloomFilter`:
 - [ ] Read about it here: [Bloom Filters](http://en.wikipedia.org/wiki/Bloom_filter). tl;dr: It's a probabalistic hash table that can gain enormous space and speed advantages over traditional hash tables. Downside is it has to accept a false positive rate when looking up whether an item is in the table. Use cases are often for checking against a giant list locally and only doing a full lookup when the local one comes back positive.
-- [ ] Create an "m=18, k=3" bloom filter. This means 18 slots, with 3 hash functions.
-- [ ] Run a small loop that runs 10,000 trials of trying to retreive a mix of items that are in the filter and not in the filter.
-- [ ] Record the empirical rate of false-positives by comparing your result with what you know to be true from the inputs you selected.
-- [ ] Compare that rate with the approximation given for Bloom filters, which is approximated as (1- e^(-kn/m))^k)
+  - [ ] Create an "m=18, k=3" bloom filter. This means 18 slots, with 3 hash functions.
+  - [ ] Run a small loop that runs 10,000 trials of trying to retreive a mix of items that are in the filter and not in the filter.
+  - [ ] Record the empirical rate of false-positives by comparing your result with what you know to be true from the inputs you selected.
+  - [ ] Compare that rate with the approximation given for Bloom filters, which is approximated as (1- e^(-kn/m))^k)
 
 ## Nightmare Mode
 
