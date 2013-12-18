@@ -2,11 +2,11 @@ window.variant = document.location.search.slice(1);
 
 define([
   'spec/verifyClass.js',
-  'lib/chai/chai.js',
-  'lib/mocha/mocha.js',
+  '../lib/chai/chai.js',
+  '../lib/mocha/mocha.js',
   'src/'+variant+'/stack.js',
   'src/'+variant+'/queue.js',
-  'lib/jquery/jquery.js'
+  '../lib/jquery/jquery.js'
 ], function(verifyClass, chai){
 
   $(function(){

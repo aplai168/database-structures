@@ -1,3 +1,5 @@
+var assert = chai.assert; 
+
 describe("binarySearchTree", function() {
   var binarySearchTree;
 
@@ -6,9 +8,9 @@ describe("binarySearchTree", function() {
   });
 
   it("should have methods named 'insert', 'contains', and 'depthFirstLog", function() {
-    expect(binarySearchTree.insert).toEqual(jasmine.any(Function));
-    expect(binarySearchTree.contains).toEqual(jasmine.any(Function));
-    expect(binarySearchTree.depthFirstLog).toEqual(jasmine.any(Function));
+    expect(binarySearchTree.insert).to.be.a('function');
+    expect(binarySearchTree.contains).to.be.a('function');
+    expect(binarySearchTree.depthFirstLog).to.be.a('function');
   });
 
   it("should insert values at the correct location in the tree", function(){
@@ -16,16 +18,16 @@ describe("binarySearchTree", function() {
     binarySearchTree.insert(3);
     binarySearchTree.insert(7);
     binarySearchTree.insert(6);
-    expect(binarySearchTree.left.right.value).toEqual(3);
-    expect(binarySearchTree.right.left.value).toEqual(6);
+    expect(binarySearchTree.left.right.value).to.equal(3);
+    expect(binarySearchTree.right.left.value).to.equal(6);
   });
 
   it("should have a working 'contains' method", function(){
     binarySearchTree.insert(2);
     binarySearchTree.insert(3);
     binarySearchTree.insert(7);
-    expect(binarySearchTree.contains(7)).toBe(true);
-    expect(binarySearchTree.contains(8)).toBe(false);
+    assert.isTrue(binarySearchTree.contains(7));
+    assert.isFalse(binarySearchTree.contains(8));
   });
   
   it("should execute a callback on every value in a tree using 'depthFirstLog'", function(){
@@ -34,6 +36,6 @@ describe("binarySearchTree", function() {
     binarySearchTree.insert(2);
     binarySearchTree.insert(3);
     binarySearchTree.depthFirstLog(func);
-    expect(array).toEqual([5,2,3]);
+    assert.notStrictEqual(array, [5,2,3]);
   });
 });
