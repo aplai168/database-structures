@@ -162,5 +162,5 @@ define([
   });
 
 
-  mocha.run();
+  window.mochaPhantomJS ? mochaPhantomJS.run() : mocha.run();
 });
