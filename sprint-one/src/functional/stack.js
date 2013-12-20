@@ -1,13 +1,13 @@
 var makeStack = function(){
-    var instance = {};
+  var instance = {};
 
   // Use an object with numeric keys to store values
-    var storage = {};
+  var storage = {};
   /* START PROMPT
     var size; // Hint: set an initial value here
   -END PROMPT */
     /* START SOLUTION */
-    var size = 0;
+  var size = 0;
     /* END SOLUTION */
 
   // Implement the methods below
