@@ -3,9 +3,6 @@ var makeStack = function(){
 
   // Use an object with numeric keys to store values
   var storage = {};
-  /* START PROMPT
-    var size; // Hint: set an initial value here
-  -END PROMPT */
     /* START SOLUTION */
   var size = 0;
     /* END SOLUTION */
@@ -32,6 +29,6 @@ var makeStack = function(){
     return size;
   /* END SOLUTION */
   };
-  
+
     return instance;
   };
