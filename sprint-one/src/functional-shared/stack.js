@@ -10,7 +10,7 @@ var makeStack = function() {
   return instance;
   /* END SOLUTION */
 };
-  
+
 var stackMethods = {};
 
 /* START SOLUTION */
@@ -22,7 +22,9 @@ stackMethods.push = function(value){
 stackMethods.pop = function(){
   this._size && this._size--;
   var result = this._storage[this._size];
+
   delete this._storage[this._size];
+
   return result;
 };
 

@@ -19,7 +19,9 @@ var makeStack = function(){
     /* START SOLUTION */
     size && size--;
     var result = storage[size];
+
     delete storage[size];
+
     return result;
     /* END SOLUTION */
   };

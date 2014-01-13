@@ -21,7 +21,9 @@ var makeQueue = function(){
     /* START SOLUTION */
     instance.size() && start++;
     var result = storage[start];
+
     delete storage[start];
+
     return result;
     /* END SOLUTION */
   };
