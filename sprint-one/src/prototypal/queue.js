@@ -1,6 +1,6 @@
 var makeQueue = function() {
   // Hey! Copy your code from src/functional-shared/queue.js and paste it here
-/* START SOLUTION */
+  /* START SOLUTION */
   var instance = Object.create(queueMethods);
 
   instance._storage = {};
@@ -8,7 +8,7 @@ var makeQueue = function() {
   instance._end = -1;
 
   return instance;
-/* END SOLUTION */
+  /* END SOLUTION */
 };
 
 var queueMethods = {};
