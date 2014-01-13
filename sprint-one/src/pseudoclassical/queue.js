@@ -1,10 +1,11 @@
 var Queue = function() {
-  // Hey! Copy your code from src/prototypal/queue.js and paste it here
-/* START SOLUTION */
+  // Hey! Rewrite in the new style. Your code will wind up looking very similar,
+  // but try not not reference your old code in writing the new style.
+  /* START SOLUTION */
   this._storage = {};
   this._start = -1;
   this._end = -1;
-/* END SOLUTION */
+  /* END SOLUTION */
 };
 
 /* START SOLUTION */

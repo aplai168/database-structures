@@ -1,5 +1,6 @@
 var makeQueue = function() {
-  // Hey! Copy your code from src/functional-shared/queue.js and paste it here
+  // Hey! Rewrite in the new style. Your code will wind up looking very similar,
+  // but try not not reference your old code in writing the new style.
   /* START SOLUTION */
   var instance = Object.create(queueMethods);
 
