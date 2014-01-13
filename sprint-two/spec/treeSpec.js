@@ -11,7 +11,7 @@ describe("tree", function() {
   it("should have methods named 'addChild' and 'contains', and a property named 'value'", function() {
     expect(tree.addChild).to.be.a('function');
     expect(tree.contains).to.be.a('function');
-    assert.isTrue('value' in tree);
+    assert.isTrue(tree.hasOwnProperty('value'));
   });
 
   it("should add children to the tree", function() {
