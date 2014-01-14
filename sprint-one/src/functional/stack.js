@@ -32,5 +32,5 @@ var makeStack = function(){
     /* END SOLUTION */
   };
 
-    return instance;
+  return instance;
   };
