@@ -57,3 +57,6 @@ treeMethods.traverse = function(callback){
 };
 /* END SOLUTION */
 
+/*
+ * Complexity: What is the time complexity of the above functions?
+ */
