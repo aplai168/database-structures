@@ -1,5 +1,6 @@
 var makeStack = function() {
-  // Hey! Copy your code from src/functional-shared/stack.js and paste it here
+  // Hey! Rewrite in the new style. Your code will wind up looking very similar,
+  // but try not not reference your old code in writing the new style.
   /* START SOLUTION */
   var instance = Object.create(stackMethods);
 
@@ -21,7 +22,9 @@ stackMethods.push = function(value){
 stackMethods.pop = function(){
   this._size && this._size--;
   var result = this._storage[this._size];
+
   delete this._storage[this._size];
+
   return result;
 };
 

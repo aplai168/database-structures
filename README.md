@@ -99,6 +99,7 @@ Some failing specs are included. You're welcome! You should make them pass, then
   - [ ] `.addToTail()` method, takes a value and adds it to the end of the list
   - [ ] `.removeHead()` method, removes the first node from the list and returns its value
   - [ ] `.contains()` method, returns boolean reflecting whether or not the passed-in value is in the linked list
+  - [ ] What is the time complexity of the above functions?
 
 
 ### 2. [Tree]
@@ -110,8 +111,22 @@ Some failing specs are included. You're welcome! You should make them pass, then
   - [ ] `.children` property, an array containing a number of subtrees
   - [ ] `.addChild()` method, takes any value, sets that as the target of a node, and adds that node as a child of the tree
   - [ ] A `.contains()` method, takes any input and returns a boolean reflecting whether it can be found as the value of the target node or any descendant node
+  - [ ] What is the time complexity of the above functions?
 
-### 3. [Set]
+### 3. [Binary Search Tree]
+
+![Binary Search Tree image]
+
+* Implement a `binarySearchTree` class with the following properties:
+  - [ ] A `.left` property, a binary search tree (BST) where all values are lower than than it the current value.
+  - [ ] A `.right` property, a BST where all values are higher than than it the current value.
+  - [ ] A `.insert()` method, which accepts a value and places in the tree in the correct position.
+  - [ ] A `.contains()` method, which accepts a value and returns a boolean reflecting whether or not the value is contained in the tree.
+  - [ ] A `.depthFirstLog()` method, which accepts a callback and executes it on every value contained in the tree.
+  - [ ] What is the time complexity of the above functions?
+  * Use case: Given a list of a million numbers, write a function that takes a new number and returns the closest number in the list using your BST. Profile this against the same operation using an array.
+
+### 4. [Set]
 
 ![Set image]
 
@@ -119,11 +134,26 @@ Some failing specs are included. You're welcome! You should make them pass, then
   - [ ] An `.add()` method, takes any string and adds it to the set
   - [ ] A `.contains()` method, takes any string and returns a boolean reflecting whether it can be found in the set
   - [ ] A `.remove()` method, takes any string and removes it from the set, if present
+  - [ ] What is the time complexity of the above functions?
   * **Note:** Sets should not use up any more space than necessary. Once a value is added to a set, adding it a second time should not increase the size of the set.
   * **Note:** Until the extra credit section, your sets should handle only string values.
   * **Note:** This is a rather simple data structure. Take a look at the [Wikipedia](http://en.wikipedia.org/wiki/Set_(computer_science) entry. Which native Javascript type fits the requirements best?
 
-### 4. [Hash Table]
+### 5. [Graph]
+
+![Graph image]
+
+* Implement a `graph` class, in pseudoclassical style, with the following properties:
+  - [ ] A `.addNode()` method that takes a new node and adds it to the graph
+  - [ ] A `.contains()` method that takes any node and returns a boolean reflecting whether it can be found in the graph
+  - [ ] A `.removeNode()` method that takes any node and removes it from the graph, if present. All edges connected to that Node are removed as well.
+  - [ ] A `.addEdge()` method that creates a edge (connection) between two nodes if they both are present within the graph
+  - [ ] A `.getEdge()` method that returns a boolean reflecting whether or not two nodes are connected
+  - [ ] A `.removeEdge()` method that removes the connection between two nodes
+  - [ ] A `.forEachNode()` method that traverses through the graph, calling a passed in function once on each node
+  - [ ] What is the time complexity of the above functions?
+
+### 6. [Hash Table]
 
 ![Hash Table image]
 
@@ -135,6 +165,7 @@ Some failing specs are included. You're welcome! You should make them pass, then
     * [ ] An `.insert()` method
     * [ ] A `.retrieve()` method
     * [ ] A `.remove()` method
+  - [ ] What is the time complexity of the above functions?
 
 ## APIs and Implementation: A Note on Communicating Your Intentions as a Developer
 
@@ -161,13 +192,7 @@ Write all of the following data structures and improvements in the order shown. 
 * Add parent links to your tree
   * [ ] A `.parent` property, which refers to the parent node or null when there is no node
   * [ ] A `.removeFromParent()` method, which disassociates the tree with its parent (in both directions)
-* Implement a `binarySearchTree` class with the following properties:
-  - [ ] A `.left` property, a binary search tree (BST) where all values are lower than than it the current value.
-  - [ ] A `.right` property, a BST where all values are higher than than it the current value.
-  - [ ] A `.insert()` method, which accepts a value and places in the tree in the correct position.
-  - [ ] A `.contains()` method, which accepts a value and returns a boolean reflecting whether or not the value is contained in the tree.
-  - [ ] A `.depthFirstLog()` method, which accepts a callback and executes it on every value contained in the tree.
-  * Use case: Given a list of a million numbers, write a function that takes a new number and returns the closest number in the list using your BST. Profile this against the same operation using an array.
+
 - [ ] To prevent excessive collisions, make your `hashTable` double in size as soon as 75 percent of the spaces have been filled.
 - [ ] To save space, make sure the `hashTable` shrinks when space usage falls below 25 percent.
 - [ ] Implement a `.traverse()` method on your `tree`. Your `.traverse()` should accept a callback and execute it on every value contained in the tree.
@@ -176,17 +201,8 @@ Write all of the following data structures and improvements in the order shown. 
 - [ ] Make your `set` capable of handling input objects of any type.
 - [ ] Make your `binarySearchTree` rebalance as soon as the max depth is more than twice the minimum depth.
 
-* Read about [Graphs](http://en.wikipedia.org/wiki/Graph_(abstract_data_type)). There is a graph.js and graphSpec.js file in your folders, use them if you wish. Implement a `graph` class, in pseudoclassical style, with the following properties:
-  - [ ] A `.addNode()` method that takes a new node and adds it to the graph
-  - [ ] A `.contains()` method that takes any node and returns a boolean reflecting whether it can be found in the graph
-  - [ ] A `.removeNode()` method that takes any node and removes it from the graph, if present. All edges connected to that Node are removed as well.
-  - [ ] A `.addEdge()` method that creates a edge (connection) between two nodes if they both are present within the graph
-  - [ ] A `.getEdge()` method that returns a boolean reflecting whether or not two nodes are connected
-  - [ ] A `.removeEdge()` method that removes the connection between two nodes
-  - [ ] A `.forEachNode()` method that traverses through the graph, calling a passed in function once on each node
-
 * Implement a `bloomFilter`:
-- [ ] Read about it here: [Bloom Filters](http://en.wikipedia.org/wiki/Bloom_filter). tl;dr: It's a probabalistic hash table that can gain enormous space and speed advantages over traditional hash tables. Downside is it has to accept a false positive rate when looking up whether an item is in the table. Use cases are often for checking against a giant list locally and only doing a full lookup when the local one comes back positive.
+  - [ ] Read about it here: [Bloom Filters](http://en.wikipedia.org/wiki/Bloom_filter). tl;dr: It's a probabalistic hash table that can gain enormous space and speed advantages over traditional hash tables. Downside is it has to accept a false positive rate when looking up whether an item is in the table. Use cases are often for checking against a giant list locally and only doing a full lookup when the local one comes back positive.
   - [ ] Create an "m=18, k=3" bloom filter. This means 18 slots, with 3 hash functions.
   - [ ] Run a small loop that runs 10,000 trials of trying to retreive a mix of items that are in the filter and not in the filter.
   - [ ] Record the empirical rate of false-positives by comparing your result with what you know to be true from the inputs you selected.
@@ -227,5 +243,9 @@ Write all of the following data structures and improvements in the order shown. 
 [Set image]: http://www.codeproject.com/KB/recipes/DotNetSet/Sets02.png
 [Tree]: https://en.wikipedia.org/wiki/Tree_(data_structure)
 [Tree Image]: http://www.urgenthomework.com/images/ternary-and-quaternary-tree.gif
+[Binary Search Tree]: http://en.wikipedia.org/wiki/Binary_search_tree
+[Binary Search Tree Image]: http://i.imgur.com/eDw57vR.png
+[Graph]: http://en.wikipedia.org/wiki/Graph_(mathematics)
+[Graph image]: http://i.imgur.com/PlN2VGG.png
 [Hash Table]: https://en.wikipedia.org/wiki/Hash_tables
 [Hash Table image]: https://upload.wikimedia.org/wikipedia/commons/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg

@@ -1,7 +1,7 @@
 var HashTable = function(){
   this._limit = 8;
   /* START SOLUTION */
-  this._size = 0; 
+  this._size = 0;
   /* END SOLUTION */
   this._storage = makeLimitedArray(this._limit);
 };
@@ -20,7 +20,7 @@ HashTable.prototype.insert = function(k, v){
     }
   }
   bucket.push([k,v]);
-  this._storage.set(i, bucket);  
+  this._storage.set(i, bucket);
   this._size++;
   if( this._size > this._limit * 0.75 ){
     this.resize(this._limit*2);
@@ -53,7 +53,7 @@ HashTable.prototype.remove = function(k){
       this._size--;
       if( this._size < this._limit * 0.25 ){
         this.resize(Math.floor(this._limit/2));
-      }      
+      }
       return pair[1];
     }
   }
@@ -78,3 +78,6 @@ HashTable.prototype.resize = function(newLimit){
 };
 /* END SOLUTION */
 
+/*
+ * Complexity: What is the time complexity of the above functions?
+ */

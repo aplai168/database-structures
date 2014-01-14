@@ -12,13 +12,13 @@ Graph.prototype.addNode = function(newNode, toNode){
   }
 
   if (size === 0) {
-    this._nodes[newNode] = { 'edges': [] }    
+    this._nodes[newNode] = { 'edges': [] }
   } else if (size === 1){
-    var toAdd; 
+    var toAdd;
     for (var node in this._nodes) {
       toAdd = node;
     }
-    this._nodes[newNode] = { 'edges': [] }    
+    this._nodes[newNode] = { 'edges': [] }
     this.addEdge(newNode, toAdd);
   } else {
     this._nodes[newNode] = { 'edges': [] }
@@ -55,7 +55,7 @@ Graph.prototype.getEdge = function(fromNode, toNode){
 };
 
 Graph.prototype.addEdge = function(fromNode, toNode){
-  /* START SOLUTION */ 
+  /* START SOLUTION */
   for (var i = 0; i < this._nodes[fromNode]['edges'].length; i++){
     if (this._nodes[fromNode]['edges'][i] === toNode) return;
   }
@@ -76,3 +76,7 @@ Graph.prototype.removeEdge = function(fromNode, toNode){
   }
   /* END SOLUTION */
 };
+
+/*
+ * Complexity: What is the time complexity of the above functions?
+ */

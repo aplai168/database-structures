@@ -3,35 +3,34 @@ var makeStack = function(){
 
   // Use an object with numeric keys to store values
   var storage = {};
-  /* START PROMPT
-    var size; // Hint: set an initial value here
-  -END PROMPT */
-    /* START SOLUTION */
+  /* START SOLUTION */
   var size = 0;
-    /* END SOLUTION */
+  /* END SOLUTION */
 
   // Implement the methods below
   instance.push = function(value){
-  /* START SOLUTION */
+    /* START SOLUTION */
     storage[size] = value;
     size++;
-  /* END SOLUTION */
+    /* END SOLUTION */
   };
 
   instance.pop = function(){
-  /* START SOLUTION */
+    /* START SOLUTION */
     size && size--;
     var result = storage[size];
+
     delete storage[size];
+
     return result;
-  /* END SOLUTION */
+    /* END SOLUTION */
   };
 
   instance.size = function(){
-  /* START SOLUTION */
+    /* START SOLUTION */
     return size;
-  /* END SOLUTION */
+    /* END SOLUTION */
   };
-  
-    return instance;
-  };
+
+  return instance;
+};

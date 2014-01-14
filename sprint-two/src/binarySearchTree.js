@@ -24,7 +24,7 @@ binaryTreePrototype.insert = function(val){
       this.right.insert(val);
     }
   } else {
-    return "The tree already contains this value."
+    return "The tree already contains this value.";
   }
 };
 
@@ -56,3 +56,7 @@ binaryTreePrototype.depthFirstLog = function(callBack){
   }
 };
 /* END SOLUTION */
+
+/*
+ * Complexity: What is the time complexity of the above functions?
+ */
