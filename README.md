@@ -196,7 +196,7 @@ Write all of the following data structures and improvements in the order shown. 
 - [ ] Make your `binarySearchTree` rebalance as soon as the max depth is more than twice the minimum depth.
 
 * Implement a `bloomFilter`:
-- [ ] Read about it here: [Bloom Filters](http://en.wikipedia.org/wiki/Bloom_filter). tl;dr: It's a probabalistic hash table that can gain enormous space and speed advantages over traditional hash tables. Downside is it has to accept a false positive rate when looking up whether an item is in the table. Use cases are often for checking against a giant list locally and only doing a full lookup when the local one comes back positive.
+  - [ ] Read about it here: [Bloom Filters](http://en.wikipedia.org/wiki/Bloom_filter). tl;dr: It's a probabalistic hash table that can gain enormous space and speed advantages over traditional hash tables. Downside is it has to accept a false positive rate when looking up whether an item is in the table. Use cases are often for checking against a giant list locally and only doing a full lookup when the local one comes back positive.
   - [ ] Create an "m=18, k=3" bloom filter. This means 18 slots, with 3 hash functions.
   - [ ] Run a small loop that runs 10,000 trials of trying to retreive a mix of items that are in the filter and not in the filter.
   - [ ] Record the empirical rate of false-positives by comparing your result with what you know to be true from the inputs you selected.
