@@ -99,6 +99,7 @@ Some failing specs are included. You're welcome! You should make them pass, then
   - [ ] `.addToTail()` method, takes a value and adds it to the end of the list
   - [ ] `.removeHead()` method, removes the first node from the list and returns its value
   - [ ] `.contains()` method, returns boolean reflecting whether or not the passed-in value is in the linked list
+  - [ ] `What is the time complexity of the above functions?
 
 
 ### 2. [Tree]
@@ -110,6 +111,7 @@ Some failing specs are included. You're welcome! You should make them pass, then
   - [ ] `.children` property, an array containing a number of subtrees
   - [ ] `.addChild()` method, takes any value, sets that as the target of a node, and adds that node as a child of the tree
   - [ ] A `.contains()` method, takes any input and returns a boolean reflecting whether it can be found as the value of the target node or any descendant node
+  - [ ] `What is the time complexity of the above functions?
 
 ### 3. [Binary Search Tree]
 
@@ -121,6 +123,7 @@ Some failing specs are included. You're welcome! You should make them pass, then
   - [ ] A `.insert()` method, which accepts a value and places in the tree in the correct position.
   - [ ] A `.contains()` method, which accepts a value and returns a boolean reflecting whether or not the value is contained in the tree.
   - [ ] A `.depthFirstLog()` method, which accepts a callback and executes it on every value contained in the tree.
+  - [ ] `What is the time complexity of the above functions?
   * Use case: Given a list of a million numbers, write a function that takes a new number and returns the closest number in the list using your BST. Profile this against the same operation using an array.
 
 ### 4. [Set]
@@ -131,6 +134,7 @@ Some failing specs are included. You're welcome! You should make them pass, then
   - [ ] An `.add()` method, takes any string and adds it to the set
   - [ ] A `.contains()` method, takes any string and returns a boolean reflecting whether it can be found in the set
   - [ ] A `.remove()` method, takes any string and removes it from the set, if present
+  - [ ] `What is the time complexity of the above functions?
   * **Note:** Sets should not use up any more space than necessary. Once a value is added to a set, adding it a second time should not increase the size of the set.
   * **Note:** Until the extra credit section, your sets should handle only string values.
   * **Note:** This is a rather simple data structure. Take a look at the [Wikipedia](http://en.wikipedia.org/wiki/Set_(computer_science) entry. Which native Javascript type fits the requirements best?
@@ -147,6 +151,7 @@ Some failing specs are included. You're welcome! You should make them pass, then
   - [ ] A `.getEdge()` method that returns a boolean reflecting whether or not two nodes are connected
   - [ ] A `.removeEdge()` method that removes the connection between two nodes
   - [ ] A `.forEachNode()` method that traverses through the graph, calling a passed in function once on each node
+  - [ ] `What is the time complexity of the above functions?
 
 ### 6. [Hash Table]
 
@@ -160,6 +165,7 @@ Some failing specs are included. You're welcome! You should make them pass, then
     * [ ] An `.insert()` method
     * [ ] A `.retrieve()` method
     * [ ] A `.remove()` method
+  - [ ] `What is the time complexity of the above functions?
 
 ## APIs and Implementation: A Note on Communicating Your Intentions as a Developer
 
