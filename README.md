@@ -238,8 +238,8 @@ Write all of the following data structures and improvements in the order shown. 
 [Tree]: https://en.wikipedia.org/wiki/Tree_(data_structure)
 [Tree Image]: http://www.urgenthomework.com/images/ternary-and-quaternary-tree.gif
 [Binary Search Tree]: http://en.wikipedia.org/wiki/Binary_search_tree
-[Binary Search Tree Image]: http://i.stack.imgur.com/X6vkB.png
+[Binary Search Tree Image]: http://i.imgur.com/eDw57vR.png
 [Graph]: http://en.wikipedia.org/wiki/Graph_(mathematics)
-[Graph image]: http://upload.wikimedia.org/wikipedia/commons/5/5b/6n-graf.svg
+[Graph image]: http://i.imgur.com/PlN2VGG.png
 [Hash Table]: https://en.wikipedia.org/wiki/Hash_tables
 [Hash Table image]: https://upload.wikimedia.org/wikipedia/commons/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg
