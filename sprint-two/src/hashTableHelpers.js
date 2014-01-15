@@ -49,3 +49,7 @@ var getIndexBelowMaxForKey = function(str, max){
   }
   return hash % max;
 };
+
+/*
+ * Complexity: What is the time complexity of the above functions?
+ */

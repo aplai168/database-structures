@@ -1,4 +1,4 @@
-define(['lib/chai/chai.js', 'lib/underscore/underscore.js'], function(chai){
+define(['../../lib/chai/chai.js', '../../lib/underscore/underscore.js'], function(chai){
   var expect = chai.expect;
 
   return function(instantiator){
