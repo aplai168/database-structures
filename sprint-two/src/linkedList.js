@@ -14,7 +14,9 @@ var makeLinkedList = function(){
 
   list.removeHead = function(){
     /* START SOLUTION */
-    if (list.head === null){ return null; }
+    if (list.head === null){ 
+      return null; 
+    }
     var currentHead = list.head;
     list.head = list.head.next;
     return currentHead.value;
@@ -25,7 +27,9 @@ var makeLinkedList = function(){
     /* START SOLUTION */
     var node = list.head;
     while ( node ){
-      if ( node.value === target ){ return true; }
+      if ( node.value === target ){ 
+        return true; 
+      }
       node = node.next;
     }
     return false;
