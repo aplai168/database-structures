@@ -182,6 +182,8 @@ To prevent this from happening to your collaborators and consumers, indicate pri
 
 ## Extra Credit:
 
+**Note**: _Prompts have varying levels of difficulty. In order to decide how to allocate your time, please review all of them before starting._
+
 Write all of the following data structures and improvements in the order shown. Use any style you like.
 
 * Extend your linked list to be [doubly linked](http://en.wikipedia.org/wiki/Doubly_linked_list), and add the
