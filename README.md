@@ -1,4 +1,4 @@
-# Sprint One: Object Oriented Programming
+# Sprint One: Object-Oriented Programming
 ---
 In this assignment, we'll implement and test two basic data structures:
 
