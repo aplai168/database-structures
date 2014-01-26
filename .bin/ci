@@ -2,7 +2,7 @@
 
 #!/usr/bin/env bash
 
-set -x
+set -e
 
 PROJECT_DIR="$(git rev-parse --show-toplevel)"
 
