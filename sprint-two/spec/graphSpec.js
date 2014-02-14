@@ -1,5 +1,3 @@
-var assert = chai.assert;
-
 describe('graph', function() {
   var graph;
 
@@ -19,27 +17,27 @@ describe('graph', function() {
   xit('should store values as nodes that were inserted', function() {
     graph.addNode('kittens');
     graph.contains('kittens');
-    assert.isTrue(graph.contains('kittens'));
+    expect(graph.contains('kittens')).to.equal(true);
   });
 
   xit('should remove nodes that were inserted', function() {
     graph.addNode('puppies');
     graph.removeNode('puppies');
-    assert.isFalse(graph.contains('puppies'));
+    expect(graph.contains('puppies')).to.equal(false);
   });
 
   xit('should automatically create an edge between two nodes if there is only one node in the graph', function() {
     graph.addNode('puppies');
     graph.addNode('kittens');
-    assert.isTrue(graph.getEdge('puppies', 'kittens'));
+    expect(graph.getEdge('puppies', 'kittens')).to.equal(true);
   });
 
   xit('should create edges between two nodes', function() {
     graph.addNode('puppies');
     graph.addNode('kittens');
     graph.addNode('penguins', 'puppies');
-    assert.isTrue(graph.getEdge('penguins', 'puppies'));
-    assert.isFalse(graph.getEdge('penguins', 'kittens'));
+    expect(graph.getEdge('penguins', 'puppies')).to.equal(true);
+    expect(graph.getEdge('penguins', 'kittens')).to.equal(false);
   });
 
   xit('should remove edges between nodes', function() {
@@ -48,15 +46,15 @@ describe('graph', function() {
     graph.addNode('satsumas', 'bananas');
     graph.addEdge('satsumas', 'apples');
     graph.removeEdge('apples', 'bananas');
-    assert.isFalse(graph.getEdge('apples', 'bananas'));
+    expect(graph.getEdge('apples', 'bananas')).to.equal(false);
   });
 
   xit('should remove nodes without any edges', function() {
     graph.addNode('jacket');
     graph.addNode('hat');
     graph.removeEdge('jacket', 'hat');
-    assert.isFalse(graph.contains('hat'));
-    assert.isFalse(graph.contains('jacket'));
+    expect(graph.contains('hat')).to.equal(false);
+    expect(graph.contains('jacket')).to.equal(false);
   });
 
 });
