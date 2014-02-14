@@ -1,6 +1,3 @@
-var expect = chai.expect;
-var assert = chai.assert;
-
 describe('set', function() {
   var set;
 
@@ -17,14 +14,14 @@ describe('set', function() {
   it('should add values to a set', function(){
     set.add("Susan Sarandon");
     set.add("Danny Glover");
-    assert.isTrue(set.contains('Danny Glover'));
-    assert.isTrue(set.contains('Susan Sarandon'));
+    expect(set.contains('Danny Glover')).to.equal(true);
+    expect(set.contains('Susan Sarandon')).to.equal(true);
   });
 
   it('should remove values from a set', function(){
     set.add("Mel Gibson");
     set.remove("Mel Gibson");
-    assert.isFalse(set.contains("Mel Gibson"));
+    expect(set.contains("Mel Gibson")).to.equal(false);
   });
 
 });

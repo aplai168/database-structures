@@ -1,6 +1,3 @@
-var expect = chai.expect;
-var assert = chai.assert;
-
 describe('linkedList', function() {
   var linkedList;
 
@@ -42,16 +39,16 @@ describe('linkedList', function() {
   it("should contain a value that was added", function(){
     linkedList.addToTail(4);
     linkedList.addToTail(5);
-    assert.isTrue(linkedList.contains(4));
-    assert.isTrue(linkedList.contains(5));
-    assert.isFalse(linkedList.contains(6));
+    expect(linkedList.contains(4)).to.equal(true);
+    expect(linkedList.contains(5)).to.equal(true);
+    expect(linkedList.contains(6)).to.equal(false);
   });
 
   it('should not contain a value that was removed', function(){
     linkedList.addToTail(4);
     linkedList.addToTail(5);
     linkedList.removeHead();
-    assert.isFalse(linkedList.contains(4));
+    expect(linkedList.contains(4)).to.equal(false);
   });
 
   // add more tests here to test the functionality of linkedList

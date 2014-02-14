@@ -1,5 +1,3 @@
-var assert = chai.assert;
-
 describe('binarySearchTree', function() {
   var binarySearchTree;
 
@@ -26,8 +24,8 @@ describe('binarySearchTree', function() {
     binarySearchTree.insert(2);
     binarySearchTree.insert(3);
     binarySearchTree.insert(7);
-    assert.isTrue(binarySearchTree.contains(7));
-    assert.isFalse(binarySearchTree.contains(8));
+    expect(binarySearchTree.contains(7)).to.equal(true);
+    expect(binarySearchTree.contains(8)).to.equal(false);
   });
 
   it('should execute a callback on every value in a tree using "depthFirstLog"', function(){
@@ -37,6 +35,6 @@ describe('binarySearchTree', function() {
     binarySearchTree.insert(3);
     binarySearchTree.depthFirstLog(func);
     console.log(array);
-    assert.deepEqual(array, [5,2,3]);
+    expect(array).to.eql([5,2,3]);
   });
 });
