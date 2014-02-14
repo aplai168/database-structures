@@ -81,7 +81,7 @@ Implement both **stack** and **queue** data structures in each of four instantia
 # Sprint Two: Data Structures
 ---
 
-This repo holds a mostly-empty [Jasmine](http://pivotal.github.com/jasmine/) test suite. To run it, open up `SpecRunner.html`.
+This repo holds a mostly-empty [Mocha](http://visionmedia.github.io/mocha/) test suite. To run it, open up `SpecRunner.html`.
 
 Some failing specs are included. You're welcome! You should make them pass, then write more specs and more code.
 
@@ -167,6 +167,10 @@ Some failing specs are included. You're welcome! You should make them pass, then
     * [ ] A `.remove()` method
   - [ ] What is the time complexity of the above functions?
 
+**On Objects and Hash Tables:** An astute hacker might find themself wondering "Is it not so that a JavaScript object is a hash table?" or even further, "Why would I ever need to create a hash table in JavaScript?" While it is true that objects and hash tables are functionally similar, knowing how a hash table works is hugely important as they are an incredibly useful and fundamental data structure. To have detailed knowledge of how a hash table is constructed will give you valuable insight on your path to code mastery. Additionally, other languages might not provide the convenience of JavaScript's object class, meaning you may someday have to put your hash table construction abilities to good use.
+
+**Interesting Aside: JavaScript objects aren't necessarily backed by hash tables. Despite the similarities, the [ECMA-262](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf) standard makes no restrictions on how JavaScript objects are implmented. The [V8 JavaScript engine](https://developers.google.com/v8/design?hl=sv&csw=1#prop_access), which is used in Chrome, implements objects in a way that is significantly faster than using a hash table.
+
 ## APIs and Implementation: A Note on Communicating Your Intentions as a Developer
 
 **tl;dr**: _prefix private properties and methods with an underscore_
@@ -236,7 +240,7 @@ Write all of the following data structures and improvements in the order shown. 
 [Array methods]: http://mdn.io/Array#Methods_of_Array_instances
 [Object.create]: http://mdn.io/Object.create
 [_.extend]: http://underscorejs.org/#extend
-[Jasmine]: http://pivotal.github.com/jasmine/
+[Mocha]: http://visionmedia.github.io/mocha/
 [Chrome profiling tools]: https://developers.google.com/chrome-developer-tools/docs/profiles
 
 [Linked List]: https://en.wikipedia.org/wiki/Linked_list
