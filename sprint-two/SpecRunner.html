@@ -8,8 +8,8 @@
     <script src="../lib/chai/chai.js"></script>
     <script src="../lib/underscore/underscore.js"></script>
     <script>
-      mocha.setup('bdd')
-      var expect = chai.expect
+      mocha.setup('bdd');
+      window.expect = chai.expect;
       $(function() {
         window.mochaPhantomJS ? mochaPhantomJS.run() : mocha.run();
       })
