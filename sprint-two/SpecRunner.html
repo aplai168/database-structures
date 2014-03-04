@@ -7,8 +7,13 @@
     <script src="../lib/mocha/mocha.js"></script>
     <script src="../lib/chai/chai.js"></script>
     <script src="../lib/underscore/underscore.js"></script>
-    <script>mocha.setup('bdd')</script>
-    <script>var expect = chai.expect</script>
+    <script>
+      mocha.setup('bdd');
+      window.expect = chai.expect;
+      $(function() {
+        window.mochaPhantomJS ? mochaPhantomJS.run() : mocha.run();
+      })
+    </script>
 
     <!-- source files -->
     <script type="text/javascript" src="src/linkedList.js"></script>
@@ -36,11 +41,6 @@
     <!-- Extra credit: Uncomment when completing graph!-->
     <!-- <script type="text/javascript" src="spec/graphSpec.js"></script> -->
 
-    <script>
-      $(function() {
-        window.mochaPhantomJS ? mochaPhantomJS.run() : mocha.run();
-      })
-    </script>
   </head>
   <body>
     <div id="mocha"></div>
