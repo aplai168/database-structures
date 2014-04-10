@@ -2,12 +2,12 @@ var makeStack = function() {
   // Hey! Rewrite in the new style. Your code will wind up looking very similar,
   // but try not not reference your old code in writing the new style.
   /* START SOLUTION */
-  var instance = Object.create(stackMethods);
+  var someInstance = Object.create(stackMethods);
 
-  instance._storage = {};
-  instance._size = 0;
+  someInstance._storage = {};
+  someInstance._size = 0;
 
-  return instance;
+  return someInstance;
   /* END SOLUTION */
 };
 

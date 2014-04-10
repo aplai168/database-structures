@@ -2,13 +2,13 @@ var makeQueue = function() {
   // Hey! Rewrite in the new style. Your code will wind up looking very similar,
   // but try not not reference your old code in writing the new style.
   /* START SOLUTION */
-  var instance = Object.create(queueMethods);
+  var someInstance = Object.create(queueMethods);
 
-  instance._storage = {};
-  instance._start = -1;
-  instance._end = -1;
+  someInstance._storage = {};
+  someInstance._start = -1;
+  someInstance._end = -1;
 
-  return instance;
+  return someInstance;
   /* END SOLUTION */
 };
 
