@@ -29,10 +29,11 @@ Graph.prototype.addNode = function(newNode, toNode){
 
 Graph.prototype.contains = function(node){
   /* START SOLUTION */
-  for (var oneNode in this._nodes) {
-    if (this._nodes[oneNode]) return true;
+  if (this._nodes[node] === undefined){
+    return false;
   }
-  return false;
+
+  return true;
   /* END SOLUTION */
 };
 
