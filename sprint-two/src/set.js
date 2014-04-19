@@ -11,7 +11,7 @@ var setPrototype = {};
 
 setPrototype.add = function(item){
   /* START SOLUTION */
-  this._storage[item] = item;
+  this._storage[item] = true;
   /* END SOLUTION */
 };
 
