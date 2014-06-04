@@ -101,32 +101,7 @@ Some failing specs are included. You're welcome! You should make them pass, then
   - [ ] `.contains()` method, returns boolean reflecting whether or not the passed-in value is in the linked list
   - [ ] What is the time complexity of the above functions?
 
-
-### 2. [Tree]
-
-![Tree image]
-
-* A `tree` class, in functional with shared methods style, with the following
-  properties:
-  - [ ] `.children` property, an array containing a number of subtrees
-  - [ ] `.addChild()` method, takes any value, sets that as the target of a node, and adds that node as a child of the tree
-  - [ ] A `.contains()` method, takes any input and returns a boolean reflecting whether it can be found as the value of the target node or any descendant node
-  - [ ] What is the time complexity of the above functions?
-
-### 3. [Binary Search Tree]
-
-![Binary Search Tree image]
-
-* Implement a `binarySearchTree` class with the following properties:
-  - [ ] A `.left` property, a binary search tree (BST) where all values are lower than than it the current value.
-  - [ ] A `.right` property, a BST where all values are higher than than it the current value.
-  - [ ] A `.insert()` method, which accepts a value and places in the tree in the correct position.
-  - [ ] A `.contains()` method, which accepts a value and returns a boolean reflecting whether or not the value is contained in the tree.
-  - [ ] A `.depthFirstLog()` method, which accepts a callback and executes it on every value contained in the tree.
-  - [ ] What is the time complexity of the above functions?
-  * Use case: Given a list of a million numbers, write a function that takes a new number and returns the closest number in the list using your BST. Profile this against the same operation using an array.
-
-### 4. [Set]
+### 2. [Set]
 
 ![Set image]
 
@@ -139,21 +114,7 @@ Some failing specs are included. You're welcome! You should make them pass, then
   * **Note:** Until the extra credit section, your sets should handle only string values.
   * **Note:** This is a rather simple data structure. Take a look at the [Wikipedia](http://en.wikipedia.org/wiki/Set_(computer_science) entry. Which native Javascript type fits the requirements best?
 
-### 5. [Graph]
-
-![Graph image]
-
-* Implement a `graph` class, in pseudoclassical style, with the following properties:
-  - [ ] A `.addNode()` method that takes a new node and adds it to the graph
-  - [ ] A `.contains()` method that takes any node and returns a boolean reflecting whether it can be found in the graph
-  - [ ] A `.removeNode()` method that takes any node and removes it from the graph, if present. All edges connected to that Node are removed as well.
-  - [ ] A `.addEdge()` method that creates a edge (connection) between two nodes if they both are present within the graph
-  - [ ] A `.getEdge()` method that returns a boolean reflecting whether or not two nodes are connected
-  - [ ] A `.removeEdge()` method that removes the connection between two nodes
-  - [ ] A `.forEachNode()` method that traverses through the graph, calling a passed in function once on each node
-  - [ ] What is the time complexity of the above functions?
-
-### 6. [Hash Table]
+### 3. [Hash Table]
 
 ![Hash Table image]
 
@@ -170,6 +131,46 @@ Some failing specs are included. You're welcome! You should make them pass, then
 **On Objects and Hash Tables:** An astute hacker might find themself wondering "Is it not so that a JavaScript object is a hash table?" or even further, "Why would I ever need to create a hash table in JavaScript?" While it is true that objects and hash tables are functionally similar, knowing how a hash table works is hugely important as they are an incredibly useful and fundamental data structure. To have detailed knowledge of how a hash table is constructed will give you valuable insight on your path to code mastery. Additionally, other languages might not provide the convenience of JavaScript's object class, meaning you may someday have to put your hash table construction abilities to good use.
 
 **Interesting Aside: JavaScript objects aren't necessarily backed by hash tables. Despite the similarities, the [ECMA-262](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf) standard makes no restrictions on how JavaScript objects are implmented. The [V8 JavaScript engine](https://developers.google.com/v8/design?hl=sv&csw=1#prop_access), which is used in Chrome, implements objects in a way that is significantly faster than using a hash table.
+
+### 3. [Tree]
+
+![Tree image]
+
+* A `tree` class, in functional with shared methods style, with the following
+  properties:
+  - [ ] `.children` property, an array containing a number of subtrees
+  - [ ] `.addChild()` method, takes any value, sets that as the target of a node, and adds that node as a child of the tree
+  - [ ] A `.contains()` method, takes any input and returns a boolean reflecting whether it can be found as the value of the target node or any descendant node
+  - [ ] What is the time complexity of the above functions?
+
+### 4. [Binary Search Tree]
+
+![Binary Search Tree image]
+
+* Implement a `binarySearchTree` class with the following properties:
+  - [ ] A `.left` property, a binary search tree (BST) where all values are lower than than it the current value.
+  - [ ] A `.right` property, a BST where all values are higher than than it the current value.
+  - [ ] A `.insert()` method, which accepts a value and places in the tree in the correct position.
+  - [ ] A `.contains()` method, which accepts a value and returns a boolean reflecting whether or not the value is contained in the tree.
+  - [ ] A `.depthFirstLog()` method, which accepts a callback and executes it on every value contained in the tree.
+  - [ ] What is the time complexity of the above functions?
+  * Use case: Given a list of a million numbers, write a function that takes a new number and returns the closest number in the list using your BST. Profile this against the same operation using an array.
+
+
+### 6. [Graph]
+
+![Graph image]
+
+* Implement a `graph` class, in pseudoclassical style, with the following properties:
+  - [ ] A `.addNode()` method that takes a new node and adds it to the graph
+  - [ ] A `.contains()` method that takes any node and returns a boolean reflecting whether it can be found in the graph
+  - [ ] A `.removeNode()` method that takes any node and removes it from the graph, if present. All edges connected to that Node are removed as well.
+  - [ ] A `.addEdge()` method that creates a edge (connection) between two nodes if they both are present within the graph
+  - [ ] A `.getEdge()` method that returns a boolean reflecting whether or not two nodes are connected
+  - [ ] A `.removeEdge()` method that removes the connection between two nodes
+  - [ ] A `.forEachNode()` method that traverses through the graph, calling a passed in function once on each node
+  - [ ] What is the time complexity of the above functions?
+
 
 ## APIs and Implementation: A Note on Communicating Your Intentions as a Developer
 
