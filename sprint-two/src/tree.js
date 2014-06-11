@@ -1,13 +1,18 @@
 var makeTree = function(value){
   var newTree = {};
   newTree.value = value;
-  newTree.children = undefined;
+
   /* START SOLUTION */
   extend(newTree, treeMethods);
   newTree.children = [];
-  /* END SOLUTION */
+  /* ELSE
+  // your code...
+  newTree.children;  // fix me
+  END SOLUTION */
+
   return newTree;
 };
+
 
 /* START SOLUTION */
 var extend = function(to, from){
