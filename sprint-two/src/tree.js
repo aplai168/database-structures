@@ -1,4 +1,4 @@
-var makeTree = function(value){
+var Tree = function(value){
   var newTree = {};
   newTree.value = value;
 
@@ -27,7 +27,7 @@ var treeMethods = {};
 
 treeMethods.addChild = function(value){
 /* START SOLUTION */
-  var child = makeTree(value);
+  var child = Tree(value);
   this.children.push(child);
 /* END SOLUTION */
 };

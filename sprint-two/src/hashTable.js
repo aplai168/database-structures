@@ -3,7 +3,7 @@ var HashTable = function(){
   /* START SOLUTION */
   this._size = 0;
   /* END SOLUTION */
-  this._storage = makeLimitedArray(this._limit);
+  this._storage = LimitedArray(this._limit);
 };
 
 HashTable.prototype.insert = function(k, v){
@@ -65,7 +65,7 @@ HashTable.prototype.remove = function(k){
 HashTable.prototype.resize = function(newLimit){
   var oldStorage = this._storage;
   this._limit = newLimit;
-  this._storage = makeLimitedArray(this._limit);
+  this._storage = LimitedArray(this._limit);
   this._size = 0;
   var that = this;
   oldStorage.each(function(bucket){

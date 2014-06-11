@@ -43,7 +43,7 @@ Implement both **stack** and **queue** data structures in each of four instantia
     - *Don't:*
         - Use the keyword `new`, the keyword `this`, or any `prototype` chains.
         - Capitalize the maker function name.
-    - *Example*: The provided classes `makeStack` and `makeQueue` already follow this pattern
+    - *Example*: The provided classes `Stack` and `Queue` already follow this pattern
 2.  **Functional instantiation with shared methods**: same as step 1, but with shared methods
     - *Do:*
         - Work within the `src/functional-shared/` folder.

@@ -1,11 +1,11 @@
-var makeLinkedList = function(){
+var LinkedList = function(){
   var list = {};
   list.head = null;
   list.tail = null;
 
   list.addToTail = function(value){
   /* START SOLUTION */
-    var newTail = makeNode(value);
+    var newTail = Node(value);
 
     if (!list.head) {
       list.head = newTail;
@@ -51,7 +51,7 @@ var makeLinkedList = function(){
   return list;
 };
 
-var makeNode = function(value){
+var Node = function(value){
   var node = {};
 
   node.value = value;

@@ -1,4 +1,4 @@
-var makeBinarySearchTree = function(value){
+var BinarySearchTree = function(value){
   /* START SOLUTION */
   var binaryTree = Object.create(binaryTreePrototype);
   binaryTree.value = value;
@@ -13,13 +13,13 @@ var binaryTreePrototype = {};
 binaryTreePrototype.insert = function(val){
   if ( val < this.value ) {
     if ( this.left === null ) {
-      this.left = makeBinarySearchTree(val);
+      this.left = BinarySearchTree(val);
     } else {
       this.left.insert(val);
     }
   } else if ( val > this.value) {
     if ( this.right === null ) {
-      this.right = makeBinarySearchTree(val);
+      this.right = BinarySearchTree(val);
     } else {
       this.right.insert(val);
     }
