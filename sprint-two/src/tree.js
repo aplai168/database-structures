@@ -6,8 +6,8 @@ var Tree = function(value){
   extend(newTree, treeMethods);
   newTree.children = [];
   /* ELSE
-  // your code...
-  newTree.children;  // fix me
+  // your code here
+  newTree.children = null;  // fix me
   END SOLUTION */
 
   return newTree;
