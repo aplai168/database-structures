@@ -1,7 +1,7 @@
 define(['../../lib/chai/chai.js', '../../lib/underscore/underscore.js'], function(chai){
   var expect = chai.expect;
 
-  return function(instantiator){
+  return function(constructor){
     return {followsPattern: function(pattern, options, prototypeOfInstances){
       var patternIs = function(){
         return _(arguments).contains(pattern);
@@ -42,13 +42,13 @@ define(['../../lib/chai/chai.js', '../../lib/underscore/underscore.js'], functio
         declaresVariables:   patternIs('functional', 'functional-shared', 'prototypal'                   ),
         hasOwnMethods:       patternIs('functional', 'functional-shared'                                 ),
         reusesNonFunctions:  patternIs(                                                                  ),
-        extendsInstantiator: patternIs(                                                                  )
+        extendsConstructor: patternIs(                                                                  )
       }).extend(options || {});
 
       prototypeOfInstances = (
         patternIs('functional') ? Object.prototype :
         patternIs('functional-shared') ? Object.prototype :
-        patternIs('pseudoclassical') ? instantiator.prototype :
+        patternIs('pseudoclassical') ? constructor.prototype :
         prototypeOfInstances
       );
 
@@ -56,10 +56,10 @@ define(['../../lib/chai/chai.js', '../../lib/underscore/underscore.js'], functio
       var usesNew = requireOption('usesNew');
       var instantiate = function(){
         if(!usesNew){
-          return instantiator.apply(this, constructionArgs);
+          return constructor.apply(this, constructionArgs);
         } else {
-          var instance = Object.create(instantiator.prototype);
-          var constructorReturn = instantiator.prototype.constructor.apply(instance, constructionArgs);
+          var instance = Object.create(constructor.prototype);
+          var constructorReturn = constructor.prototype.constructor.apply(instance, constructionArgs);
           if(constructorReturn && constructorReturn !== instance){
             console.warn("Psuedoclassical constructor returned something explicitly (returns `this` implicitly by default).");
           }
@@ -89,42 +89,42 @@ define(['../../lib/chai/chai.js', '../../lib/underscore/underscore.js'], functio
           expect(prototypeOfInstances.isPrototypeOf(instance)).to.be.true;
         });
 
-        var instantiatorPrototypeProto = option('instantiatorPrototypeProto');
-        if(instantiatorPrototypeProto){
-          it('makes the instantiator\'s .prototype property delegate to the appropriate prototype object', function(){
-            expect(instantiatorPrototypeProto.isPrototypeOf(instantiator.prototype)).to.be.true;
+        var constructorPrototypeProto = option('constructorPrototypeProto');
+        if(constructorPrototypeProto){
+          it('makes the constructor\'s .prototype property delegate to the appropriate prototype object', function(){
+            expect(constructorPrototypeProto.isPrototypeOf(constructor.prototype)).to.be.true;
           });
         }
 
-        it('has a .prototype.constructor property that points back to the instantiator itself', function(){
-          expect(instantiator.prototype.constructor).to.equal(instantiator);
+        it('has a .prototype.constructor property that points back to the constructor itself', function(){
+          expect(constructor.prototype.constructor).to.equal(constructor);
         });
 
-        var extendsInstantiator = requireOption('extendsInstantiator');
-        it(might('extend the instantiator function', extendsInstantiator), function(){
-          instantiatorPropertyCount = Object.keys(instantiator).length;
-          assuming(extendsInstantiator).expect(instantiatorPropertyCount).to.be.above(0);
+        var extendsConstructor = requireOption('extendsConstructor');
+        it(might('extend the constructor function', extendsConstructor), function(){
+          constructorPropertyCount = Object.keys(constructor).length;
+          assuming(extendsConstructor).expect(constructorPropertyCount).to.be.above(0);
         });
 
         var extendsPrototype = requireOption('extendsPrototype');
-        it(might('extend the instantiator function\'s prototype', extendsPrototype), function(){
-          var prototypeObjectPropertyCount = Object.keys(instantiator.prototype).length;
+        it(might('extend the constructor function\'s prototype', extendsPrototype), function(){
+          var prototypeObjectPropertyCount = Object.keys(constructor.prototype).length;
           assuming(extendsPrototype).expect(prototypeObjectPropertyCount).to.be.above(0);
         });
 
         var referencesThis = requireOption('referencesThis');
         it(might('reference the keyword this', referencesThis), function(){
-          assuming(referencesThis).expect(/this/.test(instantiator)).to.be.true;
+          assuming(referencesThis).expect(/this/.test(constructor)).to.be.true;
         });
 
         var referencesReturn = requireOption('referencesReturn');
         it(might('reference the return keyword', referencesReturn), function(){
-          assuming(referencesReturn).expect(/return/.test(instantiator)).to.be.true;
+          assuming(referencesReturn).expect(/return/.test(constructor)).to.be.true;
         });
 
         var declaresVariables = requireOption('declaresVariables');
         it(might('declare variables', declaresVariables), function(){
-          assuming(declaresVariables).expect(/var /.test(instantiator)).to.be.true;
+          assuming(declaresVariables).expect(/var /.test(constructor)).to.be.true;
         });
 
         it('does store properties without use of a prototype chain', function(){
