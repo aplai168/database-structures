@@ -74,9 +74,11 @@ Implement both **stack** and **queue** data structures in each of four instantia
 ## Extra credit
 
 -  **Use the [Chrome profiling tools] to compare the performance of each instantiation pattern.**
-    -  Create a profiling test case in each of your test suites.  It should instantiate and use a large number of stacks and queues.
-    -  Comment out all but one test suite.  Record the results of the profiler.  Repeat for each step of the refactor.
-    -  Write a brief analysis of your results.
+    -  Create a new HTML page with your data structures and an additional profiling script.  It should instantiate and use a large number of stacks and queues.
+    -  Reload the page with the CPU profiler running to investigate the runtime of your functions.
+    -  Take a heap snapshot to investigate object allocations and memory use.
+    -  Optionally, reload the page with the heap profiler running to investigate garbage collection behavior.
+    -  Do this for each of the instantiation styles, record, and compare the results. Write a brief analysis.
 
 # Sprint Two: Data Structures
 ---
