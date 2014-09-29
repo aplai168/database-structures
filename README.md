@@ -139,7 +139,7 @@ Some failing specs are included. You're welcome! You should make them pass, then
   - [ ] What is the time complexity of the above functions?
   * **Note:** Sets should not use up any more space than necessary. Once a value is added to a set, adding it a second time should not increase the size of the set.
   * **Note:** Until the extra credit section, your sets should handle only string values.
-  * **Note:** This is a rather simple data structure. Take a look at the [Wikipedia](http://en.wikipedia.org/wiki/Set_(computer_science) entry. Which native Javascript type fits the requirements best?
+  * **Note:** This is a rather simple data structure. Take a look at the [Wikipedia](http://en.wikipedia.org/wiki/Set_(computer_science)) entry. Which native Javascript type fits the requirements best?
 
 ### 5. [Hash Table]
 
