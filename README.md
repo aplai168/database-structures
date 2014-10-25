@@ -195,11 +195,12 @@ To prevent this from happening to your collaborators and consumers, indicate pri
 
 Write all of the following data structures and improvements in the order shown. Use any style you like.
 
-* Extend your linked list to be [doubly linked](http://en.wikipedia.org/wiki/Doubly_linked_list), and add the
-  following properties:
-  - [ ] An `.addToHead()` method which takes a value and adds it to the end of the list.
+* Create a [doubly-linked-list](http://en.wikipedia.org/wiki/Doubly_linked_list), with all the methods of
+  your linked list, and add the following properties:
+  - [ ] An `.addToHead()` method which takes a value and adds it to the front of the list.
   - [ ] A `.removeTail()` method which removes the last node from the list and returns its value.
-  * Note: each `node` object will need to have a new `.previous` property pointing to the node behind it (or to `null`).
+  * Note: each `node` object will need to have a new `.previous` property pointing to the node behind it (or to `null`);
+    this is what makes it a doubly-linked list.
 * Add parent links to your tree
   * [ ] A `.parent` property, which refers to the parent node or null when there is no node
   * [ ] A `.removeFromParent()` method, which disassociates the tree with its parent (in both directions)
