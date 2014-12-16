@@ -219,7 +219,7 @@ Write all of the following data structures and improvements in the order shown. 
   - [ ] Create an "m=18, k=3" bloom filter. This means 18 slots, with 3 hash functions.
   - [ ] Run a small loop that runs 10,000 trials of trying to retreive a mix of items that are in the filter and not in the filter.
   - [ ] Record the empirical rate of false-positives by comparing your result with what you know to be true from the inputs you selected.
-  - [ ] Compare that rate with the approximation given for Bloom filters, which is approximated as (1- e^(-kn/m))^k)
+  - [ ] Compare that rate with the approximation given for Bloom filters, which is approximated as (1- e^(-kn/m))^k.
 
 ## Nightmare Mode
 
