@@ -10,8 +10,7 @@ var Stack = function(){
   // Implement the methods below
   someInstance.push = function(value){
     /* START SOLUTION */
-    storage[size] = value;
-    size++;
+    storage[size++] = value;
     /* END SOLUTION */
   };
 

@@ -16,8 +16,7 @@ var stackMethods = {};
 
 /* START SOLUTION */
 stackMethods.push = function(value){
-  this._storage[this._size] = value;
-  this._size++;
+  this._storage[this._size++] = value;
 };
 
 stackMethods.pop = function(){

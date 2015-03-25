@@ -4,16 +4,15 @@ var Queue = function(){
   // Use an object with numeric keys to store values
   var storage = {};
   /* START SOLUTION */
-  var start = -1;
-  var end = -1;
+  var start = 0;
+  var end = 0;
   /* END SOLUTION */
 
   // Implement the methods below
 
   someInstance.enqueue = function(value){
     /* START SOLUTION */
-    end++;
-    storage[end] = value;
+    storage[end++] = value;
     /* END SOLUTION */
   };
 

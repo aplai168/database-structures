@@ -3,15 +3,14 @@ var Queue = function() {
   // but try not not reference your old code in writing the new style.
   /* START SOLUTION */
   this._storage = {};
-  this._start = -1;
-  this._end = -1;
+  this._start = 0;
+  this._end = 0;
   /* END SOLUTION */
 };
 
 /* START SOLUTION */
 Queue.prototype.enqueue = function(value){
-  this._end++;
-  this._storage[this._end] = value;
+  this._storage[this._end++] = value;
 };
 
 Queue.prototype.dequeue = function(){
