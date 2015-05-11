@@ -231,6 +231,10 @@ Write all of the following data structures and improvements in the order shown. 
   * Your priority for this task is to optimize for time complexity, but do try to avoid wasted space in your solution.
   * You can assume you have all the time required to do preprocessing on a dictionary of English words.
 
+## Resources
+
+- [Data structure coverage in Wikipedia](https://en.wikipedia.org/wiki/Data_structure) is no joke. Consider heading to Wikipedia when you have questions about data structures you are working with, or want to start learning about new ones.
+
 
 
 
