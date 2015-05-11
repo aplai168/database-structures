@@ -190,7 +190,7 @@ In JavaScript, because there is no concept of private variables (except through 
 To prevent this from happening to your collaborators and consumers, indicate private properties and methods by prefixing them with an underscore. This is how we do.
 
 
-## Extra Credit:
+## Extra Credit
 
 **Note**: _Prompts have varying levels of difficulty. In order to decide how to allocate your time, please review all of them before starting._
 
