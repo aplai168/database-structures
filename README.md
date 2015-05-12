@@ -235,7 +235,7 @@ Write all of the following data structures and improvements in the order shown. 
 
 - [Data structure coverage in Wikipedia](https://en.wikipedia.org/wiki/Data_structure) is no joke. Consider heading to Wikipedia when you have questions about data structures you are working with, or want to start learning about new ones.
 - [VisuAlgo](http://visualgo.net/) is an incredible sight with clean visualizations of all kinds of data structures and algorithms.
-
+- Hack Reactor graduate Ryan Atkinson's excellent blog post [JavaScript Classes and Instantiation Patterns](http://www.ryanatkinson.io/javascript-instantiation-patterns/)
 
 
 
