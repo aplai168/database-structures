@@ -190,7 +190,7 @@ In JavaScript, because there is no concept of private variables (except through 
 To prevent this from happening to your collaborators and consumers, indicate private properties and methods by prefixing them with an underscore. This is how we do.
 
 
-## Extra Credit:
+## Extra Credit
 
 **Note**: _Prompts have varying levels of difficulty. In order to decide how to allocate your time, please review all of them before starting._
 
@@ -215,7 +215,7 @@ Write all of the following data structures and improvements in the order shown. 
 - [ ] Make your `binarySearchTree` rebalance as soon as the max depth is more than twice the minimum depth.
 
 * Implement a `bloomFilter`:
-  - [ ] Read about it here: [Bloom Filters](http://en.wikipedia.org/wiki/Bloom_filter). tl;dr: It's a probabalistic hash table that can gain enormous space and speed advantages over traditional hash tables. Downside is it has to accept a false positive rate when looking up whether an item is in the table. Use cases are often for checking against a giant list locally and only doing a full lookup when the local one comes back positive. You may find [this](http://billmill.org/bloomfilter-tutorial/) tutorial useful.
+  - [ ] Read the [Wikipedia article about Bloom Filters](http://en.wikipedia.org/wiki/Bloom_filter) and/or [BillMill.org](http://billmill.org)'s [Bloom Filters by Example](http://billmill.org/bloomfilter-tutorial/). tl;dr: It's a probabalistic hash table that can gain enormous space and speed advantages over traditional hash tables. Downside is it has to accept a false positive rate when looking up whether an item is in the table. Use cases are often for checking against a giant list locally and only doing a full lookup when the local one comes back positive. You may find [this](http://billmill.org/bloomfilter-tutorial/) tutorial useful.
   - [ ] Create an "m=18, k=3" bloom filter. This means 18 slots, with 3 hash functions.
   - [ ] Run a small loop that runs 10,000 trials of trying to retreive a mix of items that are in the filter and not in the filter.
   - [ ] Record the empirical rate of false-positives by comparing your result with what you know to be true from the inputs you selected.
@@ -231,6 +231,11 @@ Write all of the following data structures and improvements in the order shown. 
   * Your priority for this task is to optimize for time complexity, but do try to avoid wasted space in your solution.
   * You can assume you have all the time required to do preprocessing on a dictionary of English words.
 
+## Resources
+
+- [Data structure coverage in Wikipedia](https://en.wikipedia.org/wiki/Data_structure) is no joke. Consider heading to Wikipedia when you have questions about data structures you are working with, or want to start learning about new ones.
+- [VisuAlgo](http://visualgo.net/) is an incredible sight with clean visualizations of all kinds of data structures and algorithms.
+- Hack Reactor graduate Ryan Atkinson's excellent blog post [JavaScript Classes and Instantiation Patterns](http://www.ryanatkinson.io/javascript-instantiation-patterns/)
 
 
 
