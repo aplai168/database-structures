@@ -6,8 +6,8 @@ var Queue = function(){
   _(someInstance).extend(queueMethods);
 
   someInstance._storage = {};
-  someInstance._start = -1;
-  someInstance._end = -1;
+  someInstance._start = 0;
+  someInstance._end = 0;
 
   return someInstance;
   /* END SOLUTION */
@@ -15,11 +15,9 @@ var Queue = function(){
 
 var queueMethods = {};
 
-
 /* START SOLUTION */
 queueMethods.enqueue = function(value){
-  this._end++;
-  this._storage[this._end] = value;
+  this._storage[this._end++] = value;
 };
 
 queueMethods.dequeue = function(){
