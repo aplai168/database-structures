@@ -13,7 +13,7 @@ dependencies:
 test:
   override:
 #    - mocha-phantomjs --no-colors --reporter min  sprint-one/SpecRunner.html
-    - mocha-phantomjs --no-colors --reporter min sprint-two/SpecRunner.html
+    - mocha-phantomjs --reporter min sprint-two/SpecRunner.html
 deployment:
   master:
     branch: master
