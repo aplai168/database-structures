@@ -224,9 +224,9 @@ Write all of the following data structures and improvements in the order shown. 
 
 ## Nightmare Mode
 
-- [ ] Write a `prefixTree` that can handle autocomplete for T9-style texting
-- [ ] Write a `[b-tree](http://en.wikipedia.org/wiki/B-tree)`
-- [ ] Write a `[red-black tree](http://en.wikipedia.org/wiki/Red%E2%80%93black_tree)`
+- [ ] Write a [`prefixTree`][prefixTree] that can handle autocomplete for T9-style texting
+- [ ] Write a [`bTree`][bTree]
+- [ ] Write a [`redBlackTree`][redBlackTree]
 - [ ] Design a data structure that finds every English word that can be made from a given bag of Scrabble letters
   * [ ] Optimize the algorithm and the data structure to return the set of words as quickly as possible
   * Your priority for this task is to optimize for time complexity, but do try to avoid wasted space in your solution
@@ -269,3 +269,6 @@ Write all of the following data structures and improvements in the order shown. 
 [Graph image]: http://i.imgur.com/PlN2VGG.png
 [Hash Table]: https://en.wikipedia.org/wiki/Hash_tables
 [Hash Table image]: https://upload.wikimedia.org/wikipedia/commons/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg
+[bTree]: (http://en.wikipedia.org/wiki/B-tree)
+[redBlackTree]: (http://en.wikipedia.org/wiki/Red%E2%80%93black_tree)
+[prefixTree]: (https://en.wikipedia.org/wiki/Trie)
