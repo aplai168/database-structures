@@ -15,14 +15,15 @@ A stack works like a stack of plates -- plates are added and removed from the th
 
 ![stack image]
 
-#### A stack would be great for... Implementing your browser's back button.
+#### A stack would be great for...
+Implementing your browser's back button.
 
 ## Goal
 Implement both **stack** and **queue** data structures in each of four instantiation styles. The functional style is stubbed out in `src/functional/queue.js` and `src/functional/stack.js` to get you started.
 
 ## Requirements
-- No arrays! Instead, use an object with numeric keys.
-- Pass all the tests (open `SpecRunner.html` in a browser).
+- No arrays! Instead, use an object with numeric keys
+- Pass all the tests (open `SpecRunner.html` in a browser to see which tests are passing)
 
 ## Data Structure Specs
 -  Implement a [stack] with the following methods:
@@ -38,18 +39,18 @@ Implement both **stack** and **queue** data structures in each of four instantia
 ## Instantiation Styles
 1.  **Functional instantiation**: a simple "maker" pattern
     - *Do:*
-        - Work within the `src/functional/` folder.
-        - Define all functions and properties within the maker function.
+        - Work within the `src/functional/` folder
+        - Define all functions and properties within the maker function
     - *Don't:*
-        - Use the keyword `new`, the keyword `this`, or any `prototype` chains.
-        - Capitalize the maker function name.
+        - Use the keyword `new`, the keyword `this`, or any `prototype` chains
+        - Capitalize the maker function name
     - *Example*: The provided classes `Stack` and `Queue` already follow this pattern
 2.  **Functional instantiation with shared methods**: same as step 1, but with shared methods
     - *Do:*
-        - Work within the `src/functional-shared/` folder.
-        - Create an object that holds the methods that will be shared by all instances of the class.
-        - You'll need to use the keyword `this` in your methods.
-        - Use [`_.extend`][_.extend] to copy the methods onto the instance.
+        - Work within the `src/functional-shared/` folder
+        - Create an object that holds the methods that will be shared by all instances of the class
+        - Use the keyword `this` in your methods
+        - Use [`_.extend`][_.extend] to copy the methods onto the instance
     - *Don't:*
         - Use the keyword `new` or `prototype` chains
     - *Example*: [functional instantiation example]
@@ -62,8 +63,8 @@ Implement both **stack** and **queue** data structures in each of four instantia
     - *Example:* [prototypal instantiation example]
 4.  **Pseudoclassical instantiation**: create instances with the keyword `new`
     - *Do:*
-        - Work within the `src/pseudoclassical/` folder.
-        - Capitalize your function name to indicate that it is intended to be run with the keyword `new`
+        - Work within the `src/pseudoclassical/` folder
+        - Capitalize your function name to indicate to others that it is intended to be run with the keyword `new`
         - Use the keyword `new` when instantiating your class
         - Use the keyword `this` in your constructor
     - *Don't:*
@@ -74,11 +75,11 @@ Implement both **stack** and **queue** data structures in each of four instantia
 ## Extra credit
 
 -  **Use the [Chrome profiling tools] to compare the performance of each instantiation pattern.**
-    -  Create a new HTML page with your data structures and an additional profiling script.  It should instantiate and use a large number of stacks and queues.
-    -  Reload the page with the CPU profiler running to investigate the runtime of your functions.
-    -  Take a heap snapshot to investigate object allocations and memory use.
-    -  Optionally, reload the page with the heap profiler running to investigate garbage collection behavior.
-    -  Do this for each of the instantiation styles, record, and compare the results. Write a brief analysis.
+    -  Create a new HTML page with your data structures and an additional profiling script.  It should instantiate and use a large number of stacks and queues
+    -  Reload the page with the CPU profiler running to investigate the runtime of your functions
+    -  Take a heap snapshot to investigate object allocations and memory use
+    -  Optionally, reload the page with the heap profiler running to investigate garbage collection behavior
+    -  Do this for each of the instantiation styles, record, and compare the results. Write a brief analysis
 
 # Sprint Two: Data Structures
 ---
@@ -196,23 +197,23 @@ To prevent this from happening to your collaborators and consumers, indicate pri
 
 Write all of the following data structures and improvements in the order shown. Use any style you like.
 
-* Create a [doubly-linked-list](http://en.wikipedia.org/wiki/Doubly_linked_list), with all the methods of
+* Create a `[doubly-linked-list](http://en.wikipedia.org/wiki/Doubly_linked_list)`, with all the methods of
   your linked list, and add the following properties:
   - [ ] An `.addToHead()` method which takes a value and adds it to the front of the list.
   - [ ] A `.removeTail()` method which removes the last node from the list and returns its value.
-  * Note: each `node` object will need to have a new `.previous` property pointing to the node behind it (or to `null`);
+  * Note: each `node` object will need to have a new `.previous` property pointing to the node behind it (or to `null` when appropriate);
     this is what makes it a doubly-linked list.
-* Add parent links to your tree
+* Add parent links to your `tree`
   * [ ] A `.parent` property, which refers to the parent node or null when there is no node
   * [ ] A `.removeFromParent()` method, which disassociates the tree with its parent (in both directions)
 
-- [ ] To prevent excessive collisions, make your `hashTable` double in size as soon as 75 percent of the spaces have been filled.
-- [ ] To save space, make sure the `hashTable` shrinks when space usage falls below 25 percent.
-- [ ] Implement a `.traverse()` method on your `tree`. Your `.traverse()` should accept a callback and execute it on every value contained in the tree.
-- [ ] `.breadthFirstLog()` method for `binarySearchTee`, logs the nodes contained in the tree using a breadth-first approach.
-- [ ] Make your `set` capable of handling numbers as well as strings.
-- [ ] Make your `set` capable of handling input objects of any type.
-- [ ] Make your `binarySearchTree` rebalance as soon as the max depth is more than twice the minimum depth.
+- [ ] To prevent excessive collisions, make your `hashTable` double in size as soon as 75 percent of the spaces have been filled
+- [ ] To save space, make sure the `hashTable` halves in size when space usage falls below 25 percent
+- [ ] Implement a `.traverse()` method on your `tree`. Your `.traverse()` should accept a callback and execute it on every value contained in the tree
+- [ ] `.breadthFirstLog()` method for `binarySearchTee`, logs the nodes contained in the tree using a breadth-first approach
+- [ ] Make your `set` capable of handling numbers as well as strings
+- [ ] Make your `set` capable of handling input objects of any type
+- [ ] Make your `binarySearchTree` rebalance as soon as the max depth is more than twice the minimum depth
 
 * Implement a `bloomFilter`:
   - [ ] Read the [Wikipedia article about Bloom Filters](http://en.wikipedia.org/wiki/Bloom_filter) and/or [BillMill.org](http://billmill.org)'s [Bloom Filters by Example](http://billmill.org/bloomfilter-tutorial/). tl;dr: It's a probabalistic hash table that can gain enormous space and speed advantages over traditional hash tables. Downside is it has to accept a false positive rate when looking up whether an item is in the table. Use cases are often for checking against a giant list locally and only doing a full lookup when the local one comes back positive. You may find [this](http://billmill.org/bloomfilter-tutorial/) tutorial useful.
@@ -223,13 +224,13 @@ Write all of the following data structures and improvements in the order shown. 
 
 ## Nightmare Mode
 
-- [ ] Write a `prefixTree` that can handle autocomplete for T9-style texting.
-- [ ] Write a [b-tree](http://en.wikipedia.org/wiki/B-tree).
-- [ ] Write a [red-black tree](http://en.wikipedia.org/wiki/Red%E2%80%93black_tree).
-- [ ] Design a data structure that finds every English word that can be made from a given bag of Scrabble letters.
-  * [ ] Optimize the algorithm and the data structure to return the set of words as quickly as possible.
-  * Your priority for this task is to optimize for time complexity, but do try to avoid wasted space in your solution.
-  * You can assume you have all the time required to do preprocessing on a dictionary of English words.
+- [ ] Write a `prefixTree` that can handle autocomplete for T9-style texting
+- [ ] Write a `[b-tree](http://en.wikipedia.org/wiki/B-tree)`
+- [ ] Write a `[red-black tree](http://en.wikipedia.org/wiki/Red%E2%80%93black_tree)`
+- [ ] Design a data structure that finds every English word that can be made from a given bag of Scrabble letters
+  * [ ] Optimize the algorithm and the data structure to return the set of words as quickly as possible
+  * Your priority for this task is to optimize for time complexity, but do try to avoid wasted space in your solution
+  * You can assume you have all the time required to do preprocessing on a dictionary of English words
 
 ## Resources
 
