@@ -197,7 +197,7 @@ To prevent this from happening to your collaborators and consumers, indicate pri
 
 Write all of the following data structures and improvements in the order shown. Use any style you like.
 
-* Create a `[doubly-linked-list](http://en.wikipedia.org/wiki/Doubly_linked_list)`, with all the methods of
+* Create a [`doubly-linked-list`][doubly-linked-list], with all the methods of
   your linked list, and add the following properties:
   - [ ] An `.addToHead()` method which takes a value and adds it to the front of the list.
   - [ ] A `.removeTail()` method which removes the last node from the list and returns its value.
@@ -258,6 +258,7 @@ Write all of the following data structures and improvements in the order shown. 
 
 [Linked List]: https://en.wikipedia.org/wiki/Linked_list
 [Linked List image]: https://f.cloud.github.com/assets/1577682/1212239/43154574-2615-11e3-8e29-43cf74e25b10.png
+[doubly-linked-list]: http://en.wikipedia.org/wiki/Doubly_linked_list
 [Set]: https://en.wikipedia.org/wiki/Set_data_structure
 [Set image]: http://www.codeproject.com/KB/recipes/DotNetSet/Sets02.png
 [Tree]: https://en.wikipedia.org/wiki/Tree_(data_structure)
