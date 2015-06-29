@@ -93,8 +93,15 @@ Some failing specs are included. You're welcome! You should make them pass, then
 ### Implement and test the following classes:
 
 ### 1. [Linked List]
+A linked list is a dynamic data structure that allows for constant time insertion and removal at any point in the linked list (compare this to
+an array which on average has linear time insertion and removal operations).
+In exchange for this insertion and removal speed, linked lists are not indexed and any find operations on a link list require the linear time
+operation of traversing the entire linked-list from the beginning.
 
 ![Linked List image]
+
+#### A linked list would be great for....
+Issuing instructions to your sandwich-making robot.
 
 * A `linkedList` class, in functional style, with the following properties:
   - [ ] `.head` property, a `linkedListNode` instance
