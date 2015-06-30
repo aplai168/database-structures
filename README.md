@@ -128,8 +128,14 @@ Making a family tree.
   - [ ] What is the time complexity of the above functions?
 
 ### 3. [Graph]
+Graphs consists of nodes (often referred to as vertices) and edges (often referred to as arcs) that connect the nodes. Unlike trees, graphs are not necessarily
+hierarchical. Graphs can be undirected, which means that the relationship of any 2 nodes connected by an edge is a symmetrical relationship, or they can be directed,
+which means there is an asymmetrical relationship between nodes that are connected by an edge. You will be implementing an undirected graph.
 
 ![Graph image]
+
+#### A graph would be great for....
+Representing how a collection of websites (or the entire world wide web) link to each other.
 
 * Implement a `graph` class, in pseudoclassical style, with the following properties:
   - [ ] It is an undirected graph.  It does not have to be 'connected'.
