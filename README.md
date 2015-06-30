@@ -166,8 +166,14 @@ A raffle, where all the tickets are unique and you just want to randomly pick on
   * **Note:** This is a rather simple data structure. Take a look at the [Wikipedia](http://en.wikipedia.org/wiki/Set_(computer_science)) entry. Which native Javascript type fits the requirements best?
 
 ### 5. [Hash Table]
+Hash tables (sometimes called hash maps) store key value pairs. They do so in a memory efficient way by using a 'hashing function' that translates keys into 
+numerical indices located within a fixed block of memory (think about the contiguous blocks of memory used in arrays). Hash tables only increase their size 
+in memory when necessary, and reduce their size in memory when possible.
 
 ![Hash Table image]
+
+#### A hash table would be great for....
+A contact list you might add or remove contacts from over time.
 
 - [ ] A `hashTable` class, in pseudoclassical style:
   * [ ] **First:** Play with each of the helper functions provided to get a sense of what they do.
