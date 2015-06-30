@@ -112,8 +112,13 @@ An itinerary you expect to add and remove destinations to and from.
   - [ ] What is the time complexity of the above functions?
 
 ### 2. [Tree]
+A tree is a hierarchical data structure consisting of a node (potentially) with children. The children are trees unto themselves, that is, nodes with
+(potential) children. For this reason the tree is referred to as a recursive data structure.
 
 ![Tree image]
+
+#### A tree would be great for....
+Making a family tree.
 
 * A `tree` class, in functional with shared methods style, with the following
   properties:
@@ -278,4 +283,4 @@ Write all of the following data structures and improvements in the order shown. 
 [Hash Table image]: https://upload.wikimedia.org/wikipedia/commons/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg
 [bTree]: http://en.wikipedia.org/wiki/B-tree
 [redBlackTree]: http://en.wikipedia.org/wiki/Red%E2%80%93black_tree
-[prefixTree]: https://en.wikipedia.org/wiki/Trie
+prefixTree]: https://en.wikipedia.org/wiki/Trie
