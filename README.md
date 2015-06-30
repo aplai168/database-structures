@@ -101,7 +101,7 @@ operation of traversing the entire linked-list from the beginning.
 ![Linked List image]
 
 #### A linked list would be great for....
-Issuing instructions to your sandwich-making robot.
+An itinerary you expect to add and remove destinations to and from.
 
 * A `linkedList` class, in functional style, with the following properties:
   - [ ] `.head` property, a `linkedListNode` instance
