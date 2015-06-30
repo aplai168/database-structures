@@ -149,8 +149,12 @@ Representing how a collection of websites (or the entire world wide web) link to
   - [ ] What is the time complexity of the above functions?
 
 ### 4. [Set]
+Sets contain unique values in no particular order.
 
 ![Set image]
+
+#### A set would be great for....
+A raffle, where all the tickets are unique and you just want to randomly pick one (or several) out of them all.
 
 * A `set` class, in prototypal style, with the following properties:
   - [ ] An `.add()` method, takes any string and adds it to the set
