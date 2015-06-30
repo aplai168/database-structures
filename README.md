@@ -192,8 +192,15 @@ A contact list you might add to or remove from over time.
 
 
 ### 6. [Binary Search Tree]
+Binary trees are trees that can only have 0, 1, or 2 children. Remember that trees are recursive data structures and therefore a tree's children are themselves trees and 
+can each have 0, 1, or 2 children. In a binary *search* tree, one child (out of potentially two) will always be less than the node's value (based on whatever sorting
+condition you wish) and the other child will always be greater than the node's value. Whether it is the 'left' or the 'right' child which is greater or lesser is consistent 
+throughout the binary search tree. This structure results in particularly fast find operations. You'll be asked to answer just how fast yourself.
 
 ![Binary Search Tree image]
+
+#### A binary search tree would be great for....
+A dictionary of all English words.
 
 * Implement a `binarySearchTree` class with the following properties:
   - [ ] A `.left` property, a binary search tree (BST) where all values are lower than than it the current value.
