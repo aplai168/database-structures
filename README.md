@@ -173,7 +173,7 @@ in memory when necessary, and reduce their size in memory when possible.
 ![Hash Table image]
 
 #### A hash table would be great for....
-A contact list you might add or remove contacts from over time.
+A contact list you might add to or remove from over time.
 
 - [ ] A `hashTable` class, in pseudoclassical style:
   * [ ] **First:** Play with each of the helper functions provided to get a sense of what they do.
