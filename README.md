@@ -93,8 +93,15 @@ Some failing specs are included. You're welcome! You should make them pass, then
 ### Implement and test the following classes:
 
 ### 1. [Linked List]
+A linked list is a dynamic data structure that allows for constant time insertion and removal at any point in the linked list (compare this to
+an array which on average has linear time insertion and removal operations).
+In exchange for this insertion and removal speed, linked lists are not indexed and any find operations on a link list require the linear time
+operation of traversing the entire linked-list from the beginning.
 
 ![Linked List image]
+
+#### A linked list would be great for....
+An itinerary you expect to add and remove destinations to and from.
 
 * A `linkedList` class, in functional style, with the following properties:
   - [ ] `.head` property, a `linkedListNode` instance
@@ -105,8 +112,13 @@ Some failing specs are included. You're welcome! You should make them pass, then
   - [ ] What is the time complexity of the above functions?
 
 ### 2. [Tree]
+A tree is a hierarchical data structure consisting of a node (potentially) with children. The children are trees unto themselves, that is, nodes with
+(potential) children. For this reason the tree is referred to as a recursive data structure.
 
 ![Tree image]
+
+#### A tree would be great for....
+Making a family tree.
 
 * A `tree` class, in functional with shared methods style, with the following
   properties:
@@ -116,8 +128,14 @@ Some failing specs are included. You're welcome! You should make them pass, then
   - [ ] What is the time complexity of the above functions?
 
 ### 3. [Graph]
+Graphs consist of nodes (often referred to as vertices) and edges (often referred to as arcs) that connect the nodes. Unlike trees, graphs are not necessarily
+hierarchical. Graphs can be undirected, which means that the relationship of any 2 nodes connected by an edge is a symmetrical relationship, or they can be directed,
+which means there is an asymmetrical relationship between nodes that are connected by an edge. You will be implementing an undirected graph.
 
 ![Graph image]
+
+#### A graph would be great for....
+Representing how a collection of websites (or the entire world wide web) link to each other.
 
 * Implement a `graph` class, in pseudoclassical style, with the following properties:
   - [ ] It is an undirected graph.  It does not have to be 'connected'.
@@ -131,8 +149,12 @@ Some failing specs are included. You're welcome! You should make them pass, then
   - [ ] What is the time complexity of the above functions?
 
 ### 4. [Set]
+Sets contain unique values in no particular order.
 
 ![Set image]
+
+#### A set would be great for....
+A raffle, where all the tickets are unique and you just want to randomly pick one (or several) out of them all.
 
 * A `set` class, in prototypal style, with the following properties:
   - [ ] An `.add()` method, takes any string and adds it to the set
@@ -144,8 +166,14 @@ Some failing specs are included. You're welcome! You should make them pass, then
   * **Note:** This is a rather simple data structure. Take a look at the [Wikipedia](http://en.wikipedia.org/wiki/Set_(computer_science)) entry. Which native Javascript type fits the requirements best?
 
 ### 5. [Hash Table]
+Hash tables (sometimes called hash maps) store key value pairs. They do so in a memory efficient way by using a 'hashing function' that translates keys into 
+numerical indices located within a fixed block of memory (think about the contiguous blocks of memory used in arrays). Hash tables only increase their size 
+in memory when necessary, and reduce their size in memory when possible.
 
 ![Hash Table image]
+
+#### A hash table would be great for....
+A contact list you might add to or remove from over time.
 
 - [ ] A `hashTable` class, in pseudoclassical style:
   * [ ] **First:** Play with each of the helper functions provided to get a sense of what they do.
@@ -164,8 +192,15 @@ Some failing specs are included. You're welcome! You should make them pass, then
 
 
 ### 6. [Binary Search Tree]
+Binary trees are trees that can only have 0, 1, or 2 children. Remember that trees are recursive data structures and therefore a tree's children are themselves trees and 
+can each have 0, 1, or 2 children. In a binary *search* tree, one child (out of potentially two) will always be less than the node's value (based on whatever sorting
+condition you wish) and the other child will always be greater than the node's value. Whether it is the 'left' or the 'right' child which is greater or lesser is consistent 
+throughout the binary search tree. This structure results in particularly fast find operations. You'll be asked to answer just how fast yourself.
 
 ![Binary Search Tree image]
+
+#### A binary search tree would be great for....
+A dictionary of all English words.
 
 * Implement a `binarySearchTree` class with the following properties:
   - [ ] A `.left` property, a binary search tree (BST) where all values are lower than than it the current value.
@@ -269,6 +304,7 @@ Write all of the following data structures and improvements in the order shown. 
 [Graph image]: http://i.imgur.com/PlN2VGG.png
 [Hash Table]: https://en.wikipedia.org/wiki/Hash_tables
 [Hash Table image]: https://upload.wikimedia.org/wikipedia/commons/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg
+[prefixTree]: https://en.wikipedia.org/wiki/Trie
 [bTree]: http://en.wikipedia.org/wiki/B-tree
 [redBlackTree]: http://en.wikipedia.org/wiki/Red%E2%80%93black_tree
-[prefixTree]: https://en.wikipedia.org/wiki/Trie
+
