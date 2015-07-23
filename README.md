@@ -72,15 +72,6 @@ Implement both **stack** and **queue** data structures in each of four instantia
         - Return the instance explicitly
     - *Example:* [pseudoclassical instantiation example]
 
-## Extra credit
-
--  **Use the [Chrome profiling tools] to compare the performance of each instantiation pattern.**
-    -  Create a new HTML page with your data structures and an additional profiling script.  It should instantiate and use a large number of stacks and queues
-    -  Reload the page with the CPU profiler running to investigate the runtime of your functions
-    -  Take a heap snapshot to investigate object allocations and memory use
-    -  Optionally, reload the page with the heap profiler running to investigate garbage collection behavior
-    -  Do this for each of the instantiation styles, record, and compare the results. Write a brief analysis
-
 # Sprint Two: Data Structures
 ---
 
@@ -228,9 +219,16 @@ To prevent this from happening to your collaborators and consumers, indicate pri
 
 ## Extra Credit
 
+-  **Use the [Chrome profiling tools] to compare the performance of each instantiation pattern.**
+    -  Create a new HTML page with your data structures and an additional profiling script.  It should instantiate and use a large number of stacks and queues
+    -  Reload the page with the CPU profiler running to investigate the runtime of your functions
+    -  Take a heap snapshot to investigate object allocations and memory use
+    -  Optionally, reload the page with the heap profiler running to investigate garbage collection behavior
+    -  Do this for each of the instantiation styles, record, and compare the results. Write a brief analysis
+
 **Note**: _Prompts have varying levels of difficulty. In order to decide how to allocate your time, please review all of them before starting._
 
-Write all of the following data structures and improvements in the order shown. Use any style you like.
+Write all of the following data structures and improvements. Use any style you like.
 
 * Create a [`doubly-linked-list`][doubly-linked-list], with all the methods of
   your linked list, and add the following properties:
