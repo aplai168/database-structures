@@ -153,7 +153,7 @@ A raffle, where all the tickets are unique and you just want to randomly pick on
   - [ ] A `.remove()` method, takes any string and removes it from the set, if present
   - [ ] What is the time complexity of the above functions?
   * **Note:** Sets should not use up any more space than necessary. Once a value is added to a set, adding it a second time should not increase the size of the set.
-  * **Note:** Until the extra credit section, your sets should handle only string values.
+  * **Note:** Until the advanced section, your sets should handle only string values.
   * **Note:** This is a rather simple data structure. Take a look at the [Wikipedia](http://en.wikipedia.org/wiki/Set_(computer_science)) entry. Which native Javascript type fits the requirements best?
 
 ### 5. [Hash Table]
@@ -217,7 +217,7 @@ In JavaScript, because there is no concept of private variables (except through 
 To prevent this from happening to your collaborators and consumers, indicate private properties and methods by prefixing them with an underscore. This is how we do.
 
 
-## Extra Credit
+## Advanced
 
 -  **Use the [Chrome profiling tools] to compare the performance of each instantiation pattern.**
     -  Create a new HTML page with your data structures and an additional profiling script.  It should instantiate and use a large number of stacks and queues
