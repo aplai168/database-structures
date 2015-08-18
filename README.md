@@ -282,6 +282,7 @@ Node lets you run JavaScript outside the browser. Create a basic JavaScript file
   * [ ] Whiteboard a graph and then translate it into an adjacency list text file
   * [ ] Write a function to return how many nodes your graph has. In order to accopmplish this you will need to use node's `fs` module to read your adjacency list text file and split it into lines. You'll learn how to do this later in the course, but for now, feel free to use the following code:
 
+    ``` javascript
     var fs = require('fs'); // this let's you access the file system. You'll learn more about it later
     
     // read the adjacency-list file in this directory (you might have named the file differently) and split it on new lines into an array
@@ -291,6 +292,7 @@ Node lets you run JavaScript outside the browser. Create a basic JavaScript file
     fileLines.forEach(function(line) {
       console.log(line);
     });
+    ```
 
   * [ ] the next point
 
