@@ -226,9 +226,9 @@ Our advanced content is intended to throw you in over your head, requiring you t
     -  Reload the page with the CPU profiler running to investigate the runtime of your functions
     -  Take a heap snapshot to investigate object allocations and memory use
     -  Optionally, reload the page with the heap profiler running to investigate garbage collection behavior
-    -  Do this for each of the instantiation styles, record, and compare the results. Write a brief analysis
+    -  Do this for each of the instantiation styles, record, and compare the results. Write a brief analysis you could share with a supervisor who needs the information you have in order to make wise decisions about the design of an upcoming project.
 
-**Note**: _Prompts have varying levels of difficulty. In order to decide how to allocate your time, please review all of them before starting._
+**Note**: _The following prompts have varying levels of difficulty. In order to decide how to allocate your time, please review all of them before starting._
 
 Write all of the following data structures and improvements. Use any style you like.
 
