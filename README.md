@@ -280,7 +280,7 @@ For this exercise you will work with adjacency list representations of graphs us
   * [ ] In the terminal, in the directory of the file you just created (for this example let's say it's called `test.js`) run the command `node test.js`. You just ran JavaScript with the node interpreter and should see whatever you logged to the console in the terminal
   * [ ] Familiarize yourself with [Adajency Lists][adjacencyList] and [Adjacency Matrices][adjacencyMatrix]
   * [ ] Whiteboard a graph and then translate it into an adjacency list text file
-  * [ ] Write a function to return how many nodes your graph has. In order to accopmplish this you will need to use node's `fs` module to read your adjacency list text file and split it into lines. You'll learn how to do this later in the course, but for now, feel free to use the following code:
+  * [ ] Write a function to return how many nodes your graph has. In order to accomplish this you will need to use node's `fs` module to read your adjacency list text file and split it into lines. You'll learn how to do this later in the course, but for now, feel free to use the following code:
 
     ``` javascript
     // this let's you access the file system. You'll learn more about it later in the course
