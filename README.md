@@ -219,6 +219,8 @@ To prevent this from happening to your collaborators and consumers, indicate pri
 
 ## Advanced
 
+Our advanced content is intended to throw you in over your head, requiring you to solve problems with very little support or oversight, much like you would as a mid or senior level engineer.
+
 -  **Use the [Chrome profiling tools] to compare the performance of each instantiation pattern.**
     -  Create a new HTML page with your data structures and an additional profiling script.  It should instantiate and use a large number of stacks and queues
     -  Reload the page with the CPU profiler running to investigate the runtime of your functions
