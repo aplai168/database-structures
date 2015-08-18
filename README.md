@@ -126,7 +126,7 @@ which means there is an asymmetrical relationship between nodes that are connect
 ![Graph image]
 
 #### A graph would be great for....
-Representing how a collection of websites (or the entire world wide web) link to each other.
+Representing how a collection of websites (or the entire world wide web) link to each other, and [many other things][graphExamples]
 
 * Implement a `graph` class, in pseudoclassical style, with the following properties:
   - [ ] It is an undirected graph.  It does not have to be 'connected'.
@@ -298,7 +298,13 @@ For this exercise you will work with adjacency list representations of graphs us
     });
     ```
 
-  * [ ] the next point
+  * [ ] Write a function to peform a [depth first search][depthFirstSearch] (DFS) on your graph and output the node values in depth first order
+  * [ ] Try running your DFS function on a [larger adjacency list][largeDataSets]
+  * [ ] Implement [Karger's Algorithm][kargersAlgorithm] to identify the [Minimum Cut][minimumCut] for the minimum number of edges in an undirected graph
+    * [ ] Start with a small undirected graph (in adjacency list format) of your own making, then give it a go with a [larger adjacency list][largeDataSets]
+  * [ ] Use [Kosaraju's Algorithm][kosarajusAlgorithm] to identify the greatest [strongly connected component][SCC] (SCC) of a directed graph
+    * [ ] Start with a small directed graph (in adjacency list format) of your own making, then give it a go with a [larger adjacency list][largeDataSets]
+
 
 ## Resources
 
@@ -335,6 +341,7 @@ For this exercise you will work with adjacency list representations of graphs us
 [Binary Search Tree Image]: http://i.imgur.com/eDw57vR.png
 [Graph]: http://en.wikipedia.org/wiki/Graph_(mathematics)
 [Graph image]: http://i.imgur.com/PlN2VGG.png
+[graphExamples]: http://algs4.cs.princeton.edu/lectures/42DirectedGraphs.pdf
 [Hash Table]: https://en.wikipedia.org/wiki/Hash_tables
 [Hash Table image]: https://upload.wikimedia.org/wikipedia/commons/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg
 [prefixTree]: https://en.wikipedia.org/wiki/Trie
@@ -343,3 +350,9 @@ For this exercise you will work with adjacency list representations of graphs us
 [adjacencyMatrix]: https://en.wikipedia.org/wiki/Adjacency_matrix
 [adjacencyList]: https://en.wikipedia.org/wiki/Adjacency_list
 [nodejs]: https://nodejs.org/
+[depthFirstSearch]: http://www.algolist.net/Algorithms/Graph/Undirected/Depth-first_search
+[largeDataSets]: https://snap.stanford.edu/data/#socnets
+[minimumCut]: https://en.wikipedia.org/wiki/Minimum_cut
+[kargersAlgorithm]: https://en.wikipedia.org/wiki/Karger%27s_algorithm
+[kosarajusAlgorithm]: https://en.wikipedia.org/wiki/Kosaraju%27s_algorithm
+[SCC]: https://en.wikipedia.org/wiki/Strongly_connected_component
