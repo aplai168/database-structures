@@ -274,10 +274,10 @@ Implement the following data structures and improvements. Use any instantiataion
 
 ### Advanced Graphs with Node.js
 
-For this exercise you will work with adjacency list representations of graphs using node.js. You'll learn a ton about node later in the course, but this is advanced content so why not get started early. You can find out if node is installed on the computer you're working on by entering `which node` into the terminal. If node is installed you will see the path to the node binary, otherwise you'll see a blank line. If necessary, [install node][nodejs] on the computer you're working on.
+For this exercise you will work with adjacency list representations of graphs using node.js, which will allow you to interact with your file system. You'll learn a ton about node later in the course, but this is advanced content so why not get started early. You can find out if node is installed on the computer you're working on by entering `which node` into the terminal. If node is installed you will see the path to the node binary, otherwise you'll see a blank line. If necessary, [install node][nodejs] on the computer you're working on.
 
-Node lets you run JavaScript outside the browser. Create a basic JavaScript file that logs something to the console. In the terminal, in the directory of the file you just created (for this example let's say it's called `test.js`) run the command `node test.js`. You just ran JavaScript with the node interpreter and should see whatever you logged to the console in the terminal. 
-
+  * [ ] Create a basic JavaScript file that logs something to the console
+  * [ ] In the terminal, in the directory of the file you just created (for this example let's say it's called `test.js`) run the command `node test.js`. You just ran JavaScript with the node interpreter and should see whatever you logged to the console in the terminal
   * [ ] Familiarize yourself with [Adajency Lists][adjacencyList] and [Adjacency Matrices][adjacencyMatrix]
   * [ ] Whiteboard a graph and then translate it into an adjacency list text file
   * [ ] Write a function to return how many nodes your graph has. In order to accopmplish this you will need to use node's `fs` module to read your adjacency list text file and split it into lines. You'll learn how to do this later in the course, but for now, feel free to use the following code:
