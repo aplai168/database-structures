@@ -126,7 +126,7 @@ which means there is an asymmetrical relationship between nodes that are connect
 ![Graph image]
 
 #### A graph would be great for....
-Representing how a collection of websites (or the entire world wide web) link to each other.
+Representing how a collection of websites (or the entire world wide web) link to each other, and [many other things][graphExamples]
 
 * Implement a `graph` class, in pseudoclassical style, with the following properties:
   - [ ] It is an undirected graph.  It does not have to be 'connected'.
@@ -270,6 +270,41 @@ Implement the following data structures and improvements. Use any instantiataion
   * [ ] Optimize the algorithm and the data structure to return the set of words as quickly as possible
     * Your priority for this task is to optimize for time complexity, but do try to avoid wasted space in your solution
     * You can assume you have all the time required to do preprocessing on a dictionary of English words
+- [ ] Advanced [`graph`][Graph] work using [node.js][nodejs] (see section below)
+
+### Advanced Graphs with Node.js
+
+For this exercise you will work with adjacency list representations of graphs using node.js, which will allow you to interact with your file system. You'll learn a ton about node later in the course, but this is advanced content so why not get started early. You can find out if node is installed on the computer you're working on by entering `which node` into the terminal. If node is installed you will see the path to the node binary, otherwise you'll see a blank line. If necessary, [install node][nodejs] on the computer you're working on.
+
+  * [ ] Create a basic JavaScript file that logs something to the console
+  * [ ] In the terminal, in the directory of the file you just created (for this example let's say it's called `test.js`) run the command `node test.js`. You just ran JavaScript with the node interpreter and should see whatever you logged to the console in the terminal
+  * [ ] Familiarize yourself with [Adajency Lists][adjacencyList] and [Adjacency Matrices][adjacencyMatrix]
+  * [ ] Whiteboard a graph and then translate it into an adjacency list text file
+  * [ ] Write a function to return how many nodes your graph has. In order to accomplish this you will need to use node's `fs` module to read your adjacency list text file and split it into lines. You'll learn how to do this later in the course, but for now, feel free to use the following code:
+
+    ``` javascript
+    // this let's you access the file system. You'll learn more about it later in the course
+    var fs = require('fs');     
+
+    // read the adjacency-list file in this directory (you might have named the file differently) and split it on new lines into an array
+    var fileLines = fs.readFileSync('./adjacency-list').toString().split('\n');
+
+    // you may have to do this 0 or more times, to remove blank lines from fileLines
+    fileLines.pop(); 
+    
+    fileLines.forEach(function(line) {
+      // here you have access to each line of the adjacency list
+      console.log(line);
+    });
+    ```
+
+  * [ ] Write a function to peform a [depth first search][depthFirstSearch] (DFS) on your graph and output the node values in depth first order
+  * [ ] Try running your DFS function on a [larger adjacency list][largeDataSets]
+  * [ ] Implement [Karger's Algorithm][kargersAlgorithm] to identify the [Minimum Cut][minimumCut] for the minimum number of edges in an undirected graph
+    * [ ] Start with a small undirected graph (in adjacency list format) of your own making, then give it a go with a [larger adjacency list][largeDataSets]
+  * [ ] Use [Kosaraju's Algorithm][kosarajusAlgorithm] to identify the greatest [strongly connected component][SCC] (SCC) of a directed graph
+    * [ ] Start with a small directed graph (in adjacency list format) of your own making, then give it a go with a [larger adjacency list][largeDataSets]
+
 
 ## Resources
 
@@ -306,9 +341,18 @@ Implement the following data structures and improvements. Use any instantiataion
 [Binary Search Tree Image]: http://i.imgur.com/eDw57vR.png
 [Graph]: http://en.wikipedia.org/wiki/Graph_(mathematics)
 [Graph image]: http://i.imgur.com/PlN2VGG.png
+[graphExamples]: http://algs4.cs.princeton.edu/lectures/42DirectedGraphs.pdf
 [Hash Table]: https://en.wikipedia.org/wiki/Hash_tables
 [Hash Table image]: https://upload.wikimedia.org/wikipedia/commons/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg
 [prefixTree]: https://en.wikipedia.org/wiki/Trie
 [bTree]: http://en.wikipedia.org/wiki/B-tree
 [redBlackTree]: http://en.wikipedia.org/wiki/Red%E2%80%93black_tree
-
+[adjacencyMatrix]: https://en.wikipedia.org/wiki/Adjacency_matrix
+[adjacencyList]: https://en.wikipedia.org/wiki/Adjacency_list
+[nodejs]: https://nodejs.org/
+[depthFirstSearch]: http://www.algolist.net/Algorithms/Graph/Undirected/Depth-first_search
+[largeDataSets]: https://snap.stanford.edu/data/#socnets
+[minimumCut]: https://en.wikipedia.org/wiki/Minimum_cut
+[kargersAlgorithm]: https://en.wikipedia.org/wiki/Karger%27s_algorithm
+[kosarajusAlgorithm]: https://en.wikipedia.org/wiki/Kosaraju%27s_algorithm
+[SCC]: https://en.wikipedia.org/wiki/Strongly_connected_component
