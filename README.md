@@ -270,6 +270,13 @@ Implement the following data structures and improvements. Use any instantiataion
   * [ ] Optimize the algorithm and the data structure to return the set of words as quickly as possible
     * Your priority for this task is to optimize for time complexity, but do try to avoid wasted space in your solution
     * You can assume you have all the time required to do preprocessing on a dictionary of English words
+- [ ] Advanced [`graph`][Graph] work using [node.js][nodejs] (see section below)
+
+### Advanced Graphs with Node.js
+
+For this exercise you will work with adjacency list representations of graphs using node.js. You can find out if node is installed on the computer you're working on by entering `which node` into the terminal. If node is installed you will see the path to the node binary, otherwise you'll see a blank line. If necessary, [install node][nodejs] on the computer you're working on.
+
+  * [ ] Familiarize yourself with [Adajency Lists][adjacencyList] and [Adjacency Matrices][adjacencyMatrix]
 
 ## Resources
 
@@ -311,4 +318,6 @@ Implement the following data structures and improvements. Use any instantiataion
 [prefixTree]: https://en.wikipedia.org/wiki/Trie
 [bTree]: http://en.wikipedia.org/wiki/B-tree
 [redBlackTree]: http://en.wikipedia.org/wiki/Red%E2%80%93black_tree
-
+[adjacencyMatrix]: https://en.wikipedia.org/wiki/Adjacency_matrix
+[adjacencyList]: https://en.wikipedia.org/wiki/Adjacency_list
+[nodejs]: https://nodejs.org/
