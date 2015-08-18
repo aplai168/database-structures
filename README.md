@@ -228,9 +228,11 @@ Our advanced content is intended to throw you in over your head, requiring you t
     -  Optionally, reload the page with the heap profiler running to investigate garbage collection behavior
     -  Do this for each of the instantiation styles, record, and compare the results. Write a brief analysis you could share with a supervisor who needs the information you have in order to make wise decisions about the design of an upcoming project.
 
-**Note**: _The following prompts have varying levels of difficulty. In order to decide how to allocate your time, please review all of them before starting._
+**Note**: _The following prompts have varying levels of difficulty and you may not wish to complete all of them in entirety. In order to decide how to allocate your time, please read the descriptions of all of them before starting._
 
-Write all of the following data structures and improvements. Use any style you like.
+Implement the following data structures and improvements. Use any instantiataion style you like.
+
+**Optional**: Use TDD.
 
 * Create a [`doubly-linked-list`][doubly-linked-list], with all the methods of
   your linked list, and add the following properties:
@@ -259,13 +261,15 @@ Write all of the following data structures and improvements. Use any style you l
 
 ## Nightmare Mode
 
+**Note:** Please feel free to attempt the following in any order you would like.
+
 - [ ] Write a [`prefixTree`][prefixTree] that can handle autocomplete for T9-style texting
 - [ ] Write a [`bTree`][bTree]
 - [ ] Write a [`redBlackTree`][redBlackTree]
 - [ ] Design a data structure that finds every English word that can be made from a given bag of Scrabble letters
   * [ ] Optimize the algorithm and the data structure to return the set of words as quickly as possible
-  * Your priority for this task is to optimize for time complexity, but do try to avoid wasted space in your solution
-  * You can assume you have all the time required to do preprocessing on a dictionary of English words
+    * Your priority for this task is to optimize for time complexity, but do try to avoid wasted space in your solution
+    * You can assume you have all the time required to do preprocessing on a dictionary of English words
 
 ## Resources
 
