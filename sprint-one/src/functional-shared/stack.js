@@ -15,11 +15,11 @@ var Stack = function() {
 var stackMethods = {};
 
 /* START SOLUTION */
-stackMethods.push = function(value){
+stackMethods.push = function(value) {
   this._storage[this._size++] = value;
 };
 
-stackMethods.pop = function(){
+stackMethods.pop = function() {
   this._size && this._size--;
   var result = this._storage[this._size];
 
@@ -28,7 +28,7 @@ stackMethods.pop = function(){
   return result;
 };
 
-stackMethods.size = function(){
+stackMethods.size = function() {
   return this._size;
 };
 /* END SOLUTION */

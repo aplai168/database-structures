@@ -15,11 +15,11 @@ var Queue = function() {
 var queueMethods = {};
 
 /* START SOLUTION */
-queueMethods.enqueue = function(value){
+queueMethods.enqueue = function(value) {
   this._storage[this._end++] = value;
 };
 
-queueMethods.dequeue = function(){
+queueMethods.dequeue = function() {
   this.size() && this._start++;
   var result = this._storage[this._start];
 
@@ -28,7 +28,7 @@ queueMethods.dequeue = function(){
   return result;
 };
 
-queueMethods.size = function(){
+queueMethods.size = function() {
   return this._end - this._start;
 };
 /* END SOLUTION */
