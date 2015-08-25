@@ -16,7 +16,7 @@
 // constant-time look-up when looking for any node or edge.
 // This implementation can accept any data-type that can be
 // represented as a string (keys of objects are strings).
-// Laslty, this solution is quite space efficient because hash
+// Lastly, this solution is quite space efficient because hash
 // tables only occupy only slightly more space than is needed
 // to store the underlying data set.
 //////////////////////////////////////////////////////////////////

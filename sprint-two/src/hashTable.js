@@ -47,7 +47,7 @@ HashTable.prototype.insert = function(k, v) {
   this._size++;
 
   if (this._size > this._limit * 0.75) {
-    this._resize(this._limit*2);
+    this._resize(this._limit * 2);
   }
   /* END SOLUTION */
 };
@@ -79,7 +79,7 @@ HashTable.prototype.remove = function(k) {
       bucket.splice(i, 1)
       this._size--;
       if (this._size < this._limit * 0.25) {
-        this._resize(Math.floor(this._limit/2));
+        this._resize(Math.floor(this._limit / 2));
       }
       return tuple[1];
     }
@@ -137,7 +137,7 @@ HashTableHOF.prototype.insert = function(k, v) {
       bucket.push([k,v]);
       this._size++;
       if (this._size > 0.75 * this._limit) {
-        this._resize( this._limit*2 );
+        this._resize( this._limit * 2 );
       }
     }
   );
@@ -157,7 +157,7 @@ HashTableHOF.prototype.remove = function(k) {
       bucket.splice(i, 1);
       this._size--;
       if (this._size < 0.25 * this._limit) {
-        this._resize(Math.floor(this._limit/2));
+        this._resize(Math.floor(this._limit / 2));
       }
       return tuple[1];
     }
