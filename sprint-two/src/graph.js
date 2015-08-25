@@ -1,15 +1,30 @@
 /* START SOLUTION */
- // Note:  This solution can be refactored to provide improved performance.  How might you do that?
- //        Consider the Time Complexity of removing edges.  After you review this solution, consider
- //        how you might redefine your graph implementation to make it faster.
- //
- // When you're ready, an alternate implementation follows at the bottom.
+//////////////////////////////////////////////////////////////////
+// This file contains two distinct solutions:
+//   - Store nodes and edges in objects
+//   - Store relationships in arrays (adjacency matrix)
+//
+// The two solutions are delineated by comment blocks
+// To use the Adjacency Matrix (AM) version, uncomment the line of
+// code near the end of this file.
+
+//////////////////////////////////////////////////////////////////
+// Implementation #1:
+// Store nodes and edges in objects
+//
+// Using objects to store nodes and edges has the benefit of
+// constant-time look-up when looking for any node or edge.
+// This implementation can accept any data-type that can be
+// represented as a string (keys of objects are strings).
+// Lastly, this solution is quite space efficient because hash
+// tables only occupy only slightly more space than is needed
+// to store the underlying data set.
+//////////////////////////////////////////////////////////////////
 /* END SOLUTION */
 
-// ###Graph Solution
-
+// ------------------------
 // Instantiate a new graph
-var Graph = function(){
+var Graph = function() {
   /* START SOLUTION */
   this._nodes = {};
   /* END SOLUTION */
@@ -17,28 +32,26 @@ var Graph = function(){
 
 // ------------------------
 // Add a node to the graph, passing in the node's value.
-Graph.prototype.addNode = function(node){
+Graph.prototype.addNode = function(node) {
   /* START SOLUTION */
-  if (node) {
-    this._nodes[node] = this._nodes[node] || { edges: [] };
-  }
+  this._nodes[node] = this._nodes[node] || { edges: {} };
   /* END SOLUTION */
 };
 
 // ------------------------
 // Return a boolean value indicating if the value passed to contains is represented in the graph.
-Graph.prototype.contains = function(node){
+Graph.prototype.contains = function(node) {
   /* START SOLUTION */
-  return !(this._nodes[node] === undefined);
+  return !!this._nodes[node];
   /* END SOLUTION */
 };
 
 // ------------------------
 // Removes a node from the graph.
-Graph.prototype.removeNode = function(node){
+Graph.prototype.removeNode = function(node) {
   /* START SOLUTION */
   if (this.contains(node)) {
-    //   Removes edges between node to be deleted and all other connected nodes.
+    // Removes edges between node to be deleted and all other connected nodes.
     for (var targetNode in this._nodes[node].edges) {
       this.removeEdge(node, targetNode);
     }
@@ -49,41 +62,46 @@ Graph.prototype.removeNode = function(node){
 
 // ------------------------
 // Returns a boolean indicating whether two specified nodes are connected.  Pass in the values contained in each of the two nodes.
-Graph.prototype.hasEdge = function(fromNode, toNode){
+Graph.prototype.hasEdge = function(fromNode, toNode) {
   /* START SOLUTION */
-  return this._nodes[fromNode].edges.indexOf(toNode) !== -1;
+  if (!this.contains(fromNode)) {
+    return false;
+  }
+  return !!this._nodes[fromNode].edges[toNode];
   /* END SOLUTION */
 };
 
 // ------------------------
 // Connects two nodes in a graph by adding an edge between them.
-Graph.prototype.addEdge = function(fromNode, toNode){
+Graph.prototype.addEdge = function(fromNode, toNode) {
   /* START SOLUTION */
-  // If either node doesn't currently exist, return null
-  if (fromNode === undefined || toNode === undefined) return null;
-  // Otherwise, add an edge to each node pointing to the other.
-  if (this._nodes[fromNode].edges.indexOf(toNode) === -1) { this._nodes[fromNode].edges.push(toNode) };
-  if (this._nodes[toNode].edges.indexOf(fromNode) === -1) { this._nodes[toNode].edges.push(fromNode) };
+  if (!this.contains(fromNode) || !this.contains(toNode)) {
+    return;
+  }
+
+  // Add an edge to each node pointing to the other
+  this._nodes[fromNode].edges[toNode] = toNode;
+  this._nodes[toNode].edges[fromNode] = fromNode;
   /* END SOLUTION */
 };
 
 // ------------------------
 // Remove an edge between any two specified (by value) nodes.
-Graph.prototype.removeEdge = function(fromNode, toNode){
+Graph.prototype.removeEdge = function(fromNode, toNode) {
   /* START SOLUTION */
-  // Remove "toNode" from "fromNode's" edges array.
-  var spliceIndex = this._nodes[fromNode].edges.indexOf(toNode);
-  if (spliceIndex !== -1) { this._nodes[fromNode].edges.splice(spliceIndex, 1) };
+  if (!this.contains(fromNode) || !this.contains(toNode)) {
+    return;
+  }
 
-  // Remove "fromNode" from "toNode's" edges array.
-  spliceIndex = this._nodes[toNode].edges.indexOf(fromNode);
-  if (spliceIndex !== -1) { this._nodes[toNode].edges.splice(spliceIndex, 1) };
+  // Remove edges from each node's edge list
+  delete this._nodes[fromNode].edges[toNode];
+  delete this._nodes[toNode].edges[fromNode];
   /* END SOLUTION */
 };
 
 // ------------------------
 // Pass in a callback which will be executed on each node of the graph.
-Graph.prototype.forEachNode = function(cb){
+Graph.prototype.forEachNode = function(cb) {
   /* START SOLUTION */
   for (var node in this._nodes) {
     cb(node);
@@ -95,32 +113,71 @@ Graph.prototype.forEachNode = function(cb){
  * Complexity: What is the time complexity of the above functions?
  */
 
-
 /* START SOLUTION */
-//-------------------------------------------------------------------------------------------------
-//  ###Alternative Implementation
+//////////////////////////////////////////////////////////////////
+// Implementation #2:
+// Use an Adjacency Matrix to describe relationships
 //
-//  Only changed methods are shown here.  The rest remain exactly as shown in the solution above.
-//
-//  Q: Why is this implementation faster?
-//
+// If we know that our data is going to be numeric, then we can
+// use arrays to acheive the same constant time benefit oberved
+// in the above solution by making use of an adjacency matrix.
+// See: https://en.wikipedia.org/wiki/Adjacency_matrix
+// This implementation is less space inefficent than the object
+// solution. Challenge yourself to understand why this is the case.
+//////////////////////////////////////////////////////////////////
 
-  // Graph.prototype.addNode = function(node){
-  //   if (node) {
-  //     this._nodes[node] = this._nodes[node] || { edges: {} };
-  //   }
-  // };
+var GraphAM = function() {
+  this._nodes = [];
+};
 
-  // Graph.prototype.removeEdge = function(fromNode, toNode){
-  //   delete this._nodes[fromNode].edges[toNode];
-  //   delete this._nodes[toNode].edges[fromNode];
-  // };
+GraphAM.prototype.addNode = function(node){
+  this._nodes[node] = this._nodes[node] || [];
+}
 
-  // ------------------------
-  // A:  The naive answer is that there are two instructions to the previous implementation's
-  //     four in the original removeEdge solution.  But we need to dig deeper than that.  .indexOf() identifies where in an array a value appears.  We know from our discussions around time complexity that finding a value in an array is an O(n) operation.  Even though we aren't writing any looping structure in our solution to find the value for 'spliceIndex', we should be aware that the array method 'indexOf' must do that iteration for us.
+GraphAM.prototype.contains = function(node) {
+  return !!this._nodes[node];
+};
 
-  // In Javascript, we have the luxury of using an object to store our edges rather than an array.  Doing so gives us O(1) access to any edge in that list.
+GraphAM.prototype.removeNode = function(node) {
+  if (this.contains(node)) {
+    // iterate over array like an object, to skip over undefined values
+    for (var i in this._nodes[node]) {
+      this.removeEdge(node, i);
+    }
+    this._nodes[node] = undefined;
+  }
+};
 
+GraphAM.prototype.hasEdge = function(fromNode, toNode) {
+  if (!this.contains(fromNode)) {
+    return false;
+  }
+  return !!this._nodes[fromNode][toNode];
+};
 
+GraphAM.prototype.addEdge = function(fromNode, toNode) {
+  if (!this.contains(fromNode) || !this.contains(toNode)) {
+    return;
+  }
+  this._nodes[fromNode][toNode] = true;
+  this._nodes[toNode][fromNode] = true;
+};
+
+GraphAM.prototype.removeEdge = function(fromNode, toNode) {
+  if (!this.contains(fromNode) || !this.contains(toNode)) {
+    return;
+  }
+  this._nodes[fromNode][toNode] = undefined;
+  this._nodes[toNode][fromNode] = undefined;
+};
+
+GraphAM.prototype.forEachNode = function(cb) {
+  for (var node in this._nodes) {
+    cb(node);
+  }
+};
+
+//////////////////////////////////////////////////////////////////
+// uncomment this line to use the AM version of Graph
+// Graph = GraphAM;
 /* END SOLUTION */

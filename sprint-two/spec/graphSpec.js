@@ -16,47 +16,47 @@ describe('graph', function() {
   });
 
   it('should store values as nodes that were inserted', function() {
-    graph.addNode('kittens');
-    expect(graph.contains('kittens')).to.equal(true);
+    graph.addNode(1);
+    expect(graph.contains(1)).to.equal(true);
   });
 
   it('should remove nodes that were inserted', function() {
-    graph.addNode('puppies');
-    expect(graph.contains('puppies')).to.equal(true);
-    graph.removeNode('puppies');
-    expect(graph.contains('puppies')).to.equal(false);
+    graph.addNode(2);
+    expect(graph.contains(2)).to.equal(true);
+    graph.removeNode(2);
+    expect(graph.contains(2)).to.equal(false);
   });
 
   it('should create edges between two nodes', function() {
-    graph.addNode('puppies');
-    graph.addNode('kittens');
-    graph.addNode('penguins');
-    graph.addEdge('penguins', 'puppies');
-    expect(graph.hasEdge('penguins', 'puppies')).to.equal(true);
-    expect(graph.hasEdge('penguins', 'kittens')).to.equal(false);
+    graph.addNode(2);
+    graph.addNode(1);
+    graph.addNode(3);
+    graph.addEdge(3, 2);
+    expect(graph.hasEdge(3, 2)).to.equal(true);
+    expect(graph.hasEdge(3, 1)).to.equal(false);
   });
 
   it('should remove edges between nodes', function() {
-    graph.addNode('apples');
-    graph.addNode('satsumas');
-    graph.addEdge('satsumas', 'apples');
-    expect(graph.hasEdge('apples', 'satsumas')).to.equal(true);
-    graph.removeEdge('satsumas', 'apples');
-    expect(graph.hasEdge('apples', 'satsumas')).to.equal(false);
+    graph.addNode(4);
+    graph.addNode(5);
+    graph.addEdge(5, 4);
+    expect(graph.hasEdge(4, 5)).to.equal(true);
+    graph.removeEdge(5, 4);
+    expect(graph.hasEdge(4, 5)).to.equal(false);
   });
 
   it('should execute a callback on each node in the graph', function() {
-    var connectToSatsumas = function(item) {
-      graph.addEdge(item, 'satsumas');
+    var connectToFive = function(item) {
+      graph.addEdge(item, 5);
     };
-    graph.addNode('satsumas');
-    graph.addNode('puppies');
-    graph.addNode('kittens');
-    graph.addNode('penguins');
-    graph.forEachNode(connectToSatsumas);
-    expect(graph.hasEdge('puppies', 'satsumas')).to.equal(true);
-    expect(graph.hasEdge('kittens', 'satsumas')).to.equal(true);
-    expect(graph.hasEdge('penguins', 'satsumas')).to.equal(true);
-    expect(graph.hasEdge('satsumas', 'satsumas')).to.equal(true);
+    graph.addNode(5);
+    graph.addNode(2);
+    graph.addNode(1);
+    graph.addNode(3);
+    graph.forEachNode(connectToFive);
+    expect(graph.hasEdge(2, 5)).to.equal(true);
+    expect(graph.hasEdge(1, 5)).to.equal(true);
+    expect(graph.hasEdge(3, 5)).to.equal(true);
+    expect(graph.hasEdge(5, 5)).to.equal(true);
   });
 });
