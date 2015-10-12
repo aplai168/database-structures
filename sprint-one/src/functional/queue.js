@@ -18,10 +18,10 @@ var Queue = function() {
 
   someInstance.dequeue = function() {
     /* START SOLUTION */
-    someInstance.size() && start++;
     var result = storage[start];
-
     delete storage[start];
+
+    someInstance.size() && start++;
 
     return result;
     /* END SOLUTION */

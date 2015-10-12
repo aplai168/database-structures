@@ -20,10 +20,10 @@ queueMethods.enqueue = function(value) {
 };
 
 queueMethods.dequeue = function() {
-  this.size() && this._start++;
   var result = this._storage[this._start];
-
   delete this._storage[this._start];
+
+  this.size() && this._start++;
 
   return result;
 };
