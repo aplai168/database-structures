@@ -20,6 +20,7 @@ queueMethods.enqueue = function(value) {
 };
 
 queueMethods.dequeue = function() {
+  // This does some unnecessary work sometimes. Can you spot why?
   var result = this._storage[this._start];
   delete this._storage[this._start];
 

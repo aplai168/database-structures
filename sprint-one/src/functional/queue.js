@@ -18,6 +18,7 @@ var Queue = function() {
 
   someInstance.dequeue = function() {
     /* START SOLUTION */
+    // This does some unnecessary work sometimes. Can you spot why?
     var result = storage[start];
     delete storage[start];
 
