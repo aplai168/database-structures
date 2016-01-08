@@ -18,10 +18,11 @@ var Queue = function() {
 
   someInstance.dequeue = function() {
     /* START SOLUTION */
-    someInstance.size() && start++;
+    // This does some unnecessary work sometimes. Can you spot why?
     var result = storage[start];
-
     delete storage[start];
+
+    someInstance.size() && start++;
 
     return result;
     /* END SOLUTION */

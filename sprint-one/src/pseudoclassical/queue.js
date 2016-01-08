@@ -14,10 +14,11 @@ Queue.prototype.enqueue = function(value) {
 };
 
 Queue.prototype.dequeue = function() {
-  this.size() && this._start++;
+  // This does some unnecessary work sometimes. Can you spot why?
   var result = this._storage[this._start];
-
   delete this._storage[this._start];
+
+  this.size() && this._start++;
 
   return result;
 };
