@@ -22,16 +22,16 @@ Implementing your browser's back button.
 Implement both **stack** and **queue** data structures in each of four instantiation styles. The functional style is stubbed out in `src/functional/queue.js` and `src/functional/stack.js` to get you started.
 
 ## Requirements
-- No arrays! Instead, use an object with numeric keys
-- Pass all the tests (open `SpecRunner.html` in a browser to see which tests are passing)
+* No arrays! Instead, use an object with numeric keys
+- [ ] Pass all the tests (open `SpecRunner.html` in a browser to see which tests are passing)
 
 ## Data Structure Specs
--  Implement a [stack] with the following methods:
+- [ ]  Implement a [stack] with the following methods:
     -  `push(string)` - Add a string to the top of the stack
     -  `pop()` - Remove and return the string on the top of the stack
     -  `size()` - Return the number of items on the stack
 
--  Implement a [queue] with the following methods:
+- [ ]  Implement a [queue] with the following methods:
     -  `enqueue(string)` - Add a string to the back of the queue
     -  `dequeue()` - Remove and return the string at the front of the queue
     -  `size()` - Return the number of items in the queue
