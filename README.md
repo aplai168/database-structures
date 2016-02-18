@@ -157,8 +157,8 @@ A raffle, where all the tickets are unique and you just want to randomly pick on
   * **Note:** This is a rather simple data structure. Take a look at the [Wikipedia](http://en.wikipedia.org/wiki/Set_(computer_science)) entry. Which native Javascript type fits the requirements best?
 
 ### 5. [Hash Table]
-Hash tables (sometimes called hash maps) store key value pairs. They do so in a memory efficient way by using a 'hashing function' that translates keys into 
-numerical indices located within a fixed block of memory (think about the contiguous blocks of memory used in arrays). Hash tables only increase their size 
+Hash tables (sometimes called hash maps) store key value pairs. They do so in a memory efficient way by using a 'hashing function' that translates keys into
+numerical indices located within a fixed block of memory (think about the contiguous blocks of memory used in arrays). Hash tables only increase their size
 in memory when necessary, and reduce their size in memory when possible.
 
 ![Hash Table image]
@@ -183,9 +183,9 @@ A contact list you might add to or remove from over time.
 
 
 ### 6. [Binary Search Tree]
-Binary trees are trees that can only have 0, 1, or 2 children. Remember that trees are recursive data structures and therefore a tree's children are themselves trees and 
+Binary trees are trees that can only have 0, 1, or 2 children. Remember that trees are recursive data structures and therefore a tree's children are themselves trees and
 can each have 0, 1, or 2 children. In a binary *search* tree, one child (out of potentially two) will always be less than the node's value (based on whatever sorting
-condition you wish) and the other child will always be greater than the node's value. Whether it is the 'left' or the 'right' child which is greater or lesser is consistent 
+condition you wish) and the other child will always be greater than the node's value. Whether it is the 'left' or the 'right' child which is greater or lesser is consistent
 throughout the binary search tree. This structure results in particularly fast find operations. You'll be asked to answer just how fast yourself.
 
 ![Binary Search Tree image]
@@ -284,14 +284,14 @@ For this exercise you will work with adjacency list representations of graphs us
 
     ``` javascript
     // this line lets you access the file system. You'll learn more about it later in the course
-    var fs = require('fs');     
+    var fs = require('fs');
 
     // read the `adjacency-list` file in this directory (you might have named the file differently) and split it on new lines into an array
     var fileLines = fs.readFileSync('./adjacency-list').toString().split('\n');
 
     // you may have to do this 0 or more times, to remove blank lines from fileLines
-    fileLines.pop(); 
-    
+    fileLines.pop();
+
     fileLines.forEach(function(line) {
       // here you have access to each line of the adjacency list
       console.log(line);
