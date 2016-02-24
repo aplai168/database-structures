@@ -28,9 +28,9 @@ Implement both **stack** and **queue** data structures in each of four instantia
 ### Install Pomander
 In the root directory of this sprint, run
 ```
-./pomander
+curl -s https://raw.githubusercontent.com/hackreactor-labs/pomander/master/bin/install | bash
 ```
-Pomander will check your code for syntax errors and violations against the [style guide](http://bookstrap.hackreactor.com/wiki/Style-Guide) before each commit.
+[Pomander](https://github.com/hackreactor-labs/pomander) will check your code for syntax errors and violations against the [style guide](http://bookstrap.hackreactor.com/wiki/Style-Guide) before each commit.
 
 It uses a pre-commit hook to run staged files through `eslint` before each commit. `eslint` is a linter that will block your commit should you have any syntax errors, or, should you violate the Hack Reactor style guide. There are some preferred whitespace style rules that will give warnings but not block your commit. Your work will be of a higher quality if you follow the instructions of the linter. That said, if the linter gives you any funny bugs, these bugs are not intentional, and you should feel free to skip using it during commits with the `--no-verify` option.
 
