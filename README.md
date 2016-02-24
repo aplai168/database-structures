@@ -217,7 +217,7 @@ In JavaScript, because there is no concept of private variables (except through 
 To prevent this from happening to your collaborators and consumers, indicate private properties and methods by prefixing them with an underscore. This is how we do.
 
 
-## Advanced
+## Advanced Content
 
 Our advanced content is intended to throw you in over your head, requiring you to solve problems with very little support or oversight, much like you would as a mid or senior level engineer.
 
