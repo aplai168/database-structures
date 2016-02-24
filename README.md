@@ -18,14 +18,23 @@ A stack works like a stack of plates -- plates are added and removed from the th
 #### A stack would be great for...
 Implementing your browser's back button.
 
-## Goal
+## Bare Minimum Requirements
+
 Implement both **stack** and **queue** data structures in each of four instantiation styles. The functional style is stubbed out in `src/functional/queue.js` and `src/functional/stack.js` to get you started.
 
-## Requirements
 * No arrays! Instead, use an object with numeric keys
 - [ ] Pass all the tests (open `SpecRunner.html` in a browser to see which tests are passing)
 
-## Data Structure Specs
+### Install Pomander
+In the root directory of this sprint, run
+```
+./pomander
+```
+Pomander will check your code for syntax errors and violations against the [style guide](http://bookstrap.hackreactor.com/wiki/Style-Guide) before each commit.
+
+It uses a pre-commit hook to run staged files through `eslint` before each commit. `eslint` is a linter that will block your commit should you have any syntax errors, or, should you violate the Hack Reactor style guide. There are some preferred whitespace style rules that will give warnings but not block your commit. Your work will be of a higher quality if you follow the instructions of the linter. That said, if the linter gives you any funny bugs, these bugs are not intentional, and you should feel free to skip using it during commits with the `--no-verify` option.
+
+### Data Structure Specs
 - [ ]  Implement a [stack] with the following methods:
     -  `push(string)` - Add a string to the top of the stack
     -  `pop()` - Remove and return the string on the top of the stack
@@ -36,7 +45,7 @@ Implement both **stack** and **queue** data structures in each of four instantia
     -  `dequeue()` - Remove and return the string at the front of the queue
     -  `size()` - Return the number of items in the queue
 
-## Instantiation Styles
+### Instantiation Styles
 1.  **Functional instantiation**: a simple "maker" pattern
     - *Do:*
         - Work within the `src/functional/` folder
@@ -79,7 +88,7 @@ This repo holds a mostly-empty [Mocha](http://visionmedia.github.io/mocha/) test
 
 Some failing specs are included. You're welcome! You should make them pass, then write more specs and more code.
 
-## Your Goals:
+## Bare Minimum Requirements
 
 ### Implement and test the following classes:
 

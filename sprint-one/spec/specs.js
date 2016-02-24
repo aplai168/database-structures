@@ -4,33 +4,33 @@ define([
   'spec/verifyClass.js',
   '../lib/chai/chai.js',
   '../lib/mocha/mocha.js',
-  'src/'+variant+'/stack.js',
-  'src/'+variant+'/queue.js',
+  'src/' + variant + '/stack.js',
+  'src/' + variant + '/queue.js',
   '../lib/jquery/jquery.js'
-], function(verifyClass, chai){
+], function(verifyClass, chai) {
 
-  $(function(){
-    $('<h4>The '+variant+' pattern</h4>').css({margin: 0}).prependTo(document.body);
+  $(function() {
+    $('<h4>The ' + variant + ' pattern</h4>').css({margin: 0}).prependTo(document.body);
   });
 
   mocha.setup('bdd');
   var expect = chai.expect;
 
-  describe("stack", function() {
+  describe('stack', function() {
 
     var stack;
     var instantiator = variant === 'pseudoclassical' ? Stack : Stack;
     var prototypeOfInstances = variant === 'prototypal' && stackMethods;
 
-    beforeEach(function(){
-      if(variant === 'pseudoclassical'){
+    beforeEach(function() {
+      if (variant === 'pseudoclassical') {
         stack = new instantiator();
       } else {
         stack = instantiator();
       }
     });
 
-    describe('stack shared behavior', function(){
+    describe('stack shared behavior', function() {
 
       verifyClass(instantiator).followsPattern(variant, {}, prototypeOfInstances);
 
@@ -45,7 +45,7 @@ define([
       });
 
       it('does not error when removing from an empty stack', function() {
-        expect(function(){ stack.pop(); }).not.throws();
+        expect(function() { stack.pop(); }).not.throws();
       });
 
       it('reports a size of 1 after adding two items and removing one', function() {
@@ -71,7 +71,7 @@ define([
 
     });
 
-    describe('stack-specific behavior', function(){
+    describe('stack-specific behavior', function() {
       it('removes the most recently added of two items', function() {
         stack.push('a');
         stack.push('b');
@@ -89,20 +89,20 @@ define([
 
   });
 
-  describe("queue", function() {
+  describe('queue', function() {
     var queue;
     var instantiator = variant === 'pseudoclassical' ? Queue : Queue;
     var prototypeOfInstances = variant === 'prototypal' && queueMethods;
 
-    beforeEach(function(){
-      if(variant === 'pseudoclassical'){
+    beforeEach(function() {
+      if (variant === 'pseudoclassical') {
         queue = new instantiator();
       } else {
         queue = instantiator();
       }
     });
 
-    describe('queue shared behavior', function(){
+    describe('queue shared behavior', function() {
 
       verifyClass(instantiator).followsPattern(variant, {}, prototypeOfInstances);
 
@@ -117,7 +117,7 @@ define([
       });
 
       it('does not error when removing from an empty queue', function() {
-        expect(function(){ queue.dequeue(); }).not.throws();
+        expect(function() { queue.dequeue(); }).not.throws();
       });
 
       it('reports a size of 1 after adding two items and removing one', function() {
@@ -143,7 +143,7 @@ define([
 
     });
 
-    describe('queue-specific behavior', function(){
+    describe('queue-specific behavior', function() {
       it('removes the least recently added of two items', function() {
         queue.enqueue('a');
         queue.enqueue('b');

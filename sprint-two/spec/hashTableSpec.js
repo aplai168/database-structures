@@ -8,9 +8,9 @@ describe('hashTable', function() {
   });
 
   it('should have methods named "insert", "remove", and "retrieve', function() {
-    expect(hashTable.insert).to.be.a("function");
-    expect(hashTable.remove).to.be.a("function");
-    expect(hashTable.retrieve).to.be.a("function");
+    expect(hashTable.insert).to.be.a('function');
+    expect(hashTable.remove).to.be.a('function');
+    expect(hashTable.retrieve).to.be.a('function');
   });
 
   it('should store values that were inserted', function() {
@@ -35,9 +35,9 @@ describe('hashTable', function() {
     expect(hashTable.retrieve('Steven')).to.equal(undefined);
   });
 
-  it('should handle hash function collisions', function(){
-    var v1 = "val1";
-    var v2 = "val2";
+  it('should handle hash function collisions', function() {
+    var v1 = 'val1';
+    var v2 = 'val2';
     var oldHashFunction = window.getIndexBelowMaxForKey;
     window.getIndexBelowMaxForKey = function() { return 0; };
     hashTable.insert(v1, v1);
@@ -52,8 +52,9 @@ describe('hashTable', function() {
   it /* ELSE
   xit END SOLUTION */ ('should double in size when needed', function() {
     _.each(people, function(person) {
-      var firstName = person[0], lastName = person[1];
-      hashTable.insert(firstName,lastName);
+      var firstName = person[0];
+      var lastName = person[1];
+      hashTable.insert(firstName, lastName);
     });
     expect(hashTable._limit).to.equal(16);
   });
@@ -62,8 +63,9 @@ describe('hashTable', function() {
   it /* ELSE
   xit END SOLUTION */ ('should halve in size when needed', function() {
     _.each(people, function(person) {
-      var firstName = person[0], lastName = person[1];
-      hashTable.insert(firstName,lastName);
+      var firstName = person[0];
+      var lastName = person[1];
+      hashTable.insert(firstName, lastName);
     });
     expect(hashTable._limit).to.equal(16);
     hashTable.remove('George');

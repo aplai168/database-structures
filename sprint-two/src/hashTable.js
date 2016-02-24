@@ -43,7 +43,7 @@ HashTable.prototype.insert = function(k, v) {
     }
   }
 
-  bucket.push([k,v]);
+  bucket.push([k, v]);
   this._storage.set(index, bucket);
   this._size++;
 
@@ -79,7 +79,7 @@ HashTable.prototype.remove = function(k) {
   for (var i = 0; i < bucket.length; i++) {
     var tuple = bucket[i];
     if (tuple[0] === k) {
-      bucket.splice(i, 1)
+      bucket.splice(i, 1);
       this._size--;
       if (this._size < this._limit * 0.25) {
         this._resize(Math.floor(this._limit / 2));
@@ -98,7 +98,7 @@ HashTable.prototype._resize = function(newLimit) {
 
   // min size of 8, return if nothing to do!
   newLimit = Math.max(newLimit, 8);
-  if (newLimit === this._limit) { return };
+  if (newLimit === this._limit) { return; }
 
   this._limit = newLimit;
   this._storage = LimitedArray(this._limit);
@@ -143,7 +143,7 @@ HashTableHOF.prototype.insert = function(k, v) {
       return oldValue;
     },
     function(bucket) {
-      bucket.push([k,v]);
+      bucket.push([k, v]);
       this._size++;
       if (this._size > 0.75 * this._limit) {
         this._resize( this._limit * 2 );
@@ -187,14 +187,14 @@ HashTableHOF.prototype._tupleSearch = function(key, foundCB, notFoundCB) {
   }
 
   return notFoundCB ? notFoundCB.call(this, bucket) : undefined;
-}
+};
 
 HashTableHOF.prototype._resize = function(newLimit) {
   var oldStorage = this._storage;
 
   // min size of 8, return if nothing to do!
   newLimit = Math.max(newLimit, 8);
-  if (newLimit === this._limit) { return };
+  if (newLimit === this._limit) { return; }
 
   this._limit = newLimit;
   this._storage = LimitedArray(this._limit);
