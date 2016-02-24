@@ -8,8 +8,10 @@ module.exports = {
   env: {
     'es6': true
   },
-  ecmaFeatures: {
-    'jsx': true
+  parserOptions: {
+    ecmaFeatures: {
+      'jsx': true
+    }
   },
   rules: {
     /* Indentation */
@@ -32,11 +34,10 @@ module.exports = {
     'comma-spacing': 1,
     'no-multi-spaces': 1,
     'space-before-blocks': 1,
-    'space-after-keywords': 1,
-    'space-before-keywords': 1,
+    'keyword-spacing': [1, { 'before': true, 'after': true }],
     'space-infix-ops': 1,
     /* Variable declaration */
-    'one-var': [1, 'never'],
+    'one-var': [1, { 'uninitialized': 'always', 'initialized': 'never' }],
     /* Minuta */
     'comma-style': [2, 'last'],
     'quotes': [1, 'single']
