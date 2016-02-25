@@ -26,7 +26,7 @@ Implement both **stack** and **queue** data structures in each of four instantia
 - [ ] Pass all the tests (open `SpecRunner.html` in a browser to see which tests are passing)
 
 ### Install Pomander
-In the root directory of this sprint, run
+In Terminal, run the following command from within this repository:
 ```
 curl -s https://raw.githubusercontent.com/hackreactor-labs/pomander/master/bin/install | bash
 ```
