@@ -130,9 +130,9 @@ var GraphAM = function() {
   this._nodes = [];
 };
 
-GraphAM.prototype.addNode = function(node){
+GraphAM.prototype.addNode = function(node) {
   this._nodes[node] = this._nodes[node] || [];
-}
+};
 
 GraphAM.prototype.contains = function(node) {
   return !!this._nodes[node];
