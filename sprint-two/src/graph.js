@@ -22,7 +22,6 @@
 //////////////////////////////////////////////////////////////////
 /* END SOLUTION */
 
-// ------------------------
 // Instantiate a new graph
 var Graph = function() {
   /* START SOLUTION */
@@ -30,7 +29,6 @@ var Graph = function() {
   /* END SOLUTION */
 };
 
-// ------------------------
 // Add a node to the graph, passing in the node's value.
 Graph.prototype.addNode = function(node) {
   /* START SOLUTION */
@@ -38,7 +36,6 @@ Graph.prototype.addNode = function(node) {
   /* END SOLUTION */
 };
 
-// ------------------------
 // Return a boolean value indicating if the value passed to contains is represented in the graph.
 Graph.prototype.contains = function(node) {
   /* START SOLUTION */
@@ -46,7 +43,6 @@ Graph.prototype.contains = function(node) {
   /* END SOLUTION */
 };
 
-// ------------------------
 // Removes a node from the graph.
 Graph.prototype.removeNode = function(node) {
   /* START SOLUTION */
@@ -60,7 +56,6 @@ Graph.prototype.removeNode = function(node) {
   /* END SOLUTION */
 };
 
-// ------------------------
 // Returns a boolean indicating whether two specified nodes are connected.  Pass in the values contained in each of the two nodes.
 Graph.prototype.hasEdge = function(fromNode, toNode) {
   /* START SOLUTION */
@@ -71,7 +66,6 @@ Graph.prototype.hasEdge = function(fromNode, toNode) {
   /* END SOLUTION */
 };
 
-// ------------------------
 // Connects two nodes in a graph by adding an edge between them.
 Graph.prototype.addEdge = function(fromNode, toNode) {
   /* START SOLUTION */
@@ -85,7 +79,6 @@ Graph.prototype.addEdge = function(fromNode, toNode) {
   /* END SOLUTION */
 };
 
-// ------------------------
 // Remove an edge between any two specified (by value) nodes.
 Graph.prototype.removeEdge = function(fromNode, toNode) {
   /* START SOLUTION */
@@ -99,7 +92,6 @@ Graph.prototype.removeEdge = function(fromNode, toNode) {
   /* END SOLUTION */
 };
 
-// ------------------------
 // Pass in a callback which will be executed on each node of the graph.
 Graph.prototype.forEachNode = function(cb) {
   /* START SOLUTION */
