@@ -163,7 +163,7 @@ A raffle, where all the tickets are unique and you just want to randomly pick on
   - [ ] What is the time complexity of the above functions?
   * **Note:** Sets should not use up any more space than necessary. Once a value is added to a set, adding it a second time should not increase the size of the set.
   * **Note:** Until the advanced section, your sets should handle only string values.
-  * **Note:** This is a rather simple data structure. Take a look at the [Wikipedia](http://en.wikipedia.org/wiki/Set_(computer_science)) entry. Which native Javascript type fits the requirements best?
+  * **Note:** This is a rather simple data structure. Take a look at the [Wikipedia](https://en.wikipedia.org/wiki/Set_(abstract_data_type)) entry. Which native Javascript type fits the requirements best?
 
 ### 5. [Hash Table]
 Hash tables (sometimes called hash maps) store key value pairs. They do so in a memory efficient way by using a 'hashing function' that translates keys into
@@ -337,12 +337,12 @@ For this exercise you will work with adjacency list representations of graphs us
 [Object.create]: http://mdn.io/Object.create
 [_.extend]: http://underscorejs.org/#extend
 [Mocha]: http://visionmedia.github.io/mocha/
-[Chrome profiling tools]: https://developers.google.com/chrome-developer-tools/docs/profiles
+[Chrome profiling tools]: https://developers.google.com/web/tools/chrome-devtools/profile/rendering-tools/js-execution
 
 [Linked List]: https://en.wikipedia.org/wiki/Linked_list
 [Linked List image]: https://f.cloud.github.com/assets/1577682/1212239/43154574-2615-11e3-8e29-43cf74e25b10.png
 [doubly-linked-list]: http://en.wikipedia.org/wiki/Doubly_linked_list
-[Set]: https://en.wikipedia.org/wiki/Set_data_structure
+[Set]: https://en.wikipedia.org/wiki/Set_(abstract_data_type)
 [Set image]: http://www.codeproject.com/KB/recipes/DotNetSet/Sets02.png
 [Tree]: https://en.wikipedia.org/wiki/Tree_(data_structure)
 [Tree Image]: http://www.urgenthomework.com/images/ternary-and-quaternary-tree.gif
