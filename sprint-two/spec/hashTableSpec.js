@@ -55,6 +55,7 @@ describe('hashTable', function() {
       var firstName = person[0];
       var lastName = person[1];
       hashTable.insert(firstName, lastName);
+      expect(hashTable.retrieve(firstName)).to.equal(lastName);
     });
     expect(hashTable._limit).to.equal(16);
   });
@@ -66,6 +67,7 @@ describe('hashTable', function() {
       var firstName = person[0];
       var lastName = person[1];
       hashTable.insert(firstName, lastName);
+      expect(hashTable.retrieve(firstName)).to.equal(lastName);
     });
     expect(hashTable._limit).to.equal(16);
     hashTable.remove('George');
