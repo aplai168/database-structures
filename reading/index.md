@@ -28,9 +28,9 @@ Implement both **stack** and **queue** data structures in each of four instantia
 ### Install Pomander
 In Terminal, run the following command from within this repository:
 ```
-curl -s https://raw.githubusercontent.com/hackreactor-labs/pomander/master/bin/install | bash
+curl -s https://raw.githubusercontent.com/reactorcore/pomander/master/bin/install | bash
 ```
-[Pomander](https://github.com/hackreactor-labs/pomander) will check your code for syntax errors and violations against the [style guide](http://bookstrap.hackreactor.com/wiki/Style-Guide) before each commit.
+[Pomander](https://github.com/reactorcore/pomander) will check your code for syntax errors and violations against the [style guide](https://github.com/reactorcore/docs.student-wiki/blob/master/Style-Guide.md) before each commit.
 
 It uses a pre-commit hook to run staged files through `eslint` before each commit. `eslint` is a linter that will block your commit should you have any syntax errors, or, should you violate the Hack Reactor style guide. There are some preferred whitespace style rules that will give warnings but not block your commit. Your work will be of a higher quality if you follow the instructions of the linter. That said, if the linter gives you any funny bugs, these bugs are not intentional, and you should feel free to skip using it during commits with the `--no-verify` option.
 
@@ -84,7 +84,7 @@ It uses a pre-commit hook to run staged files through `eslint` before each commi
 # Sprint Two: Data Structures
 ---
 
-This repo holds a mostly-empty [Mocha](http://visionmedia.github.io/mocha/) test suite. To run it, open up `SpecRunner.html`.
+This repo holds a mostly-empty [Mocha](https://mochajs.org/) test suite. To run it, open up `SpecRunner.html`.
 
 Some failing specs are included. You're welcome! You should make them pass, then write more specs and more code.
 
@@ -93,10 +93,7 @@ Some failing specs are included. You're welcome! You should make them pass, then
 ### Implement and test the following classes:
 
 ### 1. [Linked List]
-A linked list is a dynamic data structure that allows for constant time insertion and removal at any point in the linked list (compare this to
-an array which on average has linear time insertion and removal operations).
-In exchange for this insertion and removal speed, linked lists are not indexed and any find operations on a link list require the linear time
-operation of traversing the entire linked-list from the beginning.
+A linked list is a dynamic data structure that allows for constant time insertion and removal at any point in the linked list (compare this to an array which on average has linear time insertion and removal operations). In exchange for this insertion and removal speed, linked lists are not indexed and any find operations on a link list require the linear time operation of traversing the entire linked-list from the beginning.
 
 ![Linked List image]
 
@@ -112,8 +109,7 @@ An itinerary you expect to add and remove destinations to and from.
   - [ ] What is the time complexity of the above functions?
 
 ### 2. [Tree]
-A tree is a hierarchical data structure consisting of a node (potentially) with children. The children are trees unto themselves, that is, nodes with
-(potential) children. For this reason the tree is referred to as a recursive data structure.
+A tree is a hierarchical data structure consisting of a node (potentially) with children. The children are trees unto themselves, that is, nodes with (potential) children. For this reason the tree is referred to as a recursive data structure.
 
 ![Tree image]
 
@@ -211,7 +207,9 @@ A dictionary of all English words.
   - [ ] What is the time complexity of the above functions?
   * Use case: Given a list of a million numbers, write a function that takes a new number and returns the closest number in the list using your BST. Profile this against the same operation using an array.
 
+### Tests
 
+- [ ] For each of the data structures you have implemented, go back and add at least one additional unit test. If possible, try to add a test that will require you improve your implementation in order to make the test pass.
 
 ## APIs and Implementation: A Note on Communicating Your Intentions as a Developer
 
@@ -224,7 +222,6 @@ This relationship between APIs and implementations--that they remain independent
 In JavaScript, because there is no concept of private variables (except through closure), sometimes API and implementation are both visible. If it's impossible to distinguish between API and implementation, you might depend upon a piece of implementation that later changes and breaks your code.
 
 To prevent this from happening to your collaborators and consumers, indicate private properties and methods by prefixing them with an underscore. This is how we do.
-
 
 ## Advanced Content
 
@@ -241,14 +238,12 @@ Our advanced content is intended to throw you in over your head, requiring you t
 
 Implement the following data structures and improvements. Use any instantiataion style you like.
 
-**Optional**: Use TDD.
+**Optional, but highly recommended**: Use TDD.
 
-* Create a [`doubly-linked-list`][doubly-linked-list], with all the methods of
-  your linked list, and add the following properties:
+* Create a [`doubly-linked-list`][doubly-linked-list], with all the methods of your linked list, and add the following properties:
   - [ ] An `.addToHead()` method which takes a value and adds it to the front of the list.
   - [ ] A `.removeTail()` method which removes the last node from the list and returns its value.
-  * Note: each `node` object will need to have a new `.previous` property pointing to the node behind it (or to `null` when appropriate);
-    this is what makes it a doubly-linked list.
+  * Note: each `node` object will need to have a new `.previous` property pointing to the node behind it (or to `null` when appropriate); this is what makes it a doubly-linked list.
 * Add parent links to your `tree`
   * [ ] A `.parent` property, which refers to the parent node or null when there is no node
   * [ ] A `.removeFromParent()` method, which disassociates the tree with its parent (in both directions)
@@ -320,9 +315,6 @@ For this exercise you will work with adjacency list representations of graphs us
 - [Data structure coverage in Wikipedia](https://en.wikipedia.org/wiki/Data_structure) is no joke. Consider heading to Wikipedia when you have questions about data structures you are working with, or want to start learning about new ones.
 - [VisuAlgo](http://visualgo.net/) is an incredible sight with clean visualizations of all kinds of data structures and algorithms.
 - Hack Reactor graduate Ryan Atkinson's excellent blog post [JavaScript Classes and Instantiation Patterns](http://www.ryanatkinson.io/javascript-instantiation-patterns/)
-
-
-
 
 [functional instantiation example]: https://github.com/hackreactor/giraffeMaker/blob/master/src/giraffeExtend.js
 [prototypal instantiation example]: https://github.com/hackreactor/giraffeMaker/blob/master/src/giraffePrototype.js
