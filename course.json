@@ -2,13 +2,14 @@
   "name": "Data Structures",
   "description": "A deep dive into data structures and inheritance patterns in JavaScript.",
 
-  "syllabus": [
-
-    { "title": "Data Structures Repository", "type": "download", "id": "exercise", "folder": "code", "transform": ["problemify-export"] }
-
-  ],
-
   "phases": {
+
+    "Code": [
+
+      { "title": "Data Structures Repository", "type": "download", "id": "exercise", "folder": "code", "transform": ["problemify-export"] }
+
+    ],
+
     "Sprint Solution": [
       { "title": "Solution Code", "type": "download", "id": "solution", "folder": "code", "transform": ["problemify-solve"] },
 
