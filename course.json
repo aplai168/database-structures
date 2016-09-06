@@ -6,7 +6,7 @@
 
     "Code": [
 
-      { "title": "Data Structures Repository", "type": "download", "id": "exercise", "folder": "code", "transform": ["problemify-export"] }
+      { "title": "Data Structures Repository", "type": "download", "postTransform": ["add-init-script"], "id": "exercise", "folder": "code", "transform": ["problemify-export"] }
 
     ],
 
