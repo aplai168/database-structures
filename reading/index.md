@@ -30,7 +30,7 @@ In Terminal, run the following command from within this repository:
 ```
 curl -s https://raw.githubusercontent.com/reactorcore/pomander/master/bin/install | bash
 ```
-[Pomander](https://github.com/reactorcore/pomander) will check your code for syntax errors and violations against the [style guide](https://github.com/reactorcore/docs.student-wiki/blob/master/Style-Guide.md) before each commit.
+[Pomander](https://github.com/reactorcore/pomander) will check your code for syntax errors and violations against the Hack Reactor style guide before each commit.
 
 It uses a pre-commit hook to run staged files through `eslint` before each commit. `eslint` is a linter that will block your commit should you have any syntax errors, or, should you violate the Hack Reactor style guide. There are some preferred whitespace style rules that will give warnings but not block your commit. Your work will be of a higher quality if you follow the instructions of the linter. That said, if the linter gives you any funny bugs, these bugs are not intentional, and you should feel free to skip using it during commits with the `--no-verify` option.
 
