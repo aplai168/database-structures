@@ -4,15 +4,7 @@
 
   "phases": {
 
-    "Code": [
-
-      { "title": "Data Structures Repository", "type": "download", "postTransform": ["add-init-script"], "id": "exercise", "folder": "code", "transform": ["problemify-export"] }
-
-    ],
-
     "Sprint Solution": [
-      { "title": "Solution Code", "type": "download", "id": "solution", "folder": "code", "transform": ["problemify-solve"] },
-
       { "type": "iframe", "title": "[Video] Data Structures Solution", "src": "{{ LOCAL_VIDEO_IP  }}/bd289768ffcad273f4c0ecc11ec34bd700832fb0"  }
     ]
   }
