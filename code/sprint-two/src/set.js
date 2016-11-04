@@ -3,7 +3,7 @@ var Set = function() {
   /* START SOLUTION */
   set._storage = {};
   /* ELSE
-  set._storage = undefined;
+  set._storage = null; // fix me
   END SOLUTION */
   return set;
 };
