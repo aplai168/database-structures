@@ -14,6 +14,14 @@
       { "title": "Solution Code", "type": "download", "id": "solution", "folder": "code", "transform": ["problemify-solve"] },
 
       { "type": "iframe", "title": "[Video] Data Structures Solution", "src": "{{ LOCAL_VIDEO_IP  }}/bd289768ffcad273f4c0ecc11ec34bd700832fb0"  }
+    ],
+
+    "Sprint Solution (Remote)": [
+
+      { "title": "Solution Code", "type": "download", "id": "solution-remote", "folder": "code", "transform": ["problemify-solve"] },
+
+      { "title": "[Video] Data Structures Solution", "type": "iframe", "src": "//player.vimeo.com/video/181530302" }
+
     ]
   }
 }
