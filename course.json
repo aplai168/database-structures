@@ -20,7 +20,9 @@
 
       { "title": "Solution Code", "type": "download", "id": "solution-remote", "folder": "code", "transform": ["problemify-solve"] },
 
-      { "title": "[Video] Data Structures Solution", "type": "iframe", "src": "//player.vimeo.com/video/181530302" }
+      { "title": "[Video] Data Structures Solution I", "type": "iframe", "src": "//player.vimeo.com/video/113813953" },
+      
+      { "title": "[Video] Data Structures Solution II", "type": "iframe", "src": "//player.vimeo.com/video/114398304" }
 
     ]
   }
