@@ -159,7 +159,7 @@ A raffle, where all the tickets are unique and you just want to randomly pick on
   - [ ] What is the time complexity of the above functions?
   * **Note:** Sets should not use up any more space than necessary. Once a value is added to a set, adding it a second time should not increase the size of the set.
   * **Note:** Until the advanced section, your sets should handle only string values.
-  * **Note:** This is a rather simple data structure. Take a look at the [Wikipedia](https://en.wikipedia.org/wiki/Set_(abstract_data_type)) entry. Which native Javascript type fits the requirements best?
+  * **Note:** This is a rather simple data structure. Take a look at the [Wikipedia] entry. Which native Javascript type fits the requirements best?
 
 ### 5. [Hash Table]
 Hash tables (sometimes called hash maps) store key value pairs. They do so in a memory efficient way by using a 'hashing function' that translates keys into
@@ -366,3 +366,4 @@ For this exercise you will work with adjacency list representations of graphs us
 [kargersAlgorithm]: https://en.wikipedia.org/wiki/Karger%27s_algorithm
 [kosarajusAlgorithm]: https://en.wikipedia.org/wiki/Kosaraju%27s_algorithm
 [SCC]: https://en.wikipedia.org/wiki/Strongly_connected_component
+[Wikipedia]: https://en.wikipedia.org/wiki/Set_(abstract_data_type)
