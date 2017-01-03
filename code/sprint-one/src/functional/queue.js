@@ -1,33 +1,30 @@
 var Queue = function() {
   var someInstance = {};
-//priority order?
-  // Use an object with numeric keys to store values
-  var head = 0;
-  var tail = 0;
-  var size = 0;
+  //properties
+  var newestIndex = 0;
+  var oldestIndex = 0;
+  var sizee = 0;
   var storage = {};
-  // Implement the methods below
-
-  someInstance.enqueue = function(value) {
-    storage[tail] = value;
-    tail++;
-  };
-
-  someInstance.dequeue = function() {
-    var first = storage[head];
-    delete storage[head];
-    head++;
-    return first;
-  };
 
   someInstance.size = function() {
-    size = tail - head;
-    if (size < 0) {
-      return 0;
-    } else {
-      return size;
-    }
-  };
+    sizee = newestIndex - oldestIndex;
+    if(sizee < 0) return 0;
+    return sizee;
+  }
+
+  someInstance.enqueue = function(data) {
+    storage[newestIndex] = data;
+    newestIndex++;
+  }
+
+  someInstance.dequeue = function() {
+    //store the oldest index to the current oldest index
+    var deletedData = storage[oldestIndex];
+      delete storage[oldestIndex];
+      oldestIndex++;
+      return deletedData;
+    
+  }
 
   return someInstance;
 };

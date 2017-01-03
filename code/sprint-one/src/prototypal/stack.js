@@ -1,33 +1,34 @@
+//prototypal
+
 var Stack = function() {
-  // Hey! Rewrite in the new style. Your code will wind up looking very similar,
-  // but try not not reference your old code in writing the new style.
-  var someInstance = Object.create(stackMethods);
-  someInstance.a = 0;
-  someInstance.storage = {};
-  return someInstance;
-};
+//the variable will delegate failed lookups to the prototype
+    var someInstance = Object.create(stackMethods);
+    someInstance.sizee = 0;
+    someInstance.storage = {};
+
+    return someInstance;
+}
 
 stackMethods = {};
 
-stackMethods.push = function(value) {
-  this.storage[this.a] = value;
-  this.a++;
+stackMethods.push = function(data) {
+  //add data and increase size
+  this.storage[this.sizee] = data;
+  this.sizee++;
 };
 
 stackMethods.pop = function() {
-  var result;
-  if (this.a > 0) {
-    this.a--;
-    result = this.storage[this.a];
-    delete this.storage[this.a];
-    return result;
-  }
-};
+  //decrease size
+  this.sizee--;
+  //delete last added data
+  var deletedData = this.storage[this.sizee];
+  delete this.storage[this.sizee];
+  return deletedData;
+}
 
 stackMethods.size = function() {
-  if (this.a < 0) {
+  if(this.sizee < 0) {
     return 0;
-  } else {
-    return this.a;
   }
-};
+  return this.sizee;
+}
