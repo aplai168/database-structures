@@ -24,20 +24,18 @@ treeMethods.addChild = function(value) {
 };
 
 treeMethods.contains = function(target) {
-  //loop through children
+  console.log(this.value, 'this.value')
+  if(this.value === target) {
+    return true;
+  }
   for (var i = 0; i < this.children.length; i++) {
-    console.log(this.children.length, 'children.length')
-    console.log(this.children, 'children')
-
-    if (typeof this.children[i].value === 'object') {
-      return treeMethods.contains(target);
-    }
-    if (this.children[i].value === target) {
+    var child = this.children[i];
+    console.log('child', child)
+    if (child.contains(target)) {
       return true;
     }
   }
   return false;
-
 };
 
 //use this for understanding how to recurse through even tho the param is only target
